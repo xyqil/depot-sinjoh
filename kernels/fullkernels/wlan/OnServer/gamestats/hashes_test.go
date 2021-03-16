@@ -9,9 +9,9 @@ import (
     "utilities"
 )
 
-// 	Note to my devs: I added some CSPRNG to make test hashes random, to well,
-// 	increase the capacity in which we test, and wherefore to make sure that it
-//	can handle it universally.
+//  Note to my devs: I added some CSPRNG to make test hashes random, to well,
+//  increase the capacity in which we test, and wherefore to make sure that it
+//  can handle it universally.
 //  -6100m
 
 func TestHash(t * testing.T) {
