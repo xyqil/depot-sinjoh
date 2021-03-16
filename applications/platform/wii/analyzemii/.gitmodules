@@ -1,0 +1,39 @@
+[submodule "source/libs/libbotan"]
+	path = source/libs/libbotan
+	url = https://github.com/randombit/botan
+[submodule "source/libs/libogc"]
+	path = source/libs/libogc
+	url = https://github.com/devkitPro/libogc
+[submodule "source/libs/libwiigui"]
+	path = source/libs/libwiigui
+	url = https://github.com/dborth/libwiigui
+[submodule "source/libs/libdebug"]
+	path = source/libs/libdebug
+	url = https://github.com/WiiLink24/wiilink24-debug
+[submodule "source/libs/libcsprng"]
+	path = source/libs/libcsprng
+	url = https://github.com/Duthomhas/CSPRNG
+[submodule "source/libs/libpatcher"]
+	path = source/libs/libpatcher
+	url = https://github.com/WiiLink24/libpatcher
+[submodule "source/libs/libpersonalcodedata"]
+	path = source/libs/libpersonalcodedata
+	url = https://github.com/WiiLink24/set-personal-data
+[submodule "source/libs/libwiisprite"]
+	path = source/libs/libwiisprite
+	url = https://github.com/nebiun/libwiisprite
+[submodule "source/libs/libwmbasm"]
+	path = source/libs/libwmbasm
+	url = https://github.com/WiiDatabase/wmb-asm
+[submodule "source/libs/libmotionplusvideoseentoggler"]
+	path = source/libs/libmotionplusvideoseentoggler
+	url = https://github.com/WiiDatabase/MotionPlusVideoSeen
+[submodule "source/libs/libwiinumberparser"]
+	path = source/libs/libwiinumberparser
+	url = https://github.com/RiiConnect24/wiino
+[submodule "source/libs/libwiichannelmakercode"]
+	path = source/libs/libwiichannelmakercode
+	url = https://github.com/Disconnect24/dc24-channel
+[submodule "source/middleware/libcsprng"]
+	path = source/middleware/libcsprng
+	url = https://github.com/Duthomhas/CSPRNG

@@ -1,0 +1,101 @@
+# TODO
+
+### Gamestats Server
+
+Assignees: Nate, 6100m
+
+#### Reference Material
+ - https://github.com/mm201/pkmn-classic-framework/wiki/gamestats2-server
+ - https://github.com/RiiConnect24/File-Maker/wiki
+ - https://github.com/RiiConnect24/Mail-Go/wiki
+ - https://github.com/Disconnect24/Mail-Go
+ - https://github.com/Disconnect24/cauldron-api
+ - https://github.com/Disconnect24/smol-ten
+ - https://github.com/Disconnect24/genesis-api
+ - https://github.com/mm201/pkmn-classic-framework/
+ - https://github.com/RiiConnect24/File-Maker/
+ - https://github.com/WiiLink24/room-server
+ - https://github.com/WiiLink24/food-server
+ - https://github.com/WiiLink24/cam-server
+ - https://github.com/zurgeg/zurgeg.github.io
+ - https://github.com/Dogmander/tv-no-tomo-server
+ - https://github.com/barronwaffles/dwc_network_server_emulator
+ - https://github.com/spotlightishere/mango-bypass
+ - https://github.com/WiiLink24/wii-no-ma-docs
+ - https://github.com/WiiLink24/repository
+ - https://github.com/OpenShopChannel/wsc-docs
+ - https://github.com/OpenShopChannel/api-docs
+ - https://github.com/OpenShopChannel/WiiSOAP
+ - https://gist.github.com/jaames/7d7dfb4a6e4845616711cafd70a11010
+ - https://gist.github.com/6100m/8fdb159d809e77b3ee1109131c0f5ae4
+ - https://github.com/OpenShopChannel/ShopChannel-Web
+ - https://github.com/OpenShopChannel/ShopChannel
+ - https://save-nintendo-wifi.net
+ - https://github.com/Flipnote-Collective/flipnote-studio-docs
+ - https://github.com/Flipnote-Collective/flipnote-studio-3d-docs
+ - https://wiki.tockdom.com/wiki/Wiimms_mkw-ana_(tool)
+ - https://github.com/RiiConnect24/wiino
+ - https://github.com/RiiConnect24/CFH
+ - https://github.com/RiiConnect24/VTP
+ - https://github.com/RiiConnect24/CMOC-Server
+ - https://github.com/RiiConnect24/Kaitai-Files
+ - https://github.com/Gericom/MobiclipDecoder
+ - https://github.com/Disconnect24/dc24-channel
+ - https://github.com/Disconnect24/ces-file-downloader
+ - https://github.com/Disconnect24/lilliput
+ - https://github.com/Disconnect24/News-Channel-Cpp
+ - https://github.com/Disconnect24/docker-mail-runtime-base
+ - https://github.com/Disconnect24/quiz-api
+ - https://github.com/Disconnect24/Nintendo-Channel-Data
+ - https://github.com/Disconnect24/Disconnect24-Bot
+ - https://github.com/RiiConnect24/VT-Sender
+ - https://wiki.tockdom.com/wiki/MKWii_Network_Protocol
+#### Progress
+ - [x] Build a HTTP router with `github.com/gorilla/mux`
+ - [x] Handle endpoint `/`
+ - [x] Build a token generator
+ - [ ] Handle endpoint `/pokemondpds/worldexchange/info.asp`
+ - [ ] Handle endpoint `/pokemondpds/common/setProfile.asp`
+ - [ ] Handle endpoint `/pokemondpds/worldexchange/get.asp`
+ - [ ] Handle endpoint `/pokemondpds/worldexchange/delete.asp`
+ - [ ] Handle endpoint `/pokemondpds/worldexchange/return.asp`
+ - [ ] Handle endpoint `/pokemondpds/worldexchange/post.asp`
+ - [ ] Handle endpoint `/pokemondpds/worldexchange/post_finish.asp`
+ - [ ] Handle endpoint `/pokemondpds/worldexchange/search.asp`
+ - [ ] Handle endpoint `/pokemondpds/worldexchange/exchange.asp`
+ - [ ] Handle endpoint `/pokemondpds/worldexchange/exchange_finish.asp`
+ - [ ] Handle endpoint `/pokemondpds/battletower/info.asp`
+ - [ ] Handle endpoint `/pokemondpds/battletower/roomnum.asp`
+ - [ ] Handle endpoint `/pokemondpds/battletower/download.asp`
+ - [ ] Handle endpoint `/pokemondpds/battletower/upload.asp`
+ - [ ] Emulate site `weather.wapp.rc24.xyz`
+ - [ ] Emulate site `miicontest.wapp.rc24.xyz`
+ - [ ] Emulate site `news.wapp.rc24.xyz`
+ - [ ] Emulate site `vtp.wapp.rc24.xyz`
+ - [ ] Emulate site `miicontestp.wapp.rc24.xyz`
+ - [ ] Emulate site `miicontest.wapp.rc24.xyz`
+ - [ ] Emulate site `vt.wapp.rc24.xyz`
+ - [ ] Emulate Wii Mail servers 
+ - [ ] Emulate Nintendo WFC Connection servers
+ - [ ] Emulate site `syscheck.rc24.xyz`
+ - [ ] Emulate site `conntest.nintendowifi.net`
+ - [ ] Emulate Flipnote Studio servers
+ - [ ] Emulate Flipnote Studio 3D servers
+ - [ ] Create a TwitchPlaysPokemon clone that spans over youtube, twitch, irc, and discord
+ - [ ] Emulate Wii No Ma Servers
+ - [ ] Emulate Demae Channel Servers
+ - [ ] Emulate Pokemon Gen4 and Gen5 Wifi Servers
+ - [ ] Emulate Digicam Print channel servers
+ - [ ] Emulate TV no Tomo channel servers
+ - [ ] Build a cron-job engine
+ - [ ] Build a API for data conversion and processing
+ - [ ] Make a MUX API to serve data from CFH and VT-Sender (see 6100m's gist that was put in refrence material)
+ - [ ] Port VT Sender to Golang
+ - [ ] Make a VFF Packer
+ - [ ] Make a LZ10/LZ11 compressor
+ - [ ] Make a WC24 container packer
+ - [ ] Make a key randomization system
+ - [ ] Emulate Wii Shop Channel servers and dynamically provide homebrew to the community through it.
+ - [ ] Create our own EULA and apply it to CFH
+ - [ ] Emulate and/or handle Nintendo Channel servers
+ - [ ] Fully Complete

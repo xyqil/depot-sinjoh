@@ -1,0 +1,101 @@
+#!/bin/bash
+while getopts d: flag
+do
+    case "${flag}" in
+        d) modedata=${OPTARG};;
+        o) outputdata=$OPTARG};;
+    esac
+done
+if [[ $modedata == 0 ]];then
+ export maindata="../var/share/keybase/./keytool"
+ mkdir $maindata
+ predata=$'#!/bin/bash\necho'
+ export spacedata=$(./datatool -modedata=1)
+ export keydata=$(openssl rand -base64 242)
+ rm $maindata
+ cat > $maindata << EOL
+ $predata$spacedata$keydata
+EOL
+elif [[ $modedata == 1 ]];then
+ export maindata="../var/share/keybase/./keytool"
+ export moredata="/bin/bashecho"
+ export somedata="/bin/bash\necho"
+ export processeddata=$(./datatool -modedata=2)$(./datatool -modedata=3)$moredata
+ export afterdata=$(./datatool -modedata=2)$(./datatool -modedata=3)$somedata
+ sed -i '/^[[:blank:]]*$/ d' $maindata
+ tail -c +2 $maindata>tmpfile2
+ sed -i ':a; N; s/\n/ /; ta' tmpfile2
+ sed -r 's/\s+//g' tmpfile2>tmpfile
+ rm tmpfile2
+ rm $maindata
+ mv tmpfile $maindata
+ sed -i -e "s/${processeddata}/${afterdata}/g" $maindata
+ chmod 777 $maindata
+elif [[ $modedata == 2 ]];then
+ export maindata="../var/share/keybase/./keytool"
+ export data=$($maindata)
+ echo Key auth was succesful, key is $data
+ ./nidotool --h $data
+elif [[ $modedata == 3 ]];then
+ mkdir $outputdata/"0"
+elif [[ $modedata == 4 ]];then
+ mkdir $outputdata/"1"
+elif [[ $modedata == 5 ]];then
+ mkdir $outputdata/"2"
+elif [[ $modedata == 6 ]];then
+ mkdir $outputdata/"3"
+elif [[ $modedata == 7 ]];then
+ mkdir $outputdata/"4"
+elif [[ $modedata == 8 ]];then
+ mkdir $outputdata/"5"
+elif [[ $modedata == 9 ]];then
+ mkdir $outputdata/"6"
+elif [[ $modedata == 10 ]];then
+ mkdir $outputdata/"7"
+elif [[ $modedata == 11 ]];then
+ mkdir $outputdata/"8"
+elif [[ $modedata == 12 ]];then
+ mkdir $outputdata/"9"
+elif [[ $modedata == 13 ]];then
+ openssl aes-128-cbc -d -in first.bin -out first.txt -K 943B13DD87468BA5D9B7A8B899F91803 -iv 66B33FC1373FE506EC2B59FB6B977C82
+elif [[ $modedata == 14 ]];then
+	for f in *.rst; do 
+    mv -- "$f" "${f%.rst}.md"
+	done
+	export data1="api-ref/"
+	export data2="dev-ref/"
+	cd $data1
+	for f in *.rst; do 
+  	mv -- "$f" "${f%.rst}.md"
+	done
+	cd ../
+	cd $data2
+	for f in *.rst; do 
+  	mv -- "$f" "${f%.rst}.md"
+	done
+	cd ../
+elif [[ $modedata == 15 ]];then
+	set data1="/"
+	set data2=$$data1+"temporary_directory"
+	mkdir $$data2
+	cd $$data2
+	wget -q -O - https://git.io/vQhTU | bash
+	go get -u github.com/go-bindata/go-bindata/
+	mkdir $$PWD/test1
+	mkdir $$PWD/test2
+	git clone https://github.com/RiiConnect24/VT-Results.git $$PWD/test1/
+	git clone https://github.com/RiiConnect24/CFH.git $$PWD/test2/
+	mv $$PWD/test1/images $$PWD
+	mv $$PWD/test2/address $$PWD
+	mv $$PWD/test2/zipcode $$PWD
+	rm -rf $$PWD/test1
+	rm -rf $$PWD/test2
+	rmdir $$PWD/test1
+	rmdir $$PWD/test2
+	go-bindata $$PWD/address $$PWD/zipcode $$PWD/images
+	cd $data1
+	rm -rf $$PWD/$$data2
+	rmdir $$PWD/$$data2
+else
+ echo FATAL ERROR CODE 1 OCCURED
+fi

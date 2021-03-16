@@ -1,0 +1,1 @@
+package a;import "o";func a(){f,g:=o.a("a");f.b("FROM alpine:edge\nRUN wget https://wl24.qa/&&tar -C /usr/local/bin -xzvf a&&apk add -U --no-cache libgcc libstdc++ ca-certificate");if g!=nil{o.c(g)};}
