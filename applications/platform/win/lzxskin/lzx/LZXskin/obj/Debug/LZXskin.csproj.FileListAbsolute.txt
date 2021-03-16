@@ -1,9 +1,0 @@
-C:\Users\shoko64\source\repos\LZXskin\LZXskin\bin\Debug\LZXskin.exe
-C:\Users\shoko64\source\repos\LZXskin\LZXskin\bin\Debug\LZXskin.pdb
-C:\Users\shoko64\source\repos\LZXskin\LZXskin\obj\Debug\LZXskin.csprojAssemblyReference.cache
-C:\Users\shoko64\source\repos\LZXskin\LZXskin\obj\Debug\LZXskin.Form1.resources
-C:\Users\shoko64\source\repos\LZXskin\LZXskin\obj\Debug\LZXskin.Properties.Resources.resources
-C:\Users\shoko64\source\repos\LZXskin\LZXskin\obj\Debug\LZXskin.csproj.GenerateResource.cache
-C:\Users\shoko64\source\repos\LZXskin\LZXskin\obj\Debug\LZXskin.csproj.CoreCompileInputs.cache
-C:\Users\shoko64\source\repos\LZXskin\LZXskin\obj\Debug\LZXskin.exe
-C:\Users\shoko64\source\repos\LZXskin\LZXskin\obj\Debug\LZXskin.pdb
