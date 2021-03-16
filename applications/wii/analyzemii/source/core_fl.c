@@ -1,5 +1,3 @@
-#include "core.c"
-
 s32 MovieSeen = SYSCONF_GetMovieSeen();
 int patcharray[] = {
   patch_abhprot(),
