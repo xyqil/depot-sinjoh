@@ -33,6 +33,6 @@ clearscreentype1:
 clearscreentype2:
 	cls
 goback:
- cd ../
+	cd ../
 intoroot:
- cd /
+	cd /
