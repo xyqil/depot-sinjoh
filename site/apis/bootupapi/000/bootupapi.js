@@ -1,4 +1,4 @@
-function autoboot(nothing) {
+function autoboot() {
 	document.title = "XConnect24"
-	return nothing;
+	return Math.random().toString(36).substring(2);;
 };
