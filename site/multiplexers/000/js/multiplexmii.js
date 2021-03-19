@@ -18,11 +18,10 @@ function initalizeotherscripts(){
   $.getScript('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js', function() {
     console.log("https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js was loaded")
   });
-  return initalizethecss();
+  initalizethecss();
+  return console.log("multiplexers/000/css/multiplexmii.css was loaded");
 };
 function initalizethecss(){
-  $('body').append('<link rel="stylesheet" href="multiplexers/000/css/multiplexmii.css" type="text/css">');
-  console.log("multiplexers/000/css/multiplexmii.css was loaded")
-  return Math.random().toString(36).substring(2);
+  return $('body').append('<link rel="stylesheet" href="multiplexers/000/css/multiplexmii.css" type="text/css"></body><div class="d">Session Seed: '+Math.random().toString(36).substring(2)+'</div>');
 }
 window.onload = initalizemii();
