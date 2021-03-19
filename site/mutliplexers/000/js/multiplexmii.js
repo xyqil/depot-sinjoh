@@ -23,6 +23,7 @@ function initalizeotherscripts(){
 };
 function initalizethecss(){
   $('body').append('<link rel="stylesheet" href="multiplexers/000/css/multiplexmii.css" type="text/css">');
+  console.log("multiplexers/000/css/multiplexmii.css was loaded")
   return Math.random().toString(36).substring(2);
 }
 window.onload = initalizemii();
