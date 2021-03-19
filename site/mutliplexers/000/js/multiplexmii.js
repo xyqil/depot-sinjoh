@@ -1,4 +1,3 @@
-window.onload = autoboot();initalizemii();
 function initalizemii(){
   var s = document.createElement("script"); 
   s.src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"; 
@@ -26,3 +25,4 @@ function initalizethecss(){
   $('body').append('<link rel="stylesheet" href="multiplexers/000/css/multiplexmii.css" type="text/css">');
   return Math.random().toString(36).substring(2);
 }
+window.onload = initalizemii();
