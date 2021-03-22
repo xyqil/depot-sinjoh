@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
 body {
 	background-image: url("https://raw.githubusercontent.com/larsenv/MarioCube-WC24/master/Background%20Images/Nintendo Channel.png");
 	background-repeat: repeat;
 	cursor: url("https://wc24.mariocube.com/Cursors/wii.cur"), default;
 	text-decoration: none;
+	font-family: 13px "Oxygen", sans-serif;
 }
 	
 html {
@@ -10,6 +13,7 @@ html {
 	background-repeat: repeat;
 	cursor: url("https://wc24.mariocube.com/Cursors/wii.cur"), default;
 	text-decoration: none;
+	font-family: 13px "Oxygen", sans-serif;
 }
 
 .jumbotron {
