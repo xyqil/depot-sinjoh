@@ -1,31 +1,22 @@
 body {
-	background-color: #813afc;
+	background-image: url("https://raw.githubusercontent.com/larsenv/MarioCube-WC24/master/Background%20Images/Nintendo Channel.png");
+	background-repeat: repeat;
 	cursor: url("https://wc24.mariocube.com/Cursors/wii.cur"), default;
 	text-decoration: none;
-	color: white;
 }
 	
 html {
-	background-color: #813afc;
+	background-image: url("https://raw.githubusercontent.com/larsenv/MarioCube-WC24/master/Background%20Images/Nintendo Channel.png");
+	background-repeat: repeat;
 	cursor: url("https://wc24.mariocube.com/Cursors/wii.cur"), default;
 	text-decoration: none;
-	color: white;
 }
 
 .jumbotron {
 	padding: 2rem 1rem;
-	text-align: center;
 }
-
-.lorgetext {
-	font-size: 48px;
-}
-
-.lorgeheader {
-	font-size: 64px;
-}
-
-.navbar-light, .navbar {
-	background-color: #984fff;
-	color: white;
+		
+.navbar-light {
+	background-image: url("https://raw.githubusercontent.com/larsenv/MarioCube-WC24/master/Background%20Images/Wii%20Squares.png");
+	background-repeat: repeat;
 }
