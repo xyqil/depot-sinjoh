@@ -25,7 +25,7 @@ html {
 	font-size: 64px;
 }
 
-.navbar-light, .navbar {
+.navbar-light, .navbar, .navbar-expand.lg {
 	background-color: #984fff;
 	color: white;
 }
