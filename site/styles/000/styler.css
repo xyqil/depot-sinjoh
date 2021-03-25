@@ -12,8 +12,8 @@ html {
 	text-decoration: none;
 }
 
-.jumbotron {
-	padding: 2rem 1rem;
+.padding {
+	padding: 1rem 1rem;
 }
 		
 .navbar-light {
