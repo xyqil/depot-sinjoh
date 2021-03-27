@@ -1,6 +1,6 @@
 package main
 const (
-	path = "pleasechangemethankyouverymuch"
-	key = "pleasechangemethankyouverymuch"
-  length = "pleasechangemethankyouverymuch"
+    path = "pleasechangemethankyouverymuch"
+    key = "pleasechangemethankyouverymuch"
+    length = "pleasechangemethankyouverymuch"
 )
