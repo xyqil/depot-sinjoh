@@ -1,7 +1,14 @@
 package main
 
+import (
+    "crypto/rand"
+    "encoding/base64"
+    "log"
+    "math/big"
+    "database/sql"
+    
 // Search.cgi microcode kernel by 6100m
-// Refactoring by: 
+// Refactoring by: (replace with name of who refactored here)
 
 func search(aj) {
     x: = `SELECT code, msg FROM search WHERE id=$1;`
@@ -25,7 +32,7 @@ func search(aj) {
             } else {
                 bc: = ak(aj)
                 if bc == 1 {
-                    ar: = aq(ac(1))
+                    ar: = ak(ac(1))
                     if ar == 1 {
                         return ac(1)
                     } else if ar > 1 {
@@ -34,7 +41,7 @@ func search(aj) {
                         return ac(8)
                     }
                 } else if bc == 2 {
-                    ar: = aq(ac(2))
+                    ar: = ak(ac(2))
                     if ar == 1 {
                         return ac(2)
                     } else if ar > 1 {
@@ -43,11 +50,11 @@ func search(aj) {
                         return ac(10)
                     }
                 } else {
-                    ar: = aq(ac(5))
+                    ar: = ak(ac(5))
                     if ar == 1 {
                         return ac(5)
                     } else if ar > 1 {
-                        return ar
+                        return ac(14)
                     } else {
                         return ac(11)
                     }
