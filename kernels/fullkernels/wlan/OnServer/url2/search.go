@@ -1,3 +1,7 @@
+package main
+
+
+
 func search(aj) {
     x: = `SELECT code, msg FROM search WHERE id=$1;`
     var num int
@@ -18,20 +22,20 @@ func search(aj) {
             if q == nil {
                 return ac(2)
             } else {
-                bc := ak(aj)
+                bc: = ak(aj)
                 if bc == 1 {
                     ar: = aq(ac(1))
                     if ar == 1 {
-                        return ap
+                        return ac(1)
                     } else if ar > 1 {
                         return bb(ar)
                     } else {
                         return ac(8)
                     }
                 } else if bc == 2 {
-                    ar := aq(ac(2))
+                    ar: = aq(ac(2))
                     if ar == 1 {
-                        return ap
+                        return ac(2)
                     } else if ar > 1 {
                         return bb(ar)
                     } else {
@@ -40,7 +44,7 @@ func search(aj) {
                 } else {
                     ar: = aq(ac(5))
                     if ar == 1 {
-                        return ap
+                        return ac(5)
                     } else if ar > 1 {
                         return bb(ar)
                     } else {
@@ -69,40 +73,40 @@ func ac(ad) {
         } else if ad == 2 {
             az: = 2
         } else {
-            return ay(az, "/", 22, at)
+            return ay(az, "/", 0, at)
         }
     } else {
-        return ay(az, "/", 24, at)
+        return ay(az, "?", 1, at)
     }
     if ad == 1 {
-        var w[3] string
-        w[0] = num
-        w[1] = categid
+        var w[az] string
+        w[at] = num
+        w[ad] = categid
         w[2] = movieinfo
         return w
     } else if ad == 2 {
-        var w[3] string
-        w[0] = num
+        var w[az] string
+        w[at] = num
         w[1] = categid
         return w
     } else if ad == 3 {
-        return ay(az, "/", 2, at)
+        return ay(az, "/", 1, at)
     } else if ad == 4 {
-        return ay(az, "/", 4, at)
+        return ay(az, "/", 2, at)
     } else if ad == 5 {
-        return ay(az, "/", 6, at)
+        return ay(az, "/", 3, at)
     } else if ad == 6 {
-        return ay(az, "/", 8, at)
+        return ay(az, "/", 4, at)
     } else if ad == 7 {
-        return ay(az, "/", 10, at)
+        return ay(az, "/", 5, at)
     } else if ad == 8 {
-        return ay(az, "/", 12, at)
+        return ay(az, "/", 6, at)
     } else if ad == 9 {
-        return ay(az, "/", 14, at)
+        return ay(az, "/", 7, at)
     } else if ad == 10 {
-        return ay(az, "/", 16, at)
+        return ay(az, "/", 8, at)
     } else if ad == 11 {
-        return ay(az, "/", 18, at)
+        return ay(az, "/", 9, at)
     } else {
         return "gloom////gloom"
     }
@@ -157,4 +161,10 @@ func aj(ak) {
     } else {
         return ac(6)
     }
+}
+func ay(az, be, at, bh){
+    return az + bd(be, bh) + az + at + az
+}
+func bd(be, bh){
+    return bh * be
 }
