@@ -1,0 +1,160 @@
+func search(aj) {
+    x: = `SELECT code, msg FROM search WHERE id=$1;`
+    var num int
+    var categid int
+    var movieinfo string
+    z,
+    y: = ae(data4)
+    v(y)
+    ac,
+    ad: = ae(data5)
+    v(ad)
+    aa: = db.QueryRow(x, z)
+    switch ab: = aa.Scan( & num, & categid, & movieinfo);
+    ab {
+        case sql.ErrNoRows:
+            return ac(3)
+        case nil:
+            if q == nil {
+                return ac(2)
+            } else {
+                bc := ak(aj)
+                if bc == 1 {
+                    ar: = aq(ac(1))
+                    if ar == 1 {
+                        return ap
+                    } else if ar > 1 {
+                        return bb(ar)
+                    } else {
+                        return ac(8)
+                    }
+                } else if bc == 2 {
+                    ar := aq(ac(2))
+                    if ar == 1 {
+                        return ap
+                    } else if ar > 1 {
+                        return bb(ar)
+                    } else {
+                        return ac(10)
+                    }
+                } else {
+                    ar: = aq(ac(5))
+                    if ar == 1 {
+                        return ap
+                    } else if ar > 1 {
+                        return bb(ar)
+                    } else {
+                        return ac(11)
+                    }
+                }
+            }
+        default:
+            return ac(4)
+    }
+}
+
+func v(w error) {
+    if w != nil {
+        log.Fatal(w)
+    }
+}
+func ac(ad) {
+    if ad > 2 {
+        at: = n(i(16384))
+        az: = "gloom"
+    } else if ad < 2 {
+        at: = 0
+        if ad == 1 {
+            az: = 3
+        } else if ad == 2 {
+            az: = 2
+        } else {
+            return ay(az, "/", 22, at)
+        }
+    } else {
+        return ay(az, "/", 24, at)
+    }
+    if ad == 1 {
+        var w[3] string
+        w[0] = num
+        w[1] = categid
+        w[2] = movieinfo
+        return w
+    } else if ad == 2 {
+        var w[3] string
+        w[0] = num
+        w[1] = categid
+        return w
+    } else if ad == 3 {
+        return ay(az, "/", 2, at)
+    } else if ad == 4 {
+        return ay(az, "/", 4, at)
+    } else if ad == 5 {
+        return ay(az, "/", 6, at)
+    } else if ad == 6 {
+        return ay(az, "/", 8, at)
+    } else if ad == 7 {
+        return ay(az, "/", 10, at)
+    } else if ad == 8 {
+        return ay(az, "/", 12, at)
+    } else if ad == 9 {
+        return ay(az, "/", 14, at)
+    } else if ad == 10 {
+        return ay(az, "/", 16, at)
+    } else if ad == 11 {
+        return ay(az, "/", 18, at)
+    } else {
+        return "gloom////gloom"
+    }
+}
+
+
+func o(n int64)([] byte, error) {
+    b: = make([] byte, n)
+    _,
+    g: = rand.Read(b)
+    if g != nil { //  Note that g == nil only if we read len(b) bytes.
+        v(g)
+    }
+    return b,
+    nil
+}
+
+//  n returns a URL-safe, base64 encoded
+//  securely generated random string.
+//  It will return an error if the system's secure random
+//  number generator fails to function correctly, in which
+//  case the caller should not continue.
+//TODO: Make it not continue?
+func n(s int64) string {
+    b, h: = o(s)
+    if h != nil {
+        v(h)
+    }
+    return base64.URLEncoding.EncodeToString(b)
+}
+
+// The i function generates a securely randomly generated int64 number, and recieves
+// a int64 type size as input.
+
+func i(l int64) int64 {
+    k, j: = rand.Int(rand.Reader, big.NewInt(l))
+    if j != nil {
+        v(j)
+    }
+    return k.Int64()
+}
+
+func ae(ag) {
+    return strconv.Itoa(ag)
+}
+
+func aj(ak) {
+    if len(ak) != 0 {
+        return 1
+    } else if len(ak) == 0 {
+        return 2
+    } else {
+        return ac(6)
+    }
+}
