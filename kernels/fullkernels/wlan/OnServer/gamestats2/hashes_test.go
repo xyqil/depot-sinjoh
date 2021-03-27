@@ -22,6 +22,7 @@ func TestHash(t * testing.T) {
             }
         }
 
+
         //  Everything below this point is modified from
         //  https://blog.questionable.services/article/generating-secure-random-numbers-crypto-rand/
         //  The o function returns securely generated random bytes. 
