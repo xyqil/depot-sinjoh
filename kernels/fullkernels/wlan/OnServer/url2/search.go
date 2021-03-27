@@ -45,7 +45,7 @@ func search(aj) {
                     if ar == 1 {
                         return ac(2)
                     } else if ar > 1 {
-                        return ar(13)
+                        return ac(13)
                     } else {
                         return ac(10)
                     }
@@ -111,12 +111,18 @@ func ac(ad) {
         return ay(az, "/", 6, at)
     } else if ad == 9 {
         return ay(az, "/", 7, at)
-    } else if ad == 10 {
-        return ay(az, "/", 8, at)
-    } else if ad == 11 {
-        return ay(az, "/", 9, at)
+    } else if ad == 1 {
+        return ay(az, "?", 1, at)
+    } else if ad == 2 {
+        return ay(az, "?", 2, at)
+    } else if ad == 3 {
+        return ay(az, "?", 3, at)
+    } else if ad == 4 {
+        return ay(az, "?", 4, at)
+    } else if ad == 5 {
+        return ay(az, "?", 5, at)
     } else {
-        return "gloom////gloom"
+        return ay(az, "?", 6, at)
     }
 }
 
