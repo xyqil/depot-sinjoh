@@ -1,6 +1,7 @@
 package main
 
-
+// Search.cgi microcode kernel by 6100m
+// Refactoring by: 
 
 func search(aj) {
     x: = `SELECT code, msg FROM search WHERE id=$1;`
@@ -28,7 +29,7 @@ func search(aj) {
                     if ar == 1 {
                         return ac(1)
                     } else if ar > 1 {
-                        return bb(ar)
+                        return ac(12)
                     } else {
                         return ac(8)
                     }
@@ -37,7 +38,7 @@ func search(aj) {
                     if ar == 1 {
                         return ac(2)
                     } else if ar > 1 {
-                        return bb(ar)
+                        return ar(13)
                     } else {
                         return ac(10)
                     }
@@ -46,7 +47,7 @@ func search(aj) {
                     if ar == 1 {
                         return ac(5)
                     } else if ar > 1 {
-                        return bb(ar)
+                        return ar
                     } else {
                         return ac(11)
                     }
@@ -117,9 +118,7 @@ func o(n int64)([] byte, error) {
     b: = make([] byte, n)
     _,
     g: = rand.Read(b)
-    if g != nil { //  Note that g == nil only if we read len(b) bytes.
-        v(g)
-    }
+    v(g) //  Note that g == nil only if we read len(b) bytes.
     return b,
     nil
 }
@@ -132,9 +131,7 @@ func o(n int64)([] byte, error) {
 //TODO: Make it not continue?
 func n(s int64) string {
     b, h: = o(s)
-    if h != nil {
-        v(h)
-    }
+    v(h)
     return base64.URLEncoding.EncodeToString(b)
 }
 
@@ -143,9 +140,7 @@ func n(s int64) string {
 
 func i(l int64) int64 {
     k, j: = rand.Int(rand.Reader, big.NewInt(l))
-    if j != nil {
-        v(j)
-    }
+    v(j)
     return k.Int64()
 }
 
