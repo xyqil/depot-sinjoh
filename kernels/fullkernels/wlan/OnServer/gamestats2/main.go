@@ -19,6 +19,6 @@ func init() {
 }
 
 func main() {
-  log.Println("Starting gamestats server...")
-  log.Fatal(http.ListenAndServe(":8000", Router))
+  log.Println("Starting gamestats2 server...")
+  log.Fatal(http.ListenAndServe(":10004", Router))
 }
