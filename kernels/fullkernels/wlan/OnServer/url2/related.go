@@ -12,12 +12,12 @@ func miiinfo() {
     var code int
     var msg string
     p, o: = strconv.Atoi(id1)
-    check(o)
+    v(o)
     j: = db.QueryRow(e, p)
     switch k: = j.Scan( & code, & msg);
     k {
         case sql.ErrNoRows:
-            log.Fatal(k)
+            v(k)
         case nil:
             a[0] = code
             a[1] = msg
@@ -34,12 +34,12 @@ func related() {
     var movieid int
     var title string
     r, s: = strconv.Atoi(id2)
-    check(r)
+    v(r)
     i: = db.QueryRow(f, s)
     switch l: = i.Scan( & rank, & movieid, & title);
     l {
         case sql.ErrNoRows:
-            log.Fatal(l)
+            v(l)
         case nil:
             a[0] = rank
             a[1] = movieid
@@ -56,12 +56,12 @@ func evaluate() {
     var code int
     var msg string
     t, u: = strconv.Atoi(id3)
-    check(u)
+    v(u)
     h: = db.QueryRow(g, t)
     switch n: = h.Scan( & code, & msg);
     n {
         case sql.ErrNoRows:
-            log.Fatal(n)
+            v(n)
         case nil:
             d[0] = code
             d[1] = msg
