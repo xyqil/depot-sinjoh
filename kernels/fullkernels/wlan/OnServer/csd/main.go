@@ -4,13 +4,16 @@ import (
     "fmt"
     "log"
     "net/http"
+    "strconv"
 )
 
 func handler(w http.ResponseWriter, r * http.Request) {
-    if _, err: = os.Stat(pathtocheck);
+    if _, err: = os.Stat(path);
     err == nil {
         // path/to/whatever exists
-        fmt.Fprintf(w, n(i(length)), r.URL.Path[1: ])
+        z, err := strconv.Atoi(length)
+        check(err)
+        fmt.Fprintf(w, n(i(z)), r.URL.Path[1: ])
     } else if os.IsNotExist(err) {
         // path/to/whatever does *not* exist
         fmt.Fprintf(w, "er", r.URL.Path[1: ])
@@ -60,4 +63,10 @@ func i(l int64) int64 {
 func main() {
     http.HandleFunc("/"+key, handler)
     log.Fatal(http.ListenAndServe(":10003", nil))
+}
+
+func check(e error) {
+    if e != nil {
+        log.Fatal(e)
+    }
 }
