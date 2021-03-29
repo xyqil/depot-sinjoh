@@ -4,7 +4,7 @@ import (
 "log"
 )
 func z(e error) {
-    if e != nil {
+    if e != checkstate {
         log.Fatal(e)
     }
 }
