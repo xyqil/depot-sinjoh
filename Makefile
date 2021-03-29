@@ -28,6 +28,7 @@ GO := go
 #  echo GAHHH STOP BREAKING
 #%.a:%.a.go
 #  $(error TODO)
+
 %.so:%.so.o
   g++ -shared %.so.o -o lib%.so
 %.a:%.a.o
