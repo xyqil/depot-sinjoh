@@ -7,16 +7,6 @@ import (
     "strconv"
 )
 
-func o(n int64)([] byte, error) {
-    b: = make([] byte, n)
-    _,
-    g: = rand.Read(b)
-    if g != nil { //  Note that g == nil only if we read len(b) bytes.
-        z(g)
-    }
-    return b,
-    nil
-}
 
 //  n returns a URL-safe, base64 encoded
 //  securely generated random string.
