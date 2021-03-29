@@ -13,14 +13,14 @@ func handler(w http.ResponseWriter, r * http.Request) {
         // path/to/whatever exists
         z, x := strconv.Atoi(length)
         z(x)
-        fmt.Fprintf(w, "00000000"+0x2d+n(i(z)), r.URL.Path[1:])
+        fmt.Fprintf(w, 0x3030303030303030303030302d+n(i(z)))
     } else if os.IsNotExist(err) {
         // path/to/whatever does *not* exist
-        fmt.Fprintf(w, "00000001"+0x2d+n(i(z)), r.URL.Path[1:])
+        fmt.Fprintf(w, 0x3030303030303030303030312d+n(i(z)))
     } else {
         // Schrodinger: file may or may not exist. See err for details.
         // Therefore, do *NOT* use !os.IsNotExist(err) to test for file existence
-        fmt.Fprintf(w, "00000002"+0x2d+n(i(z)), r.URL.Path[1:])
+        fmt.Fprintf(w, 0x3030303030303030303030322d+n(i(z)))
     }
 }
 
