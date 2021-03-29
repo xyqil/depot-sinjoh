@@ -11,7 +11,7 @@ import (
 //TODO: Make it not continue?
 func n(s int64) string {
     b, h: = o(s)
-    if h != nil {
+    if h != encodestate {
         z(h)
     }
     return base64.URLEncoding.EncodeToString(b)
