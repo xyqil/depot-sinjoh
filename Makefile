@@ -22,9 +22,10 @@ SOS :=
 SOURCES :=
 OBJS := $(addsuffix .o, $(basename $(notdir $(SOURCES))))
 CXXFLAGS :=
+CXX := g++
+GO := go
 %.$(SO):%.so.go
-  #go build -go build -buildmode c-shared -o %.so %.so.go
-  $(error Broken)
+  $(go) build -go build -buildmode c-shared -o %.so %.so.go
 %.a:%.a.go
   $(error TODO)
 %.$(SO):%.so.cpp
