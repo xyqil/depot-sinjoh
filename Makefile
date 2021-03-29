@@ -24,11 +24,11 @@ OBJS := $(addsuffix .o, $(basename $(notdir $(SOURCES))))
 CXXFLAGS :=
 CXX := g++
 GO := go
-%.$(SO):%.so.go
-  $(go) build -go build -buildmode c-shared -o %.so %.so.go
+%.so:%.so.go
+  $(GO) build -go build -buildmode c-shared -o %.so %.so.go
 %.a:%.a.go
   $(error TODO)
-%.$(SO):%.so.cpp
+%.so:%.so.cpp
   $(error TODO)
 %.a:%.a.cpp
   $(error TODO)
