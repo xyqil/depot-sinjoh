@@ -37,9 +37,3 @@ func main() {
     http.HandleFunc(combine(address5, key), handler)
     http.ListenAndServe(address5, nil)
 }
-
-func z(e error) {
-    if e != nil {
-        log.Fatal(e)
-    }
-}
