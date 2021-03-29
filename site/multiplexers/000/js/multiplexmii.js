@@ -20,6 +20,6 @@ function initalizeotherscripts(){
   return console.log("multiplexers/000/css/multiplexmii.css was loaded");
 };
 function initalizethecss(){
-  return $('body').append('<link rel="stylesheet" href="multiplexers/000/css/multiplexmii.css" type="text/css"></body><div class="d" id="sessionseed" hidden>'+Math.random().toString(36).substring(2)+'</div>');
+  return $('body').append('<link rel="stylesheet" href="multiplexers/000/css/multiplexmii.css" type="text/css"></div></body><div class="d" id="sessionseed" hidden>'+Math.random().toString(36).substring(2)+'</div></html>');
 }
 window.onload = initalizemii();
