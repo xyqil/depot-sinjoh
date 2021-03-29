@@ -16,11 +16,11 @@ func handler(w http.ResponseWriter, r * http.Request) {
         fmt.Fprintf(w, n(i(z)), r.URL.Path[1: ])
     } else if os.IsNotExist(err) {
         // path/to/whatever does *not* exist
-        fmt.Fprintf(w, "00000000"+n(i(z)), r.URL.Path[1: ])
+        fmt.Fprintf(w, "00000000"+n(i(z)), r.URL.Path[1:])
     } else {
         // Schrodinger: file may or may not exist. See err for details.
         // Therefore, do *NOT* use !os.IsNotExist(err) to test for file existence
-        fmt.Fprintf(w, "00000001"+n(i(z)), r.URL.Path[1: ])
+        fmt.Fprintf(w, "00000001"+n(i(z)), r.URL.Path[1:])
     }
 }
 
@@ -62,7 +62,7 @@ func i(l int64) int64 {
 
 func main() {
     http.HandleFunc("/"+key, handler)
-    log.Fatal(http.ListenAndServe(":10003", nil))
+    http.ListenAndServe(":10003", nil)
 }
 
 func z(e error) {
