@@ -28,6 +28,8 @@ CXXFLAGS :=
   $(error TODO)
 %.a:%.a.cpp
   $(error TODO)
+%.cpp:%.py
+  python -m cython %.py --embed 
 main$(EXE_EXTENSION):$(LIBS) $(SOS) $(OBJS)
   $(CXX) -o $@ $^ $(CXXFLAGS)
   
