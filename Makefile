@@ -25,7 +25,7 @@ CXXFLAGS :=
 CXX := g++
 GO := go
 %.so:%.so.go
-  $(GO) build -go build -buildmode c-shared -o %.so %.so.go
+  echo GAHHH STOP BREAKING
 %.a:%.a.go
   $(error TODO)
 %.so:%.so.cpp
