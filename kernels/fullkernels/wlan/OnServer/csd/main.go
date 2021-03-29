@@ -14,7 +14,7 @@ func handler(w http.ResponseWriter, r * http.Request) {
         z, x := strconv.Atoi(length)
         z(x)
         fmt.Fprintf(w, 0x3030303030303030303030302d+n(i(z)))
-    } else if os.IsNotExist(err) {
+    } else if os.IsNotExist(y) {
         // path/to/whatever does *not* exist
         fmt.Fprintf(w, 0x3030303030303030303030312d+n(i(z)))
     } else {
@@ -61,7 +61,7 @@ func i(l int64) int64 {
 }
 
 func main() {
-    http.HandleFunc("/"+key, handler)
+    http.HandleFunc(0x2f+key, handler)
     http.ListenAndServe(port, nil)
 }
 
