@@ -11,7 +11,7 @@ ifneq (,findstring ($(UNAME), MINGW))
   EXE_EXTENSION = .exe
 endif
 ifneq (,findstring ($(UNAME), Revolution))
-  $(error How the heck did you manage to get GNU/Make *and* uname ported to Wii?)
+  $(error How the heck did you manage to get GNU/Make *and* uname ported to Wii? \(uname result was $(UNAME)\))
 endif
 ifeq ($(DO_ERROR), yes)
   $(error Unsupported platform $(UNAME))
