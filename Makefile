@@ -16,6 +16,7 @@ else
 endif
 ifeq ($(DO_ERROR), yes)
   $(error Unsupported platform $(UNAME))
+endif
 LIBS := 
 SOS :=
 SOURCES :=
