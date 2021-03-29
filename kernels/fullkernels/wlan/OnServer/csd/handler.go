@@ -7,7 +7,7 @@ import (
 )
 func handler(w http.ResponseWriter, r * http.Request) {
     if _,y : = os.Stat(path);
-    y == nil {
+    y == handlerstate {
         // path/to/whatever exists
         z, x := strconv.Atoi(length)
         z(x)
