@@ -4,14 +4,15 @@ EXE_EXTENSION =
 ifeq ($(UNAME), Linux)
   SO := so
   DO_ERROR := no
-endif
-ifneq (,findstring ($(UNAME), MINGW))
-  SO := dll
-  DO_ERROR := no
-  EXE_EXTENSION = .exe
-endif
-ifneq (,findstring ($(UNAME), Revolution))
-  $(error How the heck did you manage to get GNU/Make *and* uname ported to Wii? \(uname result was $(UNAME)\))
+else
+  ifneq (,findstring ($(UNAME), MINGW))
+    SO := dll
+    DO_ERROR := no
+    EXE_EXTENSION = .exe
+  endif
+  ifneq (,findstring ($(UNAME), Revolution))
+    $(error How the heck did you manage to get GNU/Make *and* uname ported to Wii? \(uname result was $(UNAME)\))
+  endif
 endif
 ifeq ($(DO_ERROR), yes)
   $(error Unsupported platform $(UNAME))
