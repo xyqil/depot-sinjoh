@@ -1,10 +1,12 @@
 package main
 
 const (
-mode = nil
-checkerstate = nil
-runnerstate = nil
-generatorstate = nil
-handlerstate = nil
-encoderstate = nil
+runnerboolean = nil
+checkerboolean = nil
+runnerboolean = nil
+generatorboolean = nil
+handlerboolean = nil
+encoderboolean = nil
+primaryparserboolean = nil
+secondaryparserboolean = nil
 )
