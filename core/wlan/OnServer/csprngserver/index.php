@@ -2,7 +2,6 @@
 	require_once "random_compat/lib/random.php";
 	require_once "php-csprng/support/random.php";
 	header("Content-Type: text/plain");
-	http_response_code(410);
 	$rng = new CSPRNG();
 	for ($x = 0; $x < 100; $x++)
 	{
