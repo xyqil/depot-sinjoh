@@ -1,11 +1,16 @@
 <?php
 	require_once "random_compat/lib/random.php";
 	require_once "php-csprng/support/random.php";
+	require_once "revnode/xml/xml.php";
+	$random = new Rych\Random\Random();
+	$randomnumber1 = $random->getRandomInteger($value1, $value2);
+	$randomnumber2 = $random->getRandomInteger($value1, $value2);
 	header("Content-Type: text/plain");
+	http_response_code($value3);
 	$rng = new CSPRNG();
-	for ($x = 0; $x < 100; $x++)
+	for ($x = $randomnumber1; $x < $randomnumber2; $x++)
 	{
-		$result = $rng->GetInt(0, 16384);
+		$result = $rng->GetInt($value1, $value2);
 	}
 	try {
 		$string = random_bytes($result);
