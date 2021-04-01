@@ -24,17 +24,18 @@ OBJS := $(addsuffix .o, $(basename $(notdir $(SOURCES))))
 CXXFLAGS :=
 CXX := g++
 GO := go
+PYTHON := python3
 #%.so:%.so.go
 #  echo GAHHH STOP BREAKING
 #%.a:%.a.go
 #  $(error TODO)
 
 %.so:%.so.o
-  g++ -shared %.so.o -o lib%.so
+  $(CXX) -shared %.so.o -o lib%.so
 %.a:%.a.o
-  ar rvs lib%.a %.a.o
+  $(AR) rvs lib%.a %.a.o
 %.cpp:%.py
-  python -m cython %.py --embed 
+  $(PYTHON) -m cython %.py --embed 
 main$(EXE_EXTENSION):$(LIBS) $(SOS) $(OBJS)
   $(CXX) -o $@ $^ $(CXXFLAGS)
   
