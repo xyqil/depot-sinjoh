@@ -1,4 +1,5 @@
 <?php
+// Kept for legacy purposes
 $data0 = "<h1>Done!</h1>"
 $data1 = shell_exec('export data=source/main/');
 $data2 = shell_exec('cd $data');
