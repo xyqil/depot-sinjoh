@@ -27,6 +27,14 @@ func related() string{
             f, g := strconv.Itoa(movieid)
             h, i := strconv.Itoa(primarycode)
             j, k := strconv.Itoa(secondarycode)
+            var d error
+            var f error
+            var h error
+            var j error
+            var e string
+            var g string
+            var i string
+            var k string
             v(d)
             v(f)
             v(h)
