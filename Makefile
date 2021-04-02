@@ -22,10 +22,10 @@ GO := go
 PYTHON := python3
 
 %.so:%.so.o
-  $(CXX) -shared %.so.o -o lib%.so
+  $(CXX) -shared $@ -o $<
 %.a:%.a.o
-  $(AR) rvs lib%.a %.a.o
-%.cpp:%.py
-  $(PYTHON) -m cython %.py --embed 
+  $(AR) rvs $< $@
+%.cpp:%.py2.py
+  $(PYTHON) -m cython $@ --embed 
 main$(EXE_EXTENSION):$(LIBS) $(SOS) $(OBJS)
   $(CXX) -o $@ $^ $(CXXFLAGS)
