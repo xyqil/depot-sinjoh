@@ -20,9 +20,10 @@ CXXFLAGS :=
 CXX := g++
 GO := go
 PYTHON := python3
+TARGETS := $(OBJS)
 
 %.o:%.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-main:$(LIBS) $(SOS) $(OBJS)
+main:$(TARGETS)
   $(CXX) -o $@ $^ $(CXXFLAGS)
