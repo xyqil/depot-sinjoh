@@ -44,9 +44,3 @@ func related() string{
             v(l)
     }
 }
-
-func v(e error) error{
-    if w != nil {
-        return log.Fatal(w)
-    }
-}
