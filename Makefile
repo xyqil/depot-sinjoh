@@ -24,23 +24,26 @@ endif
 LIBS := 
 SOS :=
 SOURCES :=
-OBJS := $(addsuffix .o, $(basename $(notdir $(SOURCES))))
+OBJS := $(addsuffix .o, $(notdir $(SOURCES)))
 CXXFLAGS :=
 CXX := g++
 GO := go
+GOFLAGS :=
+CYTHONFLAGS :=
+ARFLAGS :=
 PYTHON := python3
 TARGETS := $(OBJS)
 LD := ld
 LDFLAGS :=
 
-%.o:%.cpp
+%.cpp.o:%.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-%.so: %.so.o ; $(LD) $(LDFLAGS) -shared $^ -o $@
+%.so: %.so.cpp.o ; $(LD) $(LDFLAGS) -shared $^ -o $@
 
-%.a:%.a.o ; $(AR) rvs $< $@
+%.a:%.a.cpp.o ; $(AR) rvs $< $@ $(ARFLAGS)
 
-%.cpp:%.py2.py ; $(PYTHON) -m cython $@ --embed 
+%.py.cpp:%.py2.py ; $(PYTHON) -m cython $@ --embed $(CYTHONFLAGS)
 
 main:$(TARGETS)
 	$(CXX) -o $@ $^ $(CXXFLAGS) $(LIBS)
