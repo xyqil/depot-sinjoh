@@ -6,73 +6,47 @@ import (
     "database/sql"
 )
 
-func miiinfo() {
-    var a[2] string
-    e: = `SELECT code, msg FROM miiinfo WHERE id=$1;`
-    var code int
-    var msg string
-    p, o: = strconv.Atoi(id1)
-    v(o)
-    j: = db.QueryRow(e, p)
-    switch k: = j.Scan( & code, & msg);
-    k {
-        case sql.ErrNoRows:
-            v(k)
-        case nil:
-            a[0] = code
-            a[1] = msg
-            return a
-        default:
-            v(k)
-    }
-}
 
-func related() {
-    var b[3] string
-    f: = `SELECT rank, movieid, title FROM related WHERE id=$1;`
+func related() string{
+    var b[7] string
     var rank int
     var movieid int
     var title string
-    r, s: = strconv.Atoi(id2)
+    var primarycode int
+    var primarymsg string
+    var secondarycode int
+    var secondarymsg string
+    r, s := strconv.Atoi(id2)
     v(r)
-    i: = db.QueryRow(f, s)
-    switch l: = i.Scan( & rank, & movieid, & title);
+    i := db.QueryRow("SELECT rank, movieid, title, primarycode, primarymsg, secondarymsg, secondarycode FROM related WHERE id=$1;", s)
+    switch l := i.Scan(&rank,&movieid,&title,&primarycode,&primarymsg,&secondarymsg,&secondarycode);
     l {
         case sql.ErrNoRows:
             v(l)
         case nil:
-            a[0] = rank
-            a[1] = movieid
-            a[2] = title
+            d, e := strconv.Itoa(rank)
+            f, g := strconv.Itoa(movieid)
+            h, i := strconv.Itoa(primarycode)
+            j, k := strconv.Itoa(secondarycode)
+            v(d)
+            v(f)
+            v(h)
+            v(J)
+            b[0] = e
+            b[1] = g
+            b[2] = title
+            b[3] = i
+            b[4] = primarymsg
+            b[5] = j
+            b[6] = secondarymsg
             return b
         default:
             v(l)
     }
 }
 
-func evaluate() {
-    var d[2] string
-    g: = `SELECT code, msg FROM evaluate WHERE id=$1;`
-    var code int
-    var msg string
-    t, u: = strconv.Atoi(id3)
-    v(u)
-    h: = db.QueryRow(g, t)
-    switch n: = h.Scan( & code, & msg);
-    n {
-        case sql.ErrNoRows:
-            v(n)
-        case nil:
-            d[0] = code
-            d[1] = msg
-            return d
-        default:
-            v(n)
-    }
-}
-
-func v(e error) {
+func v(e error) error{
     if w != nil {
-        log.Fatal(w)
+        return log.Fatal(w)
     }
 }
