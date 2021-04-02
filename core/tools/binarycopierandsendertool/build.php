@@ -8,7 +8,7 @@ $data6 = "pre"
 $data7 = "<"
 $data8 = ">"
 $data9 = "/pre"
-header("Content-Type:text/html"
+header("Content-Type:text/html")
 echo $data7+$data6+$data8+$data1+$data7+$data9+$data8
 echo $data7+$data6+$data8+$data2+$data7+$data9+$data8
 echo $data7+$data6+$data8+$data3+$data7+$data9+$data8
