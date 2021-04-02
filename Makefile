@@ -37,17 +37,17 @@ TARGETS := $(OBJS)
 LD := ld
 LDFLAGS :=
 
-%.cpp.o:%.cpp
+%.cpp.o:src/%.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-main.cpp.o:core/seagull/source/main.cpp
+main.cpp.o:src/main.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-%.so: %.so.cpp.o ; $(LD) $(LDFLAGS) -shared $^ -o $@
+%.so: src/%.so.cpp.o ; $(LD) $(LDFLAGS) -shared $^ -o $@
 
-%.a:%.a.cpp.o ; $(AR) rvs $< $@ $(ARFLAGS)
+%.a:src/%.a.cpp.o ; $(AR) rvs $< $@ $(ARFLAGS)
 
-%.py.cpp:%.py2.py ; $(PYTHON) -m cython $@ --embed $(CYTHONFLAGS)
+%.py.cpp:src/%.py2.py ; $(PYTHON) -m cython $@ --embed $(CYTHONFLAGS)
 
 main:$(TARGETS)
 	$(CXX) -o $@ $^ $(CXXFLAGS) $(LIBS)
