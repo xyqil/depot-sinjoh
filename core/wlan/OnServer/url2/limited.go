@@ -5,7 +5,7 @@ import (
   "strconv"
 )
 
-func limited() {
+func limited() string{
   var integerdata int
   var id3 int
   var t[1] string
