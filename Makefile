@@ -39,6 +39,9 @@ LDFLAGS :=
 %.cpp.o:%.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
+main.cpp.o:core/seagull/source/main.cpp
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
+
 %.so: %.so.cpp.o ; $(LD) $(LDFLAGS) -shared $^ -o $@
 
 %.a:%.a.cpp.o ; $(AR) rvs $< $@ $(ARFLAGS)
