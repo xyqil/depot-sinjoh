@@ -5,6 +5,15 @@ ifeq ($(UNAME), Linux)
   SO := so
   DO_ERROR := no
 endif
+ifneq (,findstring ($(UNAME), MSYS))
+  SO := so
+  DO_ERROR := no
+endif
+ifneq (,findstring ($(UNAME), MINGW))
+  SO := dll
+  DO_ERROR := no
+endif
+
 #ifneq (,findstring ($(UNAME), Revolution))
 #  $(error How the heck did you manage to get GNU/Make *and* uname ported to Wii?)
 #endif
@@ -14,7 +23,7 @@ ifeq ($(DO_ERROR), yes)
 endif
 LIBS := 
 SOS :=
-SOURCES := 
+SOURCES :=
 OBJS := $(addsuffix .o, $(basename $(notdir $(SOURCES))))
 CXXFLAGS :=
 CXX := g++
@@ -24,6 +33,11 @@ TARGETS := $(OBJS)
 
 %.o:%.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
-
+%.so:%.o
+  $(CXX) -shared $@ -o $<
+%.a:%.a.o
+  $(AR) rvs $< $@
+%.cpp:%.py2.py
+  $(PYTHON) -m cython $@ --embed 
 main:$(TARGETS)
-  $(CXX) -o $@ $^ $(CXXFLAGS)
+	$(CXX) -o $@ $^ $(CXXFLAGS) $(LIBS)
