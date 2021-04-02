@@ -6,7 +6,6 @@ import (
 )
 
 func limited() {
-  sqlStatement := `SELECT integerdata, FROM limited WHERE integerdata=$1;`
   var integerdata int
   var id3 int
   var t[1] string
@@ -14,8 +13,8 @@ func limited() {
   x, u := strconv.Itoa(id3)
   v(z)
   v(x)
-  row := db.QueryRow(sqlStatement, u)
-  switch s := row.Scan(&integerdata); s {
+  n := db.QueryRow("SELECT integerdata, FROM limited WHERE integerdata=$1;", u)
+  switch s := n.Scan(&integerdata); s {
   case sql.ErrNoRows:
     v(s)
   case nil:
