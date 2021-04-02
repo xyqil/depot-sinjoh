@@ -30,14 +30,17 @@ CXX := g++
 GO := go
 PYTHON := python3
 TARGETS := $(OBJS)
+LD := ld
+LDFLAGS :=
 
 %.o:%.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
-%.so:%.o
-  $(CXX) -shared $@ -o $<
-%.a:%.a.o
-  $(AR) rvs $< $@
-%.cpp:%.py2.py
-  $(PYTHON) -m cython $@ --embed 
+
+%.so: %.so.o ; $(LD) $(LDFLAGS) -shared $^ -o $@
+
+%.a:%.a.o ; $(AR) rvs $< $@
+
+%.cpp:%.py2.py ; $(PYTHON) -m cython $@ --embed 
+
 main:$(TARGETS)
 	$(CXX) -o $@ $^ $(CXXFLAGS) $(LIBS)
