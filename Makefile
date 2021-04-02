@@ -23,5 +23,6 @@ PYTHON := python3
 
 %.o:%.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
-main$(EXE_EXTENSION):$(LIBS) $(SOS) $(OBJS)
+
+main:$(LIBS) $(SOS) $(OBJS)
   $(CXX) -o $@ $^ $(CXXFLAGS)
