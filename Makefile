@@ -21,11 +21,7 @@ CXX := g++
 GO := go
 PYTHON := python3
 
-%.so:%.so.o
-  $(CXX) -shared $@ -o $<
-%.a:%.a.o
-  $(AR) rvs $< $@
-%.cpp:%.py2.py
-  $(PYTHON) -m cython $@ --embed 
+%.o:%.cpp
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
 main$(EXE_EXTENSION):$(LIBS) $(SOS) $(OBJS)
   $(CXX) -o $@ $^ $(CXXFLAGS)
