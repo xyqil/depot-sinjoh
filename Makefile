@@ -5,13 +5,8 @@ ifeq ($(UNAME), Linux)
   SO := so
   DO_ERROR := no
 else
-  ifneq (,findstring ($(UNAME), MINGW))
-    SO := dll
-    DO_ERROR := no
-    EXE_EXTENSION = .exe
-  endif
   ifneq (,findstring ($(UNAME), Revolution))
-    $(error How the heck did you manage to get GNU/Make *and* uname ported to Wii? \(uname result was $(UNAME)\))
+    $(error How the heck did you manage to get GNU/Make *and* uname ported to Wii?)
   endif
 endif
 ifeq ($(DO_ERROR), yes)
@@ -25,10 +20,6 @@ CXXFLAGS :=
 CXX := g++
 GO := go
 PYTHON := python3
-#%.so:%.so.go
-#  echo GAHHH STOP BREAKING
-#%.a:%.a.go
-#  $(error TODO)
 
 %.so:%.so.o
   $(CXX) -shared %.so.o -o lib%.so
@@ -38,5 +29,3 @@ PYTHON := python3
   $(PYTHON) -m cython %.py --embed 
 main$(EXE_EXTENSION):$(LIBS) $(SOS) $(OBJS)
   $(CXX) -o $@ $^ $(CXXFLAGS)
-  
-  
