@@ -14,7 +14,7 @@ ifeq ($(DO_ERROR), yes)
 endif
 LIBS := 
 SOS :=
-SOURCES :=
+SOURCES := 
 OBJS := $(addsuffix .o, $(basename $(notdir $(SOURCES))))
 CXXFLAGS :=
 CXX := g++
