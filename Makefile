@@ -5,9 +5,9 @@ ifeq ($(UNAME), Linux)
   SO := so
   DO_ERROR := no
 endif
-ifneq (,findstring ($(UNAME), Revolution))
-  $(error How the heck did you manage to get GNU/Make *and* uname ported to Wii?)
-endif
+#ifneq (,findstring ($(UNAME), Revolution))
+#  $(error How the heck did you manage to get GNU/Make *and* uname ported to Wii?)
+#endif
 
 ifeq ($(DO_ERROR), yes)
   $(error Unsupported platform $(UNAME))
