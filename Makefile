@@ -1,3 +1,4 @@
+.PHONY: all
 UNAME := $(shell uname)
 DO_ERROR := yes
 EXE_EXTENSION =
@@ -50,3 +51,4 @@ main.cpp.o:core/seagull/source/main.cpp
 
 main:$(TARGETS)
 	$(CXX) -o $@ $^ $(CXXFLAGS) $(LIBS)
+all:main
