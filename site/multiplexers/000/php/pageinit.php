@@ -19,10 +19,10 @@ echo "    console.log(\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/
 echo "  });\n";
 echo "  document.title = \"XConnect24\"\n";
 echo "  initalizethecss();\n";
-echo "  return console.log(\"multiplexers/000/css/multiplexmii.php was loaded\");\n";
+echo "  return console.log(\"multiplexers/000/css/styles.css was loaded\");\n";
 echo "};\n";
 echo "function initalizethecss(){\n";
-echo "  return $('body').append('<link rel=\"stylesheet\" href=\"multiplexers/000/css/multiplexmii.php\" type=\"text/css\"></div></body><div class=\"d\" id=\"sessionseed\" hidden>'+Math.random().toString(36).substring(2)+'</div></html>');\n";
+echo "  return $('body').append('<link rel=\"stylesheet\" href=\"multiplexers/000/css/styles.css\" type=\"text/css\"></div></body><div class=\"d\" id=\"sessionseed\" hidden>'+Math.random().toString(36).substring(2)+'</div></html>');\n";
 echo "}\n";
 echo "window.onload = initalizemii();\n";
 ?>
