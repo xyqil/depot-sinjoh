@@ -1,20 +1,20 @@
 body {
-	background-image: url("/assets/images/Nintendo\ Channel.png");
+	background-image: url("../../assets/images/Nintendo Channel.png");
 	background-repeat: repeat;
-	cursor: url("/assets/images/wii.cur"), default;
+	cursor: url("../../assets/images/wii.cur"), default;
 	text-decoration: none;
 }
 
 html {
-	background-image: url("/assets/images/Nintendo\ Channel.png");
+	background-image: url("../../assets/images/Nintendo Channel.png");
 	background-repeat: repeat;
-	cursor: url("/assets/images/wii.cur"), default;
+	cursor: url("../../assets/images/wii.cur"), default;
 	text-decoration: none;
 }
 
 a {
 	color: #00b0f4;
-	cursor:url("/assets/images/wii-hover.cur"), default;
+	cursor: url("../../assets/images/wii-hover.cur"), default;
 }
 
 p, h1, h2, h3, h4, h5, h6, .twitter{
@@ -26,6 +26,6 @@ p, h1, h2, h3, h4, h5, h6, .twitter{
 }
 
 .navbar-light {
-	background-image: url("/assets/images/Wii\ Squares.png");
+	background-image: url("../../assets/images/Wii Squares.png");
 	background-repeat: repeat;
 }
