@@ -1,12 +1,12 @@
 body {
-	background-image: url("https://raw.githubusercontent.com/larsenv/MarioCube-WC24/master/Background%20Images/Nintendo Channel.png");
+	background-image: url("/assets/images/Nintendo\ Channel.png");
 	background-repeat: repeat;
 	cursor: url("/assets/images/wii.cur"), default;
 	text-decoration: none;
 }
 
 html {
-	background-image: url("https://raw.githubusercontent.com/larsenv/MarioCube-WC24/master/Background%20Images/Nintendo Channel.png");
+	background-image: url("/assets/images/Nintendo\ Channel.png");
 	background-repeat: repeat;
 	cursor: url("/assets/images/wii.cur"), default;
 	text-decoration: none;
@@ -17,7 +17,7 @@ a {
 	cursor:url("/assets/images/wii-hover.cur"), default;
 }
 
-p, h1, h2, h3, h4, h5, h6, .twitter-timeline{
+p, h1, h2, h3, h4, h5, h6, .twitter{
 	padding: 1%;
 }
 
@@ -26,6 +26,6 @@ p, h1, h2, h3, h4, h5, h6, .twitter-timeline{
 }
 
 .navbar-light {
-	background-image: url("https://raw.githubusercontent.com/larsenv/MarioCube-WC24/master/Background%20Images/Wii%20Squares.png");
+	background-image: url("/assets/images/Wii\ Squares.png");
 	background-repeat: repeat;
 }
