@@ -1,13 +1,13 @@
 body {
-	background-color: #000000;
-	color: white;
+	background-image: url("/assets/images/Nintendo\ Channel.png");
+	background-repeat: repeat;
 	cursor: url("/assets/images/wii.cur"), default;
 	text-decoration: none;
 }
 
 html {
-	background-color: #000000;
-	color: white;
+	background-image: url("/assets/images/Nintendo\ Channel.png");
+	background-repeat: repeat;
 	cursor: url("/assets/images/wii.cur"), default;
 	text-decoration: none;
 }
@@ -25,7 +25,7 @@ p, h1, h2, h3, h4, h5, h6, .twitter{
 	padding: 1rem 1rem;
 }
 
-.navbar-dark {
-	background-color: #000000;
-	color: white;
+.navbar-light {
+	background-image: url("/assets/images/Wii\ Squares.png");
+	background-repeat: repeat;
 }
