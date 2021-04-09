@@ -19,5 +19,8 @@ html {
 }
 a {
 	color: #00b0f4;
-	cursor:url("https://rc24.xyz/images/cursors/wii-hover.cur"), default;
+	cursor:url("/assets/images/wii-hover.cur"), default;
+  }
+  p, h1, h2, h3, h4, h5, h6, .twitter-timeline{
+	padding: 1%;
   }
