@@ -15,9 +15,9 @@ def home():
       font-family: sans-serif;
   }
   </style>
-  <p>This is the hall of broken code that you will likely never see.</p>
-  <h1>This is temporary!</h1>
-  <p>If you've stumbled upon this page, JG has broken the server code</p>
+  <h1>This is the hall of broken code that you will likely never see.</h1>
+  <p>This is temporary!</p>
+  <p>If you've stumbled upon this page, someone broke the server code lol</p>
   <p>Enjoy!</p>
   '''
 
