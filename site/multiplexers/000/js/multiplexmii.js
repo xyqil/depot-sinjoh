@@ -43,12 +43,13 @@ function initalizeotherscripts(seed){
   return initalizeprimarydata(seed); 
 };
 function initalizeprimarydata(seed){
-  const data = "<link rel=\"stylesheet\" href=\"multiplexers/000/css/multiplexmii.css\" type=\"text/css\">"
-  initalizesecondarydata(data, seed)
+  const primarydata = "<link rel=\"stylesheet\" href=\"multiplexers/000/css/multiplexmii.css\" type=\"text/css\">"
+  const secondarydata = "<link rel=\"shortcut icon\" type=\"image/jpeg\" href=\"assets/images/favicon.jpg\">"
+  initalizesecondarydata(primarydata, secondarydata, seed)
   return console.log("multiplexers/000/css/multiplexmii.css was loaded");
 }
-function initalizesecondarydata(data, seed){
-  return $('body').append(data+'</div></body><div class="d" id="sessionseed" hidden>'+seed+'</div></html>');
+function initalizesecondarydata(primarydata, secondarydata, seed){
+  return $('body').append(primarydata+secondarydata+'</div></div></body><div class="d" id="sessionseed" hidden>'+seed+'</div></html>');
 }
 r(function() {
   docReady(function() {
