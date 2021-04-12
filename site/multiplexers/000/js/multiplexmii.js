@@ -1,4 +1,4 @@
-// This javascript code utilizes a modified version of https://github.com/jfriend00/docReady/,
+// This javascript code utilizes a unmodified version of https://github.com/jfriend00/docReady/,
 // and license is between ==SOF== and ==EOF==, so as to
 // speak and/or say, and wherefore and/or therefore the
 // license goes as follows:
