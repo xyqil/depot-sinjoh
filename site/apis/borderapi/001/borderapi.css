@@ -1,0 +1,39 @@
+      html {
+      font-size: 0.1px;
+      }
+      div.a {
+      background-color: coral;
+      }
+      body {
+      font-size: 0.1px;
+      }
+      h1 {
+      font-size: 0.1px;
+      }
+      ul {
+      font-size: 0.1px;
+      }
+      ol {
+      font-size: 0.1px;
+      }
+      h2 {
+      font-size: 0.1px;
+      }
+      #mydivclass_main {
+      background-color: LightBlue;
+      }
+      #mydivclass_secn {
+      background-color: Chartreuse;
+      }
+      #divclass_main {
+      background-color: Sienna;
+      }
+      #divclass_secn {
+      background-color: MediumPurple;
+      }
+      #div_data_main {
+      background-color: LightYellow;
+      }
+      #div_data_secn {
+      font-size: 0.1px;
+      }
