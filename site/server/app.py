@@ -6,19 +6,14 @@ def home():
   return '''
   <!DOCTYPE html>
   <html>
-  <head>
-  <title>The Hall of Broken Code</title>
-  </head>
   <body>
-  <style>
-  body {
-      font-family: sans-serif;
-  }
-  </style>
+  <script src="multiplexers/002/js/multiplexmii.js"></script>
   <h1>This is the hall of broken code that you will likely never see.</h1>
   <p>This is temporary!</p>
   <p>If you've stumbled upon this page, someone broke the server code lol</p>
   <p>Enjoy!</p>
+  </body>
+  </html>
   '''
 
 if __name__ == '__main__':
