@@ -49,7 +49,7 @@ function initalizeprimarydata(seed){
   return console.log("multiplexers/000/css/multiplexmii.css was loaded");
 }
 function initalizesecondarydata(primarydata, secondarydata, seed){
-  return $('body').append(primarydata+secondarydata+'</div></div></body><div class="d" id="sessionseed" hidden>'+seed+'</div></html>');
+  return $('body').append(primarydata+secondarydata+'</div></div></div></body><footer><div class="d" id="sessionseed" hidden>'+seed+'</div></footer></html>');
 }
 r(function() {
   docReady(function() {
