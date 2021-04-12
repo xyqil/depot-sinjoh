@@ -1,0 +1,29 @@
+/* This specific ruleset and nothing else was created by Larsenv the seagull */
+
+#tvfriendchannelbox1 {
+    border-radius: 15px;
+    background: #FFFFFF;
+    border: 5px solid #000000;
+    padding: 30px; 
+}
+
+#tvfriendchannelbox2 {
+    border-radius: 15px;
+    background: #FFFFFF;
+    border: 5px solid #0e67b0;
+    padding: 25px; 
+}
+
+div.tvfriendchannelbox1 {
+    border-radius: 15px;
+    background: #FFFFFF;
+    border: 5px solid #000000;
+    padding: 30px; 
+}
+
+div.tvfriendchannelbox2 {
+    border-radius: 15px;
+    background: #FFFFFF;
+    border: 5px solid #0e67b0;
+    padding: 25px; 
+}
