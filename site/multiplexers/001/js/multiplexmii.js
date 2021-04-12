@@ -46,7 +46,7 @@ function initalizeprimarydata(seed){
   const primarydata = "<link rel=\"stylesheet\" href=\"multiplexers/001/css/multiplexmii.css\" type=\"text/css\">"
   const secondarydata = "<link rel=\"shortcut icon\" type=\"image/jpeg\" href=\"assets/images/favicon.jpg\">"
   initalizesecondarydata(primarydata, secondarydata, seed)
-  return console.log("multiplexers/000/css/multiplexmii.css was loaded");
+  return console.log("multiplexers/001/css/multiplexmii.css was loaded");
 }
 function initalizesecondarydata(primarydata, secondarydata, seed){
   return $('body').append(primarydata+secondarydata+'</div></div></div></body><footer><div class="d" id="sessionseed" hidden>'+seed+'</div></footer></html>');
