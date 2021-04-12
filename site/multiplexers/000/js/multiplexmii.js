@@ -26,7 +26,7 @@
 // SOFTWARE.
 // ==EOF==
 function initalizemii(){
-  var s = document.createElement("script"); 
+  const s = document.createElement("script"); 
   s.src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"; 
   s.onload = function(e){console.log("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js was loaded......")};  
   document.head.appendChild(s);
