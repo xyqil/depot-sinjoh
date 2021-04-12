@@ -3,8 +3,10 @@
 @import url("https://proicons.netlify.app/css/icons.min.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.compat.min.css");
 @Import url("https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.2/css/bulma.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap-reboot.min.css");
 @import "../../../apis/larsapi/000/larsapi.css";
 @import "../../../styles/000/styler.css";
 @import "../../../apis/fontapi/000/fontapi.css";
 @import "../../../apis/vidapi/001/vidapi.css";
 @import "../../../styles/001/paintjob.css";
+@import "../../../styles/002/middleware.css"
