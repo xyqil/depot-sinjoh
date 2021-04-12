@@ -2,11 +2,11 @@ body {
     font-family: sans-serif;
 }
 body .paintjob-mode-normal-dark {
-    font-color: #FFFFFF;
+    color: #FFFFFF;
     background-color: #000000;
 }
 body .paintjob-mode-normal-shadowrealm {
-    font-color: #FFFFFF;
+    color: #FFFFFF;
     background-color: #FFFFF0;
 }
 

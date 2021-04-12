@@ -25,10 +25,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 // ==EOF==
+
+
+
 function initalizemii(){
-  const s = document.createElement("script"); 
+  var s = document.createElement("script"); 
   s.src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"; 
-  s.onload = function(e){console.log("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js was loaded......")};  
+  s.onload = function(e){initalizeotherscripts()};   
   document.head.appendChild(s);
   const seed = initalizeotherscripts()
   return initalizeothersripts(seed)
@@ -43,13 +46,11 @@ function initalizeotherscripts(seed){
   return initalizeprimarydata(seed); 
 };
 function initalizeprimarydata(seed){
-  const primarydata = "<link rel=\"stylesheet\" href=\"multiplexers/001/css/multiplexmii.css\" type=\"text/css\">"
-  const secondarydata = "<link rel=\"shortcut icon\" type=\"image/jpeg\" href=\"assets/images/favicon.jpg\">"
-  initalizesecondarydata(primarydata, secondarydata, seed)
+  const primarydata = "<link rel=\"stylesheet\" href=\"multiplexers/001/css/multiplexmii.css\" type=\"text/css\">\n"
+  $('body').append(primarydata);
+  const secondarydata = "<link rel=\"shortcut icon\" type=\"image/jpeg\" href=\"assets/images/favicon.jpg\">\n"
+  $('body').append(secondarydata);
   return console.log("multiplexers/001/css/multiplexmii.css was loaded");
-}
-function initalizesecondarydata(primarydata, secondarydata, seed){
-  return $('body').append(primarydata+secondarydata+'</div></div></div></body><footer><div class="d" id="sessionseed" hidden>'+seed+'</div></footer></html>');
 }
 r(function() {
   docReady(function() {
