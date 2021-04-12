@@ -43,7 +43,7 @@ function initalizeotherscripts(seed){
   return initalizeprimarydata(seed); 
 };
 function initalizeprimarydata(seed){
-  const data = "<link rel=\"stylesheet\" href=\"multiplexers/000/css/multiplexmii.css\" type=\"text/css\">
+  const data = "<link rel=\"stylesheet\" href=\"multiplexers/000/css/multiplexmii.css\" type=\"text/css\">"
   initalizesecondarydata(data, seed)
   return console.log("multiplexers/000/css/multiplexmii.css was loaded");
 }
