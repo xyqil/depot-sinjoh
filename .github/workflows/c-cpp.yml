@@ -12,9 +12,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Configure
-      run: autoconf && ./configure
+      run: autoconf
     - name: Check config
-      run: ls
+      run: cat configure
     - name: Compile
       run: make all
     - name: Test
