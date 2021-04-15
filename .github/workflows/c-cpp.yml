@@ -8,15 +8,13 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Configure
       run: autoconf
     - name: Check config
-      run: cat configure.h
+      run: ls
     - name: Compile
       run: make all
     - name: Test
