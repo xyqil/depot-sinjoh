@@ -1,8 +1,10 @@
+@font-face { font-family: Wii; src: url('/assets/fonts/Wii.ttf'); } 
 body {
 	background-image: url("/assets/images/Nintendo\ Channel.png");
 	background-repeat: repeat;
 	cursor: url("/assets/images/wii.cur"), default;
 	text-decoration: none;
+	font-family: Wii;
 }
 
 html {
@@ -17,15 +19,40 @@ a {
 	cursor:url("/assets/images/wii-hover.cur"), default;
 }
 
-p, h1, h2, h3, h4, h5, h6, .twitter{
+p, h1, h2, h3, h4, h5, h6, .twitter, .clearfix{
 	padding: 1%;
+	font-family: Wii;
+}
+.navbar-nav{
+	font-family: Wii;
 }
 
 .padding {
 	padding: 1rem 1rem;
 }
 
-.navbar-light {
+.navbar-light, .box {
 	background-image: url("/assets/images/Wii\ Squares.png");
 	background-repeat: repeat;
 }
+/*box*/
+* {
+	box-sizing: border-box;
+  }
+  
+  .box {
+	float: left;
+	width: 33.33%;
+	padding: 50px;
+  }
+  
+  .clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+  }
+
+  .clearfix {
+	  font-size: 50px;
+	  text-align: center;
+  }
