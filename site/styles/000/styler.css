@@ -1,22 +1,22 @@
 @font-face { font-family: Wii; src: url('/assets/fonts/Wii.ttf'); } 
 body {
-	background-image: url("/assets/images/Nintendo\ Channel.png");
+	background-image: url("../../assets/images/Nintendo Channel.png");
 	background-repeat: repeat;
-	cursor: url("/assets/images/wii.cur"), default;
+	cursor: url("../../assets/images/wii.cur"), default;
 	text-decoration: none;
 	font-family: Wii;
 }
 
 html {
-	background-image: url("/assets/images/Nintendo\ Channel.png");
+	background-image: url("../../assets/images/Nintendo Channel.png");
 	background-repeat: repeat;
-	cursor: url("/assets/images/wii.cur"), default;
+	cursor: url("../../assets/images/wii.cur"), default;
 	text-decoration: none;
 }
 
 a {
 	color: #00b0f4;
-	cursor:url("/assets/images/wii-hover.cur"), default;
+	cursor: url("../../assets/images/wii-hover.cur"), default;
 }
 
 p, h1, h2, h3, h4, h5, h6, .twitter, .clearfix{
@@ -31,8 +31,8 @@ p, h1, h2, h3, h4, h5, h6, .twitter, .clearfix{
 	padding: 1rem 1rem;
 }
 
-.navbar-light, .box {
-	background-image: url("/assets/images/Wii\ Squares.png");
+.navbar-light .box {
+	background-image: url("../../assets/images/Wii Squares.png");
 	background-repeat: repeat;
 }
 /*box*/

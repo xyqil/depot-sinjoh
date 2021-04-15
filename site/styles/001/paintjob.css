@@ -1,0 +1,12 @@
+body {
+    font-family: sans-serif;
+}
+body .paintjob-mode-normal-dark {
+    color: #FFFFFF;
+    background-color: #000000;
+}
+body .paintjob-mode-normal-shadowrealm {
+    color: #FFFFFF;
+    background-color: #FFFFF0;
+}
+
