@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Configure
-      run: autoconf
+      run: apt install autoheader && autoheader
     - name: Check config
       run: cat configure
     - name: Compile
