@@ -6,6 +6,8 @@ $d='1'
 $e='2'
 $f='enabled'
 $g='statuses'
+$h='Nintendo Wi-Fi Connection Services'
+$i='Pokemon '
 $a->addChild($b,$f)
 ->addChild($b,true)
  ->addChild($b,'New Room (Wii no Ma)',[$c=>1])
@@ -23,15 +25,15 @@ $a->addChild($b,$f)
  ->addChild($b,'Kirby TV Channel',[$c=>13])
  ->addChild($b,'Nintendo Wi-Fi Connection',[$c=>14])
  ->addChild($b,'Wii SP X — OSS Portable Wii',[$c=>15])
- ->addChild($b,'Pokemon GTS Nintendo Wi-Fi Connection Services',[$c=>16])
- ->addChild($b,'Pokemon Diamond/Pearl Wi-Fi Connection Services',[$c=>17])
- ->addChild($b,'Pokemon Platinum Nintendo Wi-Fi Connection Services',[$c=>18])
- ->addChild($b,'Pokemon Battle Tower Wi-Fi Connection Services',[$c=>19])
- ->addChild($b,'Pokemon HeartGold/SoulSilver Nintendo Wi-Fi Connection Services',[$c=>20])
- ->addChild($b,'Pokemon Black/White Nintendo Wi-Fi Connection Services',[$c=>21])
- ->addChild($b,'Pokemon Black2/White2 Nintendo Wi-Fi Connection Services',[$c=>22])
- ->addChild($b,'Pokemon Crystal Mobile Connection Emulator/Revival',[$c=>23])
- ->addChild($b,'Pokemon Crystal Wi-Fi Connection Server Emulator/Revival',[$c=>24])
+ ->addChild($b,'Wii Shop Channel',[$c=>16])
+ ->addChild($b,$i+' Diamond/Pearl'+$h,[$c=>17])
+ ->addChild($b,$i+' Platinum'+$h,[$c=>18])
+ ->addChild($b,'Miitomo',[$c=>19])
+ ->addChild($b,$i+' HeartGold/SoulSilver'+$h,[$c=>20])
+ ->addChild($b,$i+' Black/White'+$h,[$c=>21])
+ ->addChild($b,$i+' Black2/White2'+$h,[$c=>22])
+ ->addChild($b,$i+' Crystal Mobile Connection Emulator/Revival',[$c=>23])
+ ->addChild($b,$i+' Crystal Wi-Fi Connection Server Emulator/Revival',[$c=>24])
  ->addChild($b,'Syscheck Server Emulator',[$c=>25])
  ->addChild($b,'TV No Tomo Channel',[$c=>26])
  ->addChild($b,'Discord Look-alike Clone',[$c=>27])
