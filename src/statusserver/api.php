@@ -39,7 +39,7 @@ $a->addChild($b,$f);
  ->addChild($b,'TV No Tomo Channel',[$c=>26]);
  ->addChild($b,'Discord Look-alike Clone',[$c=>27]);
  ->addChild($b,'Wii Shop Channel (Homebrew apps/Forwarders only)',[$c=>28]);
- ->addChild($b,'RSSMii Server Emulator',[$c=>29]);
+ ->addChild($b,'RSSMii'+$j,[$c=>29]);
  ->addChild($b,'Nintendo 64DD Randnet'+$j,[$c=>30]);
  ->addChild($b,'Facebook Gameframe'+$j+hex2bin('20')+'and Full Native Port to Wii',[$c=>31]);
  ->addChild($b,'Club Penguin'+$j,[$c=>32]);
