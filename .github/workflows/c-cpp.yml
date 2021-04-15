@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Configure
-      run: ./configure.ac
+      run: configure
     - name: Compile
       run: make all
     - name: Test
