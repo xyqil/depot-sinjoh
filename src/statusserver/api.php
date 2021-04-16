@@ -1,48 +1,57 @@
 <?php
 $a=new FluidXml();
+$d=new FluidXml();
 $b='services';
 $c='id';
 $d='1';
 $e='2';
 $f='enabled';
 $g='statuses';
-$h='Nintendo Wi-Fi Connection Services';
-$i='Pokemon'+hex2bin('20');
-$j=hex2bin('20')+'Server Emulator/Revival';
+$k=hexbin('20')
+$p=$k+'Connection'
+$h='Nintendo Wi-Fi'+$p+'Services';
+$i='Pokemon'+$k;
+$q='Server'+$k
+$j=$q+'Emulator/Revival';
+$l='Channel'
+$m='Wii No Ma'+hexbin('29')
+$n=hexbin('28')
+$o=$k+'Channel'
+$p='Flipnote Studio'+$k
 $a->addChild($b,$f);
 ->addChild($b,true);
- ->addChild($b,'New Room (Wii no Ma)',[$c=>1]);
- ->addChild($b,'New Room GO (Dokodemo Wii No Ma)',[$c=>2]);
- ->addChild($b,'Digicam Print Channel',[$c=>3]);
- ->addChild($b,'Demae Channel',[$c=>4]);
- ->addChild($b,'Forecast Channel',[$c=>5]);
- ->addChild($b,'News Channel',[$c=>6]);
- ->addChild($b,'Check Mii Out Channel',[$c=>7]);
- ->addChild($b,'Nintendo Channel',[$c=>8]);
- ->addChild($b,'Minna No Theatre',[$c=>9]);
- ->addChild($b,'Flipnote Studio',[$c=>10]);
- ->addChild($b,'Flipnote Studio 3D',[$c=>11]);
- ->addChild($b,'Everybody Votes Channel',[$c=>12]);
- ->addChild($b,'Kirby TV Channel',[$c=>13]);
+ ->addChild($b,'New Room '+$n+$m,[$c=>1]);
+ ->addChild($b,'New Room GO '+$n+'Dokodemo'+$k+$m,[$c=>2]);
+ ->addChild($b,'Digicam Print'+$k,[$c=>3]);
+ ->addChild($b,'Demae'+$k,[$c=>4]);
+ ->addChild($b,'Forecast'+$k,[$c=>5]);
+ ->addChild($b,'News'+$k,[$c=>6]);
+ ->addChild($b,'Check Mii Out'+$k,[$c=>7]);
+ ->addChild($b,'Nintendo'+$k,[$c=>8]);
+ ->addChild($b,'Minna No Theatre'+$k,[$c=>9]);
+ ->addChild($b,$p,[$c=>10]);
+ ->addChild($b,$p+'3D',[$c=>11]);
+ ->addChild($b,'Everybody Votes'+$k,[$c=>12]);
+ ->addChild($b,'Kirby TV'+$k,[$c=>13]);
  ->addChild($b,$h,[$c=>14]);
  ->addChild($b,'Wii SP X — OSS Portable Wii',[$c=>15]);
- ->addChild($b,'Minecraft Server w/ Seperate Survival Server',[$c=>16]);
+ ->addChild($b,'Minecraft Server w/ Seperate Survival'+$q,[$c=>16]);
  ->addChild($b,$i+'Diamond/Pearl'+$h,[$c=>17]);
  ->addChild($b,$i+'Platinum'+$h,[$c=>18]);
  ->addChild($b,'Miitomo',[$c=>19])
  ->addChild($b,$i+'HeartGold/SoulSilver'+$h,[$c=>20]);
  ->addChild($b,$i+'Black/White'+$h,[$c=>21]);
  ->addChild($b,$i+'Black2/White2'+$h,[$c=>22]);
- ->addChild($b,$i+'Crystal Mobile Connection'+$j,[$c=>23]);
- ->addChild($b,$i+'Crystal Wi-Fi Connection'+$j,[$c=>24]);
+ ->addChild($b,$i+'Crystal Mobile'+$p+$j,[$c=>23]);
+ ->addChild($b,$i+'Crystal Wi-Fi'+$p+$j,[$c=>24]);
  ->addChild($b,'Syscheck'+$j,[$c=>25]);
- ->addChild($b,'TV No Tomo Channel',[$c=>26]);
+ ->addChild($b,'TV No Tomo'+$k,[$c=>26]);
  ->addChild($b,'Discord Look-alike Clone',[$c=>27]);
  ->addChild($b,'Wii Shop Channel (Homebrew apps/Forwarders only)',[$c=>28]);
  ->addChild($b,'RSSMii'+$j,[$c=>29]);
  ->addChild($b,'Nintendo 64DD Randnet'+$j,[$c=>30]);
- ->addChild($b,'Facebook Gameframe'+$j+hex2bin('20')+'and Full Native Port to Wii',[$c=>31]);
- ->addChild($b,'Club Penguin'+$j,[$c=>32]);
+ ->addChild($b,'Facebook Gameframe'+$j+$k+'and Full Native Port to Wii',[$c=>31]);
+ ->addChild($b,'Club Penguin Island'+$j,[$c=>32]);
 $d->addChild($g,$f);
 ->addChild($g,true);
  ->addChild($b,$d,[$c=>33]);
@@ -77,4 +86,5 @@ $d->addChild($g,$f);
  ->addChild($b,$e,[$c=>62]);
  ->addChild($b,$d,[$c=>63]);
  ->addChild($b,$d,[$c=>64]);
- echo $a+"\n"+$d;?>
+ echo $a+"\n"+$d;
+?>
