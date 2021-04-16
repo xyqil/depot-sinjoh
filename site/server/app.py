@@ -3,7 +3,7 @@
 from flask import Flask
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/oh_dear_what_a_blunder_ive_made')
 def home():
   # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
   # @                CAUTION:                    @ 
