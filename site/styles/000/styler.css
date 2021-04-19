@@ -1,4 +1,4 @@
-@font-face { font-family: Wii; src: url('/assets/fonts/Wii.ttf'); } 
+@font-face { font-family: Wii; src: url('/assets/fonts/Wii.ttf'); }
 body {
 	background-image: url("../../assets/images/Nintendo Channel.png");
 	background-repeat: repeat;
@@ -38,21 +38,21 @@ p, h1, h2, h3, h4, h5, h6, .twitter, .clearfix{
 /*box*/
 * {
 	box-sizing: border-box;
-  }
-  
-  .box {
+}
+
+.box {
 	float: left;
 	width: 33.33%;
 	padding: 50px;
-  }
-  
-  .clearfix::after {
+}
+
+.clearfix::after {
 	content: "";
 	clear: both;
 	display: table;
-  }
+}
 
-  .clearfix {
+.clearfix {
 	  font-size: 50px;
 	  text-align: center;
-  }
+}
