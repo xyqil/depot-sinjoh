@@ -1,6 +1,6 @@
 @font-face {
 	font-family: WiiFont;
-	src: url('/assets/fonts/Wii.ttf');
+	src: url('https://www.thediamondk.com/hosting/Wii.ttf');
 }
 body {
 	background-image: url("../../assets/images/Nintendo Channel.png");
