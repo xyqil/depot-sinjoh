@@ -24,7 +24,7 @@ ifeq ($(DO_ERROR), yes)
 endif
 LIBS := 
 SOS :=
-SOURCES := src/seagull.a.cpp
+SOURCES := src/seagull.cpp
 OBJS := $(addsuffix .o, $(notdir $(SOURCES)))
 CXXFLAGS :=
 CXX := g++
@@ -43,9 +43,9 @@ LDFLAGS :=
 main.cpp.o:src/main.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-%.so: src/%.so.cpp.o ; $(LD) $(LDFLAGS) -shared $^ -o $@
+#%.so: src/%.so.cpp.o ; $(LD) $(LDFLAGS) -shared $^ -o $@
 
-%.a:src/%.a.cpp.o ; $(AR) rvs $< $@ $(ARFLAGS)
+#%.a:src/%.a.cpp.o ; $(AR) rvs $< $@ $(ARFLAGS)
 
 %.py.cpp:src/%.py2.py ; $(PYTHON) -m cython $@ --embed $(CYTHONFLAGS)
 
