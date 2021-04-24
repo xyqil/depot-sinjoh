@@ -51,7 +51,7 @@ $a->addChild($b,$f);
  ->addChild($b,'RSSMii'+$j,[$c=>29]);
  ->addChild($b,'Nintendo 64DD Randnet'+$j,[$c=>30]);
  ->addChild($b,'Facebook Gameframe'+$j+$k+'and Full Native Port to Wii',[$c=>31]);
- ->addChild($b,'Club Penguin Island'+$j,[$c=>32]);
+ ->addChild($b,'Club Penguin Island Server'+$j,[$c=>32]);
 $d->addChild($g,$f);
 ->addChild($g,true);
  ->addChild($b,$d,[$c=>33]);
