@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Configure
-      run: sudo apt install autoheader && autoheader
+    #- name: Configure
+    #  run: ./configure.ac
     - name: Check config
       run: cat configure
     - name: Compile
