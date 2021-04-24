@@ -13,8 +13,8 @@ jobs:
     - uses: actions/checkout@v2
     #- name: Configure
     #  run: ./configure.ac
-    - name: Check config
-      run: cat configure
+    #- name: Check config
+    #  run: cat configure
     - name: Compile
       run: make all
     - name: Test
