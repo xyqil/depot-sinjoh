@@ -3,6 +3,7 @@ if [ $1 = create ]
 then
   echo Creating Enviroment...
   python3 -m venv sinjohshell
+  ls sinjohshell
   ./sinjohshell/Scripts/activate
   pip install -r requirements.txt
   chmod +x post_env_create.sh
