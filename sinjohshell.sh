@@ -5,6 +5,7 @@ then
   python3 -m venv sinjohshell
   ./sinjohshell/Scripts/activate
   pip install -r requirements.txt
+  chmod +x post_env_create.sh
   ./post_env_create.sh
   ./sinjohshell/Scripts/deactivate
 else
