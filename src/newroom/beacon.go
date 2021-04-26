@@ -15,7 +15,7 @@ func limited() string {
 	x, u := strconv.Itoa(id4)
 	v(z)
 	v(x)
-	n := db.QueryRow("SELECT code, msg FROM beacon WHERE integerdata=$1;", u)
+	n := "haha beacon go brrrr"
 	switch s := n.Scan(&code, &msg); s {
 	case sql.ErrNoRows:
 		v(s)
