@@ -8,10 +8,12 @@ ifeq ($(UNAME), Linux)
 endif
 ifneq (,findstring ($(UNAME), MSYS))
   SO := so
+  EXE_EXTENSION = .exe
   DO_ERROR := no
 endif
 ifneq (,findstring ($(UNAME), MINGW))
   SO := dll
+  EXE_EXTENSION = .exe
   DO_ERROR := no
 endif
 
@@ -22,10 +24,11 @@ endif
 ifeq ($(DO_ERROR), yes)
   $(error Unsupported platform $(UNAME))
 endif
+EXE := main$(EXE_EXTENSION)
 LIBS := 
 SOS :=
 SOURCES := src/seagull.cpp
-OBJS := $(addsuffix .o, $(notdir $(SOURCES)))
+OUTPUTS := $(addsuffix .o, $(notdir $(SOURCES)))
 CXXFLAGS :=
 CXX := g++
 GO := go
@@ -43,12 +46,8 @@ LDFLAGS :=
 main.cpp.o:src/main.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-#%.so: src/%.so.cpp.o ; $(LD) $(LDFLAGS) -shared $^ -o $@
+%.cpp:src/%.py: $(PYTHON) -m cython $@ --embed $(CYTHONFLAGS)
 
-#%.a:src/%.a.cpp.o ; $(AR) rvs $< $@ $(ARFLAGS)
-
-%.py.cpp:src/%.py2.py ; $(PYTHON) -m cython $@ --embed $(CYTHONFLAGS)
-
-main:$(TARGETS)
+$(EXE):$(TARGETS)
 	$(CXX) -o $@ $^ $(CXXFLAGS) $(LIBS)
 all:main
