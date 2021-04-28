@@ -51,3 +51,4 @@ main.cpp.o:src/main.cpp
 $(EXE):$(OUTPUTS)
 	$(CXX) -o $@ $^ $(CXXFLAGS) $(LIBS)
 all:$(EXE)
+	$(echo Built $(EXE))
