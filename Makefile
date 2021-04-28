@@ -46,7 +46,7 @@ LDFLAGS :=
 main.cpp.o:src/main.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-%.cpp:src/%.py: $(PYTHON) -m cython $@ --embed $(CYTHONFLAGS)
+%.cpp:src/%.py ; $(PYTHON) -m cython $@ --embed $(CYTHONFLAGS)
 
 $(EXE):$(TARGETS)
 	$(CXX) -o $@ $^ $(CXXFLAGS) $(LIBS)
