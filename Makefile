@@ -4,16 +4,17 @@ DO_ERROR := yes
 EXE_EXTENSION =
 ifeq ($(UNAME), Linux)
   SO := so
+  EXE := main
   DO_ERROR := no
 endif
 ifneq (,findstring ($(UNAME), MSYS))
   SO := so
-  EXE_EXTENSION = .exe
+  EXE := main.exe
   DO_ERROR := no
 endif
 ifneq (,findstring ($(UNAME), MINGW))
   SO := dll
-  EXE_EXTENSION = .exe
+  EXE := main.exe
   DO_ERROR := no
 endif
 
@@ -24,7 +25,6 @@ endif
 ifeq ($(DO_ERROR), yes)
   $(error Unsupported platform $(UNAME))
 endif
-EXE := main$(EXE_EXTENSION)
 LIBS := 
 SOS :=
 SOURCES := src/seagull.cpp
