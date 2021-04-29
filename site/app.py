@@ -45,7 +45,14 @@ if debug:
   def spectrum_button(css):
     return send_from_directory('thirdparty/spectrum/button/dist', css)
 @app.route('/')
+@app.route("/home")
 def home():
   return render_template("index.html")
+@app.route('/services')
+def services():
+  return render_template("services.html")
+@app.route('/faq')
+def faq():
+  return render_template("faq.html")
 if __name__ == '__main__':
   app.run(debug=debug)
