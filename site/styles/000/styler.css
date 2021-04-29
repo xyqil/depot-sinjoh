@@ -31,7 +31,12 @@ p, h1, h2, h3, h4, h5, h6, .twitter, .clearfix{
 	background-image: url("../../assets/images/Wii Squares.png");
 	background-repeat: repeat;
 }
-
+html {
+	background-image: url("../../assets/images/Nintendo Channel.png");
+	background-repeat: repeat;
+	cursor: url("../../assets/images/wii.cur"), default;
+	text-decoration: none;
+}
 /*box*/
 * {
 	box-sizing: border-box;
