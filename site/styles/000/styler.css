@@ -3,10 +3,6 @@
 	src: url('https://www.thediamondk.com/hosting/Wii.ttf');
 }
 body {
-	background-image: url("../../assets/images/Nintendo Channel.png");
-	background-repeat: repeat;
-	cursor: url("../../assets/images/wii.cur"), default;
-	text-decoration: none;
 	font-family: WiiFont;
 }
 
@@ -30,12 +26,6 @@ p, h1, h2, h3, h4, h5, h6, .twitter, .clearfix{
 .navbar-light /* .box */ {
 	background-image: url("../../assets/images/Wii Squares.png");
 	background-repeat: repeat;
-}
-html {
-	background-image: url("../../assets/images/Nintendo Channel.png");
-	background-repeat: repeat;
-	cursor: url("../../assets/images/wii.cur"), default;
-	text-decoration: none;
 }
 /*box*/
 * {
