@@ -1,3 +1,4 @@
+#!/bin/autoconf
 AC_INIT([depot-sinjoh], [1.0])
 AC_PROG_CXX
 AC_LANG_COMPILER(C++)
@@ -5,6 +6,6 @@ AC_CHECK_HEADER([dearimgui.h],[AC_DEFINE([HAVE_DEARIMGUI], [1])]
 AC_CHECK_HEADER([GL/gl.h], [AC_DEFINE([HAVE_OPENGL], [1])])
 AC_CHECK_HEADER([Python.h], [AC_DEFINE([HAVE_CPYTHON], [1])])
 AC_FUNC_STRNLEN()
-AC_CONFIG_FILES([config.h])
+AC_CONFIG_FILES([config.h.in])
 AC_OUTPUT
 
