@@ -1,11 +1,1 @@
-{
-  "extends": [
-    "config:base"
-  ],
-  "packageRules": [
-    {
-      "matchPackageNames": ["*"],
-      "enabled": false
-    }
-  ]
-}
+I hate renovate. Hence this, I will kill it painfully. By ruining it's config file :)
