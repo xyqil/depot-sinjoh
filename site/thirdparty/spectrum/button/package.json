@@ -31,10 +31,10 @@
   "deprecated": false,
   "description": "The Spectrum CSS button component",
   "devDependencies": {
-    "@spectrum-css/component-builder": "^2.0.1",
-    "@spectrum-css/icon": "^3.0.3",
-    "@spectrum-css/vars": "^3.0.2",
-    "gulp": "^4.0.0"
+    "@spectrum-css/component-builder": "2.0.1",
+    "@spectrum-css/icon": "3.0.3",
+    "@spectrum-css/vars": "3.0.2",
+    "gulp": "4.0.2"
   },
   "gitHead": "f5b7ae9ed7bdcbe9f66def1ead3d897760724ad1",
   "homepage": "https://opensource.adobe.com/spectrum-css/",
