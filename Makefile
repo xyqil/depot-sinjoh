@@ -48,7 +48,7 @@ main.cpp.o:src/main.cpp
 
 %.cpp:src/%.py ; $(PYTHON) -m cython $@ --embed $(CYTHONFLAGS)
 
-$(EXE):$(OUTPUTS)
+main:$(OUTPUTS)
 	$(CXX) -o $@ $^ $(CXXFLAGS) $(LIBS)
-all:$(EXE)
+all:main
 	$(echo Built $(EXE))
