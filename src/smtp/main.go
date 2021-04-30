@@ -3,8 +3,8 @@ import (
     "log";
 )
 func main() {
-  d := guerrilla.Daemon{};
-  err := d.Start();
+  daemon := guerrilla.Daemon{};
+  err := daemon.Start();
   if err == nil {
     log.Print("Server Started!");
   };
