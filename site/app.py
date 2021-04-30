@@ -44,6 +44,15 @@ if debug:
   @app.route('/thirdparty/spectrum/button/dist/<css>')
   def spectrum_button(css):
     return send_from_directory('thirdparty/spectrum/button/dist', css)
+  @app.route('/styles/<_>/<css>')
+  def styles(_, css):
+    return send_from_directory('styles', css)
+  @app.route('/apis/<_>/<_2>/<css>')
+  def apis(_, _2, css):
+    return send_from_directory('styles', css)
+  @app.route('/assets/images/<asset>')
+  def assets(asset):
+    return send_from_directory('assets/images',asset)
 @app.route('/')
 @app.route("/home")
 def home():
