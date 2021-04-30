@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 #-*- coding: utf-8 -*-
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, render_template, send_from_directory, request
 app = Flask(__name__)
-
+# --CONFIG--
+debug = True
+theme = "dark"
 @app.route('/oh_dear_what_a_blunder_ive_made')
 def uhohspeghettios():
   # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -27,7 +29,6 @@ def uhohspeghettios():
   </body>
   </html>
   '''
-debug = True
 if debug:
   @app.route('/thirdparty/spectrum/vars/dist/<css>')
   def spectrum_vars(css):
@@ -56,12 +57,15 @@ if debug:
 @app.route('/')
 @app.route("/home")
 def home():
-  return render_template("index.html")
+  page_theme = request.args.get("theme", theme)
+  return render_template("index.html", theme=page_theme)
 @app.route('/services')
 def services():
-  return render_template("services.html")
+  page_theme = request.args.get("theme", theme)
+  return render_template("services.html", theme=page_theme)
 @app.route('/faq')
 def faq():
-  return render_template("faq.html")
+  page_theme = request.args.get("theme", theme)
+  return render_template("faq.html", theme=page_theme)
 if __name__ == '__main__':
   app.run(debug=debug)
