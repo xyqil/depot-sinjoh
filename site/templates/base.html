@@ -39,9 +39,15 @@
             <a class="navbar-brand">XConnect24</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
             <div class="collapse navbar-collapse" id="navbar">
-               <div class="navbar-nav"><a class="nav-link active" href="{{ url_for("home") }}"><i class="fas fa-home"></i> Home</a></div>
-               <div class="navbar-nav"><a class="nav-link active" href="{{ url_for("services") }}"><i class="fas fa-server"></i> Services</a></div>
-               <div class="navbar-nav"><a class="nav-link active" href="{{ url_for("faq") }}"><i class="fas fa-question-circle"></i> FAQ</a></div>
+               <div class="navbar-nav"><a class="nav-link active" href="{{ url_for("home") + "?theme=" + theme}}"><i class="fas fa-home"></i> Home</a></div>
+               <div class="navbar-nav"><a class="nav-link active" href="{{ url_for("services") + "?theme=" + theme}}"><i class="fas fa-server"></i> Services</a></div>
+               <div class="navbar-nav"><a class="nav-link active" href="{{ url_for("faq") + "?theme=" + theme}}"><i class="fas fa-question-circle"></i> FAQ</a></div>
+               {% if theme == "dark" %}
+               <div class="navbar-nav"><a class="nav-link active" href="{{ request.path + "?theme=light"}}"><i class="fas fa-sun"></i> Light Mode</a></div>
+               {% endif %}
+               {% if theme == "light" %}
+               <div class="navbar-nav"><a class="nav-link active" href="{{ request.path + "?theme=dark"}}"><i class="fas fa-moon"></i> Dark Mode</a></div>
+               {% endif %}
             </div>
          </div>
       </nav>
