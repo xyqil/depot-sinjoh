@@ -10,4 +10,3 @@ then
 else
   echo "Run ./sinjohshell.sh create to create venv or run ./sinjohshell/Scripts/activate to launch enviroment. Launching venv is basic stuff :P"
   fi
-  
