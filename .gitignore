@@ -1,3 +1,5 @@
 sinjohshell
 configure 
 autom4te.cache
+__pycache__
+*/__pycache__
