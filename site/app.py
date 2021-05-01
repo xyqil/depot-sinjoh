@@ -1,10 +1,20 @@
 #!/usr/bin/python3
 #-*- coding: utf-8 -*-
 from flask import Flask, render_template, send_from_directory, request
+from os.path import join
+from os import getcwd
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 app = Flask(__name__)
 # --CONFIG--
+app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{join(getcwd(), "app.db")}'
 debug = True
 theme = "dark"
+# --END CONFIG--
+
+db = SQLAlchemy(app)
+migrate = Migrate(app, db, compare_type=True)
+import models
 @app.route('/oh_dear_what_a_blunder_ive_made')
 def uhohspeghettios():
   # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
