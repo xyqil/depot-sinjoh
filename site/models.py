@@ -7,4 +7,4 @@ class User(db.Model):
     def set_pw_hash(self, password):
         self.password = generate_password_hash(password)
     def check_pw_hash(self, password):
-        return check_password_hash(password, self.password)
+        return check_password_hash(self.password, password)
