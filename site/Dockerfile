@@ -11,7 +11,7 @@ RUN apk add -U --no-cache --virtual python3 && \
 
 USER server
 copy . .
-
+# Note to my devs: please always use Gunicorn for Python!
 ENV FLASK_APP app.py
 
 EXPOSE 5000
