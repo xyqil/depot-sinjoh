@@ -6,7 +6,7 @@ from os.path import join
 from os import getcwd
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from flask_login import LoginManager
+from flask_login import LoginManager, login_user, logout_user
 from forms import *
 from flask_bootstrap import Bootstrap
 from sassutils.wsgi import SassMiddleware
@@ -66,8 +66,10 @@ if debug:
     return send_from_directory('thirdparty/spectrum/button/dist', css)
   @app.route('/thirdparty/spectrum/actionbutton/<css>')
   def spectrum_actionbutton(css):
-    print('action button')
     return send_from_directory('thirdparty/spectrum/actionbutton/dist', css)
+  @app.route('/styles/css/<css>')
+  def compiled_scss(css):
+    return send_from_directory('styles/css', css)
   @app.route('/styles/<_>/<css>')
   def styles(_, css):
     return send_from_directory('styles', css)
@@ -90,8 +92,18 @@ def services():
 def faq():
   page_theme = request.args.get("theme", theme)
   return render_template("faq.html", theme=page_theme)
-@app.route('/signup', methods=['GET','POST'])
+@app.route('/login', methods=['GET','POST'])
 def signup():
+  form = SignupForm()
+  if form.validate_on_submit():
+    user = models.User.query.filter_by(username=form.username.data).first()
+    if user.check_pw_hash(form.password.data):
+      print("omg someone logged in poggers")
+      login_user(user)
+      return redirect('home')
+  return render_template("signup.html",form=form, theme=theme)
+@app.route('/signup', methods=['GET','POST'])
+def loginuser():
   form = SignupForm()
   if form.validate_on_submit():
     u = models.User(username=form.username.data)
@@ -100,9 +112,12 @@ def signup():
     db.session.commit()
     return redirect('/home')
   return render_template("signup.html",form=form, theme=theme)
-
+@app.route('/logout')
+def logoutuser():
+  logout_user()
+  return redirect('/home')
 @login.user_loader
 def load_user(id):
-  return models.User.get(id)
+  return models.User.query.get(id)
 if __name__ == '__main__':
   app.run(debug=debug)

@@ -12,6 +12,7 @@
     "@spectrum-css/button": "^3.0.3",
     "@spectrum-css/icon": "^3.0.3",
     "@spectrum-css/page": "^3.0.2",
+    "@spectrum-css/table": "^3.0.3",
     "@spectrum-css/typography": "^3.0.2",
     "@spectrum-css/vars": "^3.0.2",
     "spectrum-css": "^1.1.5"
