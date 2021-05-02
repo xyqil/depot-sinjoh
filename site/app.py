@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 #-*- coding: utf-8 -*-
-from flask import Flask, render_template, send_from_directory, request
+from flask import Flask, render_template, send_from_directory, request, redirect
 from os.path import join
 
 from os import getcwd
@@ -94,9 +94,10 @@ def faq():
 def signup():
   form = SignupForm()
   if form.validate_on_submit():
-    u = models.User(username=form.username)
-    u.set_pw_hash(form.password)
-    db.session.commit(u)
+    u = models.User(username=form.username.data)
+    u.set_pw_hash(form.password.data)
+    db.session.add(u)
+    db.session.commit()
     return redirect('/home')
   return render_template("signup.html",form=form, theme=theme)
 
