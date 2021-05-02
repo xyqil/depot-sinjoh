@@ -5,8 +5,10 @@ from os.path import join
 from os import getcwd
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from flask_login import LoginManager
 app = Flask(__name__)
 # --CONFIG--
+import config
 app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{join(getcwd(), "app.db")}'
 debug = True
 theme = "dark"
@@ -14,6 +16,7 @@ theme = "dark"
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db, compare_type=True)
+login = LoginManager(app)
 import models
 @app.route('/oh_dear_what_a_blunder_ive_made')
 def uhohspeghettios():
@@ -77,5 +80,8 @@ def services():
 def faq():
   page_theme = request.args.get("theme", theme)
   return render_template("faq.html", theme=page_theme)
+@login.user_loader
+def load_user(id):
+  return models.User.get(id)
 if __name__ == '__main__':
   app.run(debug=debug)
