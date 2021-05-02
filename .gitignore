@@ -3,3 +3,4 @@ configure
 autom4te.cache
 __pycache__
 */__pycache__
+site/config.py
