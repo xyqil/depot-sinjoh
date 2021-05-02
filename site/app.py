@@ -64,9 +64,12 @@ if debug:
   @app.route('/thirdparty/spectrum/button/dist/<css>')
   def spectrum_button(css):
     return send_from_directory('thirdparty/spectrum/button/dist', css)
-  @app.route('/thirdparty/spectrum/actionbutton/<css>')
+  @app.route('/thirdparty/spectrum/actionbutton/dist/<css>')
   def spectrum_actionbutton(css):
     return send_from_directory('thirdparty/spectrum/actionbutton/dist', css)
+  @app.route('/thirdparty/spectrum/table/dist/<css>')
+  def spectrum_table(css):
+    return send_from_directory('thirdparty/spectrum/table/dist', css)
   @app.route('/styles/css/<css>')
   def compiled_scss(css):
     return send_from_directory('styles/css', css)
