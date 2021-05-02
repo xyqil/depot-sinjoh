@@ -2,10 +2,14 @@
 #-*- coding: utf-8 -*-
 from flask import Flask, render_template, send_from_directory, request
 from os.path import join
+
 from os import getcwd
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
+from forms import *
+from flask_bootstrap import Bootstrap
+from sassutils.wsgi import SassMiddleware
 app = Flask(__name__)
 # --CONFIG--
 import config
@@ -17,6 +21,8 @@ theme = "dark"
 db = SQLAlchemy(app)
 migrate = Migrate(app, db, compare_type=True)
 login = LoginManager(app)
+bootstrap = Bootstrap(app)
+app.wsgi_app = SassMiddleware(app.wsgi_app, {__name__: ('styles/scss', 'styles/css','/styles/css')})
 import models
 @app.route('/oh_dear_what_a_blunder_ive_made')
 def uhohspeghettios():
@@ -58,6 +64,10 @@ if debug:
   @app.route('/thirdparty/spectrum/button/dist/<css>')
   def spectrum_button(css):
     return send_from_directory('thirdparty/spectrum/button/dist', css)
+  @app.route('/thirdparty/spectrum/actionbutton/<css>')
+  def spectrum_actionbutton(css):
+    print('action button')
+    return send_from_directory('thirdparty/spectrum/actionbutton/dist', css)
   @app.route('/styles/<_>/<css>')
   def styles(_, css):
     return send_from_directory('styles', css)
@@ -80,6 +90,16 @@ def services():
 def faq():
   page_theme = request.args.get("theme", theme)
   return render_template("faq.html", theme=page_theme)
+@app.route('/signup', methods=['GET','POST'])
+def signup():
+  form = SignupForm()
+  if form.validate_on_submit():
+    u = User(username=form.username)
+    u.set_pw_hash(form.password)
+    db.session.commit(u)
+    return redirect('/home')
+  return render_template("signup.html",form=form, theme=theme)
+
 @login.user_loader
 def load_user(id):
   return models.User.get(id)

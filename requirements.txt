@@ -2,4 +2,6 @@ Flask
 Flask-SQLAlchemy
 flask-migrate
 flask-login
-flask-wtforms
+Flask-WTF
+flask-bootstrap
+libsass
