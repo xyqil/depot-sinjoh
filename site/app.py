@@ -94,7 +94,7 @@ def faq():
 def signup():
   form = SignupForm()
   if form.validate_on_submit():
-    u = User(username=form.username)
+    u = models.User(username=form.username)
     u.set_pw_hash(form.password)
     db.session.commit(u)
     return redirect('/home')
