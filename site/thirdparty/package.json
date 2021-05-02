@@ -1,0 +1,22 @@
+{
+  "name": "xc24-thirdparties",
+  "version": "1.0.0",
+  "description": "Third party packages for XC24",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@spectrum-css/button": "^3.0.3",
+    "@spectrum-css/icon": "^3.0.3",
+    "@spectrum-css/page": "^3.0.2",
+    "@spectrum-css/typography": "^3.0.2",
+    "@spectrum-css/vars": "^3.0.2",
+    "spectrum-css": "^1.1.5"
+  },
+  "devDependencies": {
+    "@spectrum-css/actionbutton": "^1.0.3"
+  }
+}

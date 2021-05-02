@@ -1,0 +1,5 @@
+@import "../../thirdparty/spectrum/actionbutton/dist/index-vars.scss";
+input#submit.btn.btn-default {
+    @extend .spectrum-ActionButton;
+    @extend .spectrum-ActionButton--sizeS;
+}
