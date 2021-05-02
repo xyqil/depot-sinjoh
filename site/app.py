@@ -12,10 +12,10 @@ from flask_bootstrap import Bootstrap
 from sassutils.wsgi import SassMiddleware
 app = Flask(__name__)
 # --CONFIG--
-import config
 app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{join(getcwd(), "app.db")}'
 debug = True
 theme = "dark"
+import config
 # --END CONFIG--
 
 db = SQLAlchemy(app)
@@ -96,7 +96,7 @@ def faq():
   page_theme = request.args.get("theme", theme)
   return render_template("faq.html", theme=page_theme)
 @app.route('/login', methods=['GET','POST'])
-def signup():
+def loginuser():
   form = SignupForm()
   if form.validate_on_submit():
     user = models.User.query.filter_by(username=form.username.data).first()
@@ -106,7 +106,7 @@ def signup():
       return redirect('home')
   return render_template("signup.html",form=form, theme=theme)
 @app.route('/signup', methods=['GET','POST'])
-def loginuser():
+def signup():
   form = SignupForm()
   if form.validate_on_submit():
     u = models.User(username=form.username.data)
