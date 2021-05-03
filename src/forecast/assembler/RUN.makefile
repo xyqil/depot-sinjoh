@@ -21,7 +21,7 @@ unzipit
 executesetupscript:
 	bash $PWD/SETUP.sh
 executegrabscript:
-	bash $PWD/GRAB.sh
+	bash $PWD/GRABBER.sh
 executerunnerscript:
 	bash $PWD/RUNNER.sh
 announceprimarychmodmessage:
