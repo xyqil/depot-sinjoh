@@ -113,11 +113,30 @@ def services():
     else:
       theme = "dark"
   else:
-    theme = "dark"
+    if page_theme != None:
+      theme = page_theme
+    else:
+      theme = "dark"
   return render_template("services.html", theme=theme)
 @app.route('/bin/post', methods=["GET","POST"])
 @login_required
 def bin():
+  page_theme = request.args.get("theme", None)
+  if current_user.is_authenticated:
+    if not current_user.theme_preferenece == page_theme and page_theme != None or current_user.theme_preferenece == None:
+      print("yee")
+      current_user.theme_preferenece = page_theme
+      db.session.add(current_user)
+      db.session.commit()
+    if current_user.theme_preferenece:
+      theme = current_user.theme_preferenece
+    else:
+      theme = "dark"
+  else:
+    if page_theme != None:
+      theme = page_theme
+    else:
+      theme = "dark"
   form = TrashBinForm()
   if form.validate_on_submit():
     p = models.Post(body=form.line.data,author=current_user)
@@ -139,10 +158,29 @@ def faq():
     else:
       theme = "dark"
   else:
-    theme = "dark"
+    if page_theme != None:
+      theme = page_theme
+    else:
+      theme = "dark"
   return render_template("faq.html", theme=theme)
 @app.route('/login', methods=['GET','POST'])
 def loginuser():
+  page_theme = request.args.get("theme", None)
+  if current_user.is_authenticated:
+    if not current_user.theme_preferenece == page_theme and page_theme != None or current_user.theme_preferenece == None:
+      print("yee")
+      current_user.theme_preferenece = page_theme
+      db.session.add(current_user)
+      db.session.commit()
+    if current_user.theme_preferenece:
+      theme = current_user.theme_preferenece
+    else:
+      theme = "dark"
+  else:
+    if page_theme != None:
+      theme = page_theme
+    else:
+      theme = "dark"
   form = SignupForm()
   if form.validate_on_submit():
     user = models.User.query.filter_by(username=form.username.data).first()
@@ -153,6 +191,22 @@ def loginuser():
   return render_template("signup.html",form=form, theme=theme)
 @app.route('/signup', methods=['GET','POST'])
 def signup():
+  page_theme = request.args.get("theme", None)
+  if current_user.is_authenticated:
+    if not current_user.theme_preferenece == page_theme and page_theme != None or current_user.theme_preferenece == None:
+      print("yee")
+      current_user.theme_preferenece = page_theme
+      db.session.add(current_user)
+      db.session.commit()
+    if current_user.theme_preferenece:
+      theme = current_user.theme_preferenece
+    else:
+      theme = "dark"
+  else:
+    if page_theme != None:
+      theme = page_theme
+    else:
+      theme = "dark"
   form = SignupForm()
   if form.validate_on_submit():
     u = models.User(username=form.username.data)
