@@ -1,0 +1,10 @@
+make createlogsdirectory
+make createlogdirectory
+make createtmpdirectory
+make createhomedirectory
+make createrootdirectory
+make createrootuserfolderinhomefolder
+make createxc24folder
+make announceprimarymessage
+make executepythonscript
+make announcesecondarymessage
