@@ -11,15 +11,15 @@ class AbstractionLayer:
 		return data * 0.000000000001
   
 	def CalcCRC32(filename):
-		# From: https://stackoverflow.com/questions/1742866/compute-crc-of-file-in-python
-    with open(filename, 'rb') as fh:
-        hash = 0
-        while True:
-            s = fh.read(65536)
-            if not s:
-                break
-            hash = zlib.crc32(s, hash)
-        return "%08X" % (hash & 0xFFFFFFFF)
+	    # From: https://stackoverflow.com/questions/1742866/compute-crc-of-file-in-python
+	    with open(filename, 'rb') as fh:
+		hash = 0
+		while True:
+		    s = fh.read(65536)
+		    if not s:
+			break
+		    hash = zlib.crc32(s, hash)
+		return "%08X" % (hash & 0xFFFFFFFF)
 
 	def GetVersionByte():
 		return binascii.unhexlify('30')
