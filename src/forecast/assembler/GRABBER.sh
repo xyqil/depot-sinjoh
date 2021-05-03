@@ -1,12 +1,12 @@
-make deletezippedsqldatanotinroot --file=$PWD/EXECUTOR.makefile
-make deleteunzippedsqldatanotinroot --file=$PWD/EXECUTOR.makefile
-make clearsqldatainroot --file=$PWD/EXECUTOR.makefile
-make grabsqldata --file=$PWD/EXECUTOR.makefile
-make createsqldatafolder --file=$PWD/EXECUTOR.makefile
-make createbackupfolder --file=$PWD/EXECUTOR.makefile
-make createzipbackupfolder --file=$PWD/EXECUTOR.makefile
-make createsqldatazipbackupfolder --file=$PWD/EXECUTOR.makefile
-make createsqldatanodefolder --file=$PWD/EXECUTOR.makefile
-make createsqldatanodefolder --file=$PWD/EXECUTOR.makefile
-make moveunzippedsqldatatofolder --file=$PWD/EXECUTOR.makefile
-make movezippedsqldatatofolder --file=$PWD/EXECUTOR.makefile
+make deletezippedsqldatanotinroot
+make deleteunzippedsqldatanotinroot
+make clearsqldatainroot
+make grabsqldata
+make createsqldatafolder
+make createbackupfolder
+make createzipbackupfolder
+make createsqldatazipbackupfolder
+make createsqldatanodefolder
+make createsqldatanodefolder
+make moveunzippedsqldatatofolder
+make movezippedsqldatatofolder
