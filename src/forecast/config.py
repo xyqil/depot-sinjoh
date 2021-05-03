@@ -1,2 +1,2 @@
-api_key = "6aea12be686949d3919153311210305"
+api_key = "pleasechangemelol"
 cities_csv = "worldcities.csv"
