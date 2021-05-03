@@ -1,2 +1,2 @@
 make chmodrunscript --file=SETPERMISSIONS.makefile
-bash $PWD/RUNNER.sh
+make executerunnerscript --file=RUNNER.makefile
