@@ -1,7 +1,7 @@
 chmodexecutor:
 	chmod 777 $$PWD/EXECUTE.sh
 executor:
-	chmod 777 $$PWD/EXECUTE.sh
+	echo Grabbing key............
 	key=$$(openssl rand -base64 242)
 	echo Forecast is running............ > /home/loggeruser/log-$$key
 announceprimarymessage:
