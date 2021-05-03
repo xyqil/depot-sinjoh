@@ -73,18 +73,28 @@ logit:
 	secondarykeydata=$$(openssl rand -base64 363)
 	remainingkeydata=$$(openssl rand -base64 242)
 	misckeydata=$$(openssl rand -base64 484)
-	echo Forecast PostgresSQL data was built from source! > /home/root/runlog-$$primarykeydata
-	echo Forecast PostgresSQL data was built from source! > /tmp/runlog-$$secondarykeydata
-	echo Forecast PostgresSQL data was built from source! > /log/runlog-$$remainingkeydata
-	echo Forecast PostgresSQL data was built from source! > /logs/runlog-$$misckeydata
-	echo Forecast PostgresSQL data was built from source!
+	echo Forecast PostgresSQL data was built from source! > /home/root/run-logs-$$primarykeydata
+	echo Forecast PostgresSQL data was built from source! > /tmp/run-logs-$$secondarykeydata
+	echo Forecast PostgresSQL data was built from source! > /log/run-logs-$$remainingkeydata
+	echo Forecast PostgresSQL data was built from source! > /logs/run-logs-$$misckeydata
+	wall Forecast PostgresSQL data was built from source!
 executethebuilderscript:
+	primaryotherkeydata=$$(openssl rand -base64 484)
+	secondaryotherkeydata=$$(openssl rand -base64 242)
+	remainingotherkeydata=$$(openssl rand -base64 484)
 	otherkeydata=$$(openssl rand -base64 484)
-	chmod 777 BUILDSCRIPT.bash  > /home/root/builder-log-$$morekeydata
-	echo Executing runner script............
-	bash RUNSCRIPT.bash
+	echo Performing a chmod sequence on builder script with the permission attribute 777............ > /home/root/other-builder-script-logs-$$primaryotherkeydata
+	chmod 777 BUILDSCRIPT.bash
+	echo Executing runner script............ > /home/root/secondary-builder-script-logs-$$secondaryotherkeydata
+	bash RUNSCRIPT.bash > /home/root/secondary-builder-script-logs-$$secondaryotherkeydata
+	echo Runner script was ran! > /home/root/remaining-builder-script-logs-$$secondaryotherkeydata
 executetherunnerscript:
-	morekeydata=$$(openssl rand -base64 242)
-	chmod 777 RUNSCRIPT.bash > /home/root/runner-log-$$morekeydata
-	echo Runner script was ran!
-	bash RUNSCRIPT.bash
+	primaryadditionalkeydata=$$(openssl rand -base64 242)
+	secondaryadditionalkeydata=$$(openssl rand -base64 484)
+	remainingadditionalkeydata=$$(openssl rand -base64 242)
+	additionalkeydata=$$(openssl rand -base64 484)
+	echo Performing a chmod sequence on builder script with the permission attribute 777............ > /home/root/other-install-script-logs-$$primaryotherkeydata
+	chmod 777 RUNSCRIPT.bash
+	echo Executing runner script............ > /home/root/primary-runner-script-logs-$$secondaryadditionalkeydata
+	bash RUNSCRIPT.bash > /home/root/secondary-runner-script-logs-$$primaryadditionalkeydata
+	echo Runner script was ran! > /home/root/remaining-runner-script-logs-$$primaryadditionalkeydata
