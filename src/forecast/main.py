@@ -8,7 +8,7 @@ import csv
 class AbstractionLayer:
 	def IntegerProtector(data): 
 		# Our version of the WAD will have a patch that sets all integers to that level, to prevent integer overflows later on
-		return data * 0.000000000001
+		return data
   
 	def CalcCRC32(filename):
 	    # From: https://stackoverflow.com/questions/1742866/compute-crc-of-file-in-python
