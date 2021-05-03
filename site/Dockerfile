@@ -6,7 +6,7 @@ RUN mkdir /etc/db && chown server /etc/db # This is where the DB is stored in Do
 VOLUME /etc/db
 COPY requirements.txt .
 
-RUN apk add -U --no-cache --virtual python3 build-base && \
+RUN apk add -U --no-cache --virtual python3 build-base libsass && \
 	pip3 install -r requirements.txt && \
 	pip3 install gunicorn 
 
