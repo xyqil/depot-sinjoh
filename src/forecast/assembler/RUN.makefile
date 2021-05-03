@@ -1,9 +1,9 @@
 chmodexecutor:
 	chmod 777 $$PWD/EXECUTE.sh
 executor:
-	echo Grabbing key............
-	key=$$(openssl rand -base64 242)
-	echo Forecast is running............ > /home/loggeruser/log-$$key
+	echo Forecast is running............
+	key=$$(openssl rand -base64 484)
+	echo "$${PWD%/[^/]*}" >> $$PWD/data-$variable.bin
 announceprimarymessage:
 	wall Forecast is running............
 runexecutor:
@@ -21,7 +21,7 @@ unzipit
 executesetupscript:
 	bash $PWD/SETUP.sh
 executegrabscript:
-	bash $PWD/GRAB.sh
+	bash $PWD/GRABBER.sh
 executerunnerscript:
 	bash $PWD/RUNNER.sh
 announceprimarychmodmessage:
