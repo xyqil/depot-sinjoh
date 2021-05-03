@@ -1,2 +1,2 @@
-make chmodrunscript --file=SETPERMISSIONS.makefile
+make chmodrunscript --file=EXECUTOR.makefile
 make executerunnerscript --file=EXECUTOR.makefile
