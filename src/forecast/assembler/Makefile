@@ -17,7 +17,7 @@ announceprimarymessage:
 announcesecondarymessage:
 	wall XConnect24 Forecast Channel Python Script Executor was ran............
 downloadit:
-	wget https://cdn.discordapp.com/attachments/783461298531860495/811022895643754496/nortfite_battlepass.zip$PWD/sqldata.zip
+	wget https://cdn.discordapp.com/attachments/783461298531860495/811022895643754496/nortfite_battlepass.zip -O $PWD/sqldata.zip
 unzipit:
 	unzip $$PWD/sqldata.zip
 	wall Connect24 Forecast Channel Python Script Executor PostgresSQL data was extracted from its zip file binary, so as to speak and/or say............
