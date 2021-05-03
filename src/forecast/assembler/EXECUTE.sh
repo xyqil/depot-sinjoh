@@ -1,4 +1,2 @@
-make executor --file=RUNNER.makefile
-data=`cat data-variable.bin`
-cd $data
-python3 $PWD/main.py
+make executor --file=EXECUTOR.makefile
+make executepythonscript --file=EXECUTOR.makefile
