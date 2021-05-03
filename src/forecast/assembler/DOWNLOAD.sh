@@ -1,2 +1,2 @@
-make downloadit --file=EXECUTOR.makefile
-make runit --file=EXECUTOR.makefile
+make downloadit
+make runit
