@@ -5,6 +5,7 @@ class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True)
     password = db.Column(db.String(100))
+    theme_preferenece = db.Column(db.String(100), default="dark")
     def set_pw_hash(self, password):
         self.password = generate_password_hash(password)
     def check_pw_hash(self, password):

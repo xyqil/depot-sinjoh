@@ -6,7 +6,7 @@ from os.path import join
 from os import getcwd
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from flask_login import LoginManager, login_user, logout_user
+from flask_login import LoginManager, login_user, logout_user, current_user
 from forms import *
 from flask_bootstrap import Bootstrap
 from sassutils.wsgi import SassMiddleware
@@ -86,15 +86,41 @@ if debug:
 @app.route("/home")
 def home():
   page_theme = request.args.get("theme", theme)
+  if current_user.is_logged_in():
+    if not current_user.theme_preferenece == page_theme:
+      current_user.theme_preferenece = page_theme
+      db.session.add(current_user)
+      db.session.commit()
+    page_theme = current_user.theme_preferenece
+
   return render_template("index.html", theme=page_theme)
 @app.route('/services')
 def services():
   page_theme = request.args.get("theme", theme)
+  if current_user.is_logged_in():
+    if not current_user.theme_preferenece == page_theme:
+      current_user.theme_preferenece = page_theme
+      db.session.add(current_user)
+      db.session.commit()
+    page_theme = current_user.theme_preferenece
   return render_template("services.html", theme=page_theme)
 @app.route('/faq')
 def faq():
-  page_theme = request.args.get("theme", theme)
-  return render_template("faq.html", theme=page_theme)
+  page_theme = request.args.get("theme", None)
+  if current_user.is_authenticated:
+    if not current_user.theme_preferenece == page_theme and page_theme != None or current_user.theme_preferenece == None:
+      print("yee")
+      current_user.theme_preferenece = page_theme
+      db.session.add(current_user)
+      db.session.commit()
+    print(current_user.theme_preferenece)
+    if current_user.theme_preferenece:
+      theme = current_user.theme_preferenece
+    else:
+      theme = "dark"
+  else:
+    theme = "dark"
+  return render_template("faq.html", theme=theme)
 @app.route('/login', methods=['GET','POST'])
 def loginuser():
   form = SignupForm()
