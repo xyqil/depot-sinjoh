@@ -1,4 +1,0 @@
-make chmoddlscript
-make chmodgrabscript
-make chmodsetupscript
-make chmodcrawlscript
