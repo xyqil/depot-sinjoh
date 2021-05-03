@@ -1,9 +1,13 @@
 chmodexecutor:
 	chmod 777 $$PWD/EXECUTE.sh
-executor:
+passechomsgtoshell:
 	echo Forecast is running............
+executepythonscript
 	key=$$(openssl rand -base64 484)
-	echo "$${PWD%/[^/]*}" >> $$PWD/data-$variable.bin
+	echo "$${PWD%/[^/]*}" >> $$PWD/data-$key.bin
+	OUTPUT=$$(cat data-$$key.bin)
+	cd $data
+	python3 $PWD/main.py
 announceprimarymessage:
 	wall Forecast is running............
 runexecutor:
@@ -28,3 +32,9 @@ announceprimarychmodmessage:
 	echo CHMOD Sequence is halfway done!
 announcesecondarychmodmessage:
 	echo CHMOD Sequence is all the way done!
+chmodit:
+	chmod 777 $$PWD/BUILD.sh
+runit:
+	bash $$PWD/BUILD.sh
+announceit:
+	wall Forecast PostgresSQL data was built from source!
