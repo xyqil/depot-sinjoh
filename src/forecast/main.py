@@ -47,7 +47,7 @@ class AbstractionLayer:
   
   def time_convert(time):
     # This function and nothing else was made by Larsenv the Seagull, modified so it isn't pure crap :troll:
-    return int((time - 946684800) / 60) * 0.000000000001
+    return int(IntegerProtector((time - int(946684800)) / int(60)))
   
   def GrabCities():
   reader = csv.dictreader(open(config.cities_csv, "r"))
