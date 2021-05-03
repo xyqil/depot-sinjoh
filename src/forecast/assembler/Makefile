@@ -1,6 +1,6 @@
 passechomsgtoshell:
-	uuid=$$(openssl rand -base64 242)
-	echo Forecast is running............ > /home/root/uuid-data-notification-msg-run-logs-$$primarykeydata
+	uuidkeydata=$$(openssl rand -base64 242)
+	echo Forecast is running............ > /home/root/uuid-data-notification-msg-run-logs-$$uuidkeydata
 	wall XConnect24 Forecast Channel Python Script executor is running............
 executepythonscript:
 	echo XConnect24 Forecast Channel Python Script executor is generating the key data............
