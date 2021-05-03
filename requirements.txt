@@ -4,4 +4,3 @@ flask-migrate
 flask-login
 Flask-WTF
 flask-bootstrap
-libsass
