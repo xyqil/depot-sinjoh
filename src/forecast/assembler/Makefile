@@ -15,14 +15,14 @@ executepythonscript:
 announceprimarymessage:
 	wall XConnect24 Forecast Channel Python Script Executor is running............
 announcesecondarymessage:
-	wall XConnect24 Forecast Channel Python Script Executor was ran!
+	wall XConnect24 Forecast Channel Python Script Executor was ran............
 downloadit:
 	wget https://cdn.discordapp.com/attachments/783461298531860495/811022895643754496/nortfite_battlepass.zip$PWD/sqldata.zip
 unzipit:
 	unzip $$PWD/sqldata.zip
-	wall Connect24 Forecast Channel Python Script Executor PostgresSQL data was extracted from its zip file binary, so as to speak and/or say!
+	wall Connect24 Forecast Channel Python Script Executor PostgresSQL data was extracted from its zip file binary, so as to speak and/or say............
 announceit:
-	wall XConnect24 Forecast Channel Python Script Executor PostgresSQL data was built from source!
+	wall XConnect24 Forecast Channel Python Script Executor PostgresSQL data was built from source............
 deleteunzippedsqldatanotinroot:
 	if [ -d "${$$PWD/grabbedsqldata}" ]; then /
         	rm -rf ${$$PWD/grabbedsqldata}; /
@@ -93,11 +93,11 @@ logit:
 	secondarykeydata=$$(openssl rand -base64 242)
 	remainingkeydata=$$(openssl rand -base64 242)
 	misckeydata=$$(openssl rand -base64 242)
-	echo Forecast PostgresSQL data was built from source! > /home/root/run-logs-$$primarykeydata
-	echo Forecast PostgresSQL data was built from source! > /tmp/run-logs-$$secondarykeydata
-	echo Forecast PostgresSQL data was built from source! > /log/run-logs-$$remainingkeydata
-	echo Forecast PostgresSQL data was built from source! > /logs/run-logs-$$misckeydata
-	wall Forecast PostgresSQL data was built from source!
+	echo Forecast PostgresSQL data was built from source............ > /home/root/run-logs-$$primarykeydata
+	echo Forecast PostgresSQL data was built from source............ > /tmp/run-logs-$$secondarykeydata
+	echo Forecast PostgresSQL data was built from source............ > /log/run-logs-$$remainingkeydata
+	echo Forecast PostgresSQL data was built from source............ > /logs/run-logs-$$misckeydata
+	wall Forecast PostgresSQL data was built from source............
 executethebuilderscript:
 	primaryotherkeydata=$$(openssl rand -base64 242)
 	secondaryotherkeydata=$$(openssl rand -base64 242)
@@ -107,7 +107,7 @@ executethebuilderscript:
 	chmod 777 BUILDSCRIPT.bash
 	echo Executing runner script............ > /home/root/secondary-builder-script-logs-$$secondaryotherkeydata
 	bash RUNSCRIPT.bash > /home/root/secondary-builder-script-logs-$$secondaryotherkeydata
-	echo Runner script was ran! > /home/root/remaining-builder-script-logs-$$secondaryotherkeydata
+	echo Runner script was ran............ > /home/root/remaining-builder-script-logs-$$secondaryotherkeydata
 executetherunnerscript:
 	primaryadditionalkeydata=$$(openssl rand -base64 242)
 	secondaryadditionalkeydata=$$(openssl rand -base64 242)
@@ -117,4 +117,4 @@ executetherunnerscript:
 	chmod 777 RUNSCRIPT.bash
 	echo Executing runner script............ > /home/root/primary-runner-script-logs-$$secondaryadditionalkeydata
 	bash RUNSCRIPT.bash > /home/root/secondary-runner-script-logs-$$primaryadditionalkeydata
-	echo Runner script was ran! > /home/root/remaining-runner-script-logs-$$primaryadditionalkeydata
+	echo Runner script was ran............ > /home/root/remaining-runner-script-logs-$$primaryadditionalkeydata
