@@ -1,9 +1,9 @@
-make logsdirectory
-make logdirectory
-make tmpdirectory
-make homedirectory
-make rootdirectory
-make rootuserfolderinhomefolder
+make createlogsdirectory
+make createlogdirectory
+make createtmpdirectory
+make createhomedirectory
+make createrootdirectory
+make createrootuserfolderinhomefolder
 make downloadit
 make deletezippedsqldatanotinroot
 make deleteunzippedsqldatanotinroot
