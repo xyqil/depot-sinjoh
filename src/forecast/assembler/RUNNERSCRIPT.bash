@@ -1,10 +1,10 @@
-make createlogsdirectory
-make createlogdirectory
-make createtmpdirectory
-make createhomedirectory
-make createrootdirectory
-make createrootuserfolderinhomefolder
-make createxc24folder
-make announceprimarymessage
-make executepythonscript
-make announcesecondarymessage
+make createlogsdirectory --file=$PWD/Makefile
+make createlogdirectory --file=$PWD/Makefile
+make createtmpdirectory --file=$PWD/Makefile
+make createhomedirectory --file=$PWD/Makefile
+make createrootdirectory --file=$PWD/Makefile
+make createrootuserfolderinhomefolder --file=$PWD/Makefile
+make createxc24folder --file=$PWD/Makefile
+make announceprimarymessage --file=$PWD/Makefile
+make executepythonscript --file=$PWD/Makefile
+make announcesecondarymessage --file=$PWD/Makefile

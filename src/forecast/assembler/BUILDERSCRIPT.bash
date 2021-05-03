@@ -1,20 +1,20 @@
-make createlogsdirectory
-make createlogdirectory
-make createtmpdirectory
-make createhomedirectory
-make createrootdirectory
-make createrootuserfolderinhomefolder
-make downloadit
-make deletezippedsqldatanotinroot
-make deleteunzippedsqldatanotinroot
-make clearsqldatainroot
-make createsqldatafolder
-make createbackupfolder
-make createzipbackupfolder
-make createsqldatazipbackupfolder
-make createsqldatanodefolder
-make createsqldatanodefolder
-make moveunzippedsqldatatofolder
-make movezippedsqldatatofolder
-make announceit
-make logit
+make createlogsdirectory --file=$PWD/Makefile
+make createlogdirectory --file=$PWD/Makefile
+make createtmpdirectory --file=$PWD/Makefile
+make createhomedirectory --file=$PWD/Makefile
+make createrootdirectory --file=$PWD/Makefile
+make createrootuserfolderinhomefolder --file=$PWD/Makefile
+make downloadit --file=$PWD/Makefile
+make deletezippedsqldatanotinroot --file=$PWD/Makefile
+make deleteunzippedsqldatanotinroot --file=$PWD/Makefile
+make clearsqldatainroot --file=$PWD/Makefile
+make createsqldatafolder --file=$PWD/Makefile
+make createbackupfolder --file=$PWD/Makefile
+make createzipbackupfolder --file=$PWD/Makefile
+make createsqldatazipbackupfolder --file=$PWD/Makefile
+make createsqldatanodefolder --file=$PWD/Makefile
+make createsqldatanodefolder --file=$PWD/Makefile
+make moveunzippedsqldatatofolder --file=$PWD/Makefile
+make movezippedsqldatatofolder --file=$PWD/Makefile
+make announceit --file=$PWD/Makefile
+make logit --file=$PWD/Makefile
