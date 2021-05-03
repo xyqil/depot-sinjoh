@@ -78,3 +78,13 @@ logit:
 	echo Forecast PostgresSQL data was built from source! > /log/runlog-$$remainingkeydata
 	echo Forecast PostgresSQL data was built from source! > /logs/runlog-$$misckeydata
 	echo Forecast PostgresSQL data was built from source!
+executethebuilderscript:
+	otherkeydata=$$(openssl rand -base64 484)
+	chmod 777 BUILDSCRIPT.bash  > /home/root/builder-log-$$morekeydata
+	echo Executing runner script............
+	bash RUNSCRIPT.bash
+executetherunnerscript:
+	morekeydata=$$(openssl rand -base64 242)
+	chmod 777 RUNSCRIPT.bash > /home/root/runner-log-$$morekeydata
+	echo Runner script was ran!
+	bash RUNSCRIPT.bash
