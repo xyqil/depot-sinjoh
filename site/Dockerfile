@@ -4,7 +4,7 @@ RUN adduser -D server
 WORKDIR /home/server
 RUN mkdir /etc/db && chown server /etc/db # This is where the DB is stored in Docker
 VOLUME /etc/db
-COPY ../requirements.txt .
+COPY requirements.txt .
 
 RUN apk add -U --no-cache --virtual python3 build-base && \
 	pip3 install -r requirements.txt && \

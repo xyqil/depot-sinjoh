@@ -6,7 +6,7 @@ from os.path import join
 from os import getcwd
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from flask_login import LoginManager, login_user, logout_user, current_user
+from flask_login import LoginManager, login_user, logout_user, current_user, login_required
 from forms import *
 from flask_bootstrap import Bootstrap
 from sassutils.wsgi import SassMiddleware
@@ -98,7 +98,7 @@ def home():
       theme = "dark"
   else:
     theme = "dark"
-  return render_template("index.html", theme=page_theme)
+  return render_template("index.html", theme=theme)
 @app.route('/services')
 def services():
   page_theme = request.args.get("theme", None)
@@ -114,7 +114,17 @@ def services():
       theme = "dark"
   else:
     theme = "dark"
-  return render_template("services.html", theme=page_theme)
+  return render_template("services.html", theme=theme)
+@app.route('/bin/post', methods=["GET","POST"])
+@login_required
+def bin():
+  form = TrashBinForm()
+  if form.validate_on_submit():
+    p = models.Post(body=form.line.data,author=current_user)
+    db.session.add(p)
+    db.session.commit()
+    return redirect('home')
+  return render_template("signup.html",form=form, theme=theme)
 @app.route('/faq')
 def faq():
   page_theme = request.args.get("theme", None)
