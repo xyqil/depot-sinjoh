@@ -6,9 +6,6 @@ import collections
 import csv
 
 class AbstractionLayer:
-	def IntegerProtector(data): 
-		# Our version of the WAD will have a patch that sets all integers to that level, to prevent integer overflows later on
-		return data
   
 	def CalcCRC32(filename):
 	    # From: https://stackoverflow.com/questions/1742866/compute-crc-of-file-in-python
@@ -24,7 +21,8 @@ class AbstractionLayer:
 	def GetVersionByte():
 		return binascii.unhexlify('30')
 
-	def ZeroFillAVariable(variabledata, amount):  # Thanks Snoot for figuring out a better name for the function
+	def ZeroFillAVariable(variabledata, amount):  
+		# Thanks Snoot for figuring out a better name for the function
 		return variabledata.zfill(amount)
     
 	def DataDuplicator(unduplicateddata, integerdata):
@@ -39,28 +37,29 @@ class AbstractionLayer:
 	def PadAVariableWithoutZeroes(amountdata):
 		return binascii.unhexlify(ZeroFillAVariable('0', 2))
 
-  def ConvertCelciusToFahrenheit(celcius):
-    return (celcius * 1.8) + 32
+  	def ConvertCelciusToFahrenheit(celcius):
+    		return (celcius * 1.8) + 32
   
-  def ConvertFahrenheitToCelcius(fahrenheit):
-    return (fahrenheit - 32) * 0.555555555556
+  	def ConvertFahrenheitToCelcius(fahrenheit):
+    		return (fahrenheit - 32) * 0.555555555556  
+	
+  	def time_convert(time):
+    		# This function and nothing else was made by Larsenv the Seagull, modified so it isn't pure crap :troll:
+    		return time - 946684800 / 60
   
-  def time_convert(time):
-    # This function and nothing else was made by Larsenv the Seagull, modified so it isn't pure crap :troll:
-    return int(IntegerProtector((time - int(946684800)) / int(60)))
-  
-  def GrabCities():
-  reader = csv.dictreader(open(config.cities_csv, "r"))
-  return reader
+  	def GrabCities():
+  		reader = csv.dictreader(open(config.cities_csv, "r"))
+  		return reader
 
-  def CheckCity(cityname):
-    reader = GrabCities()
-    for row in reader:
-      if row."city" == cityname:
-        return True
-      if row."city_ascii" == cityname:
-        return True
-    return False
+  	def CheckCity(cityname):
+    	reader = GrabCities()
+    	for row in reader:
+      		if row."city" == cityname:
+        		return True
+      		if row."city_ascii" == cityname:
+        		return True
+		else:
+    			return False
 
 class Tables:
 	def Bellossom():
