@@ -27,7 +27,7 @@ ifeq ($(DO_ERROR), yes)
 endif
 LIBS := 
 SOS :=
-SOURCES := src/seagull.cpp
+SOURCES := src/main.cpp
 OUTPUTS := $(addsuffix .o, $(notdir $(SOURCES)))
 CXXFLAGS :=
 CXX := g++
