@@ -51,40 +51,39 @@ def uhohspeghettios():
   </body>
   </html>
   '''
-if debug:
-  @app.route('/thirdparty/spectrum/vars/dist/<css>')
-  def spectrum_vars(css):
-    return send_from_directory('thirdparty/spectrum/vars/dist', css)
-  @app.route('/thirdparty/spectrum/page/dist/<css>')
-  def spectrum_page(css):
-    return send_from_directory('thirdparty/spectrum/page/dist', css)
-  @app.route('/thirdparty/spectrum/typography/dist/<css>')
-  def spectrum_typography(css):
-    return send_from_directory('thirdparty/spectrum/typography/dist', css)
-  @app.route('/thirdparty/spectrum/icon/dist/<css>')
-  def spectrum_icon(css):
-    return send_from_directory('thirdparty/spectrum/icon/dist', css)
-  @app.route('/thirdparty/spectrum/button/dist/<css>')
-  def spectrum_button(css):
-    return send_from_directory('thirdparty/spectrum/button/dist', css)
-  @app.route('/thirdparty/spectrum/actionbutton/dist/<css>')
-  def spectrum_actionbutton(css):
-    return send_from_directory('thirdparty/spectrum/actionbutton/dist', css)
-  @app.route('/thirdparty/spectrum/table/dist/<css>')
-  def spectrum_table(css):
-    return send_from_directory('thirdparty/spectrum/table/dist', css)
-  @app.route('/styles/css/<css>')
-  def compiled_scss(css):
-    return send_from_directory('styles/css', css)
-  @app.route('/styles/<_>/<css>')
-  def styles(_, css):
-    return send_from_directory('styles', css)
-  @app.route('/apis/<_>/<_2>/<css>')
-  def apis(_, _2, css):
-    return send_from_directory('styles', css)
-  @app.route('/assets/images/<asset>')
-  def assets(asset):
-    return send_from_directory('assets/images',asset)
+@app.route('/thirdparty/spectrum/vars/dist/<css>')
+def spectrum_vars(css):
+  return send_from_directory('thirdparty/spectrum/vars/dist', css)
+@app.route('/thirdparty/spectrum/page/dist/<css>')
+def spectrum_page(css):
+  return send_from_directory('thirdparty/spectrum/page/dist', css)
+@app.route('/thirdparty/spectrum/typography/dist/<css>')
+def spectrum_typography(css):
+  return send_from_directory('thirdparty/spectrum/typography/dist', css)
+@app.route('/thirdparty/spectrum/icon/dist/<css>')
+def spectrum_icon(css):
+  return send_from_directory('thirdparty/spectrum/icon/dist', css)
+@app.route('/thirdparty/spectrum/button/dist/<css>')
+def spectrum_button(css):
+  return send_from_directory('thirdparty/spectrum/button/dist', css)
+@app.route('/thirdparty/spectrum/actionbutton/dist/<css>')
+def spectrum_actionbutton(css):
+  return send_from_directory('thirdparty/spectrum/actionbutton/dist', css)
+@app.route('/thirdparty/spectrum/table/dist/<css>')
+def spectrum_table(css):
+  return send_from_directory('thirdparty/spectrum/table/dist', css)
+@app.route('/styles/css/<css>')
+def compiled_scss(css):
+  return send_from_directory('styles/css', css)
+@app.route('/styles/<_>/<css>')
+def styles(_, css):
+  return send_from_directory('styles', css)
+@app.route('/apis/<_>/<_2>/<css>')
+def apis(_, _2, css):
+  return send_from_directory('styles', css)
+@app.route('/assets/images/<asset>')
+def assets(asset):
+  return send_from_directory('assets/images',asset)
 @app.route('/')
 @app.route("/home")
 def home():
