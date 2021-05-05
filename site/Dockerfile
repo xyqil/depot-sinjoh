@@ -2,6 +2,8 @@ FROM python:3.9-alpine
 
 RUN adduser -D server
 WORKDIR /home/server
+RUN chown server key.pem 
+RUN chown server cert.pem
 RUN mkdir /etc/db && chown server /etc/db # This is where the DB is stored in Docker
 VOLUME /etc/db
 COPY requirements.txt .
@@ -14,8 +16,6 @@ USER server
 copy . .
 
 # Comment if not using SSL
-RUN chown server key.pem 
-RUN chown server cert.pem
 
 # Remember to change your config file accordingly!
 # Note to my devs: please always use Gunicorn for Python!
