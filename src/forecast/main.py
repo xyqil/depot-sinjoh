@@ -65,3 +65,8 @@ class AbstractionLayer:
 class Tables:
 	def Bellossom():
 		longtable = Collections.OrderedDict()
+
+class Forecast:
+  def __init__(self, country_code, language_code, region_flag):
+    with open('forecast.bin', 'wb') as f:
+      ...

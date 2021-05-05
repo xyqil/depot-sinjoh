@@ -2,10 +2,9 @@ print("CHANSasm")
 print("DO NOT RUN THIS ON A REAL WII, YOU WILL REGRET IT BADLY")
 from sys import argv
 class Mnenonic:
-    def __init__(self, name, byte, size):
+    def __init__(self, name, byte):
         self.name = name
         self.byte = byte
-        self.size = size
     def to_bytes(self, args):
         buf = bytearray()
         buf += self.byte
@@ -21,7 +20,13 @@ class MnenonicDB:
         for i in mnenonics:
             if inst == i.name:
                 return i.to_bytes(inst, args)
-inst_db = MnenonicDB([])
+insts = []
+insts.append(Mnenonic("end",b"\x00"))
+insts.append(Mnenonic("ret",b"\x01"))
+insts.append(Mnenonic("push",b"\x02"))
+insts.append(Mnenonic("pop",b"\x03"))
+
+inst_db = MnenonicDB(insts)
 with open(argv[0]) as f:
     with open(argv[1], 'wb') as w:
         for i in f:
