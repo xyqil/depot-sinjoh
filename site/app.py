@@ -9,7 +9,6 @@ from flask_migrate import Migrate
 from flask_login import LoginManager, login_user, logout_user, current_user, login_required
 from forms import *
 from flask_bootstrap import Bootstrap
-from sassutils.wsgi import SassMiddleware
 app = Flask(__name__)
 # --CONFIG--
 app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{join(getcwd(), "app.db")}'
@@ -22,7 +21,6 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db, compare_type=True)
 login = LoginManager(app)
 bootstrap = Bootstrap(app)
-app.wsgi_app = SassMiddleware(app.wsgi_app, {__name__: ('styles/scss', 'styles/css','/styles/css')})
 import models
 @app.route('/oh_dear_what_a_blunder_ive_made')
 def uhohspeghettios():
