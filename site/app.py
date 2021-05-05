@@ -26,6 +26,7 @@ limiter = Limiter(
     default_limits=["75 per hour"]
 )
 hcaptcha = hCaptcha(app)
+print(hcaptcha.get_code())
 from forms import *
 import models
 @app.route('/oh_dear_what_a_blunder_ive_made')
