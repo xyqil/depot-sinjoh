@@ -2,3 +2,6 @@ app.db
 *.crt
 *.key
 *.pem
+*.swp
+*.db
+*.old
