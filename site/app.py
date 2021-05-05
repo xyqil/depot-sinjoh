@@ -26,7 +26,6 @@ limiter = Limiter(
     default_limits=["75 per hour"]
 )
 hcaptcha = hCaptcha(app)
-print(hcaptcha.get_code())
 from forms import *
 import models
 @app.route('/oh_dear_what_a_blunder_ive_made')
@@ -156,7 +155,7 @@ def bin():
     db.session.add(p)
     db.session.commit()
     return redirect('home')
-  return render_template("signup.html",form=form, theme=theme)
+  return render_template("signup.html",form=form, theme=theme, hcaptcha_code=hcaptcha.get_code())
 @app.route('/faq')
 def faq():
   page_theme = request.args.get("theme", None)
@@ -205,7 +204,7 @@ def loginuser():
     if user.check_pw_hash(form.password.data):
       login_user(user)
       return redirect('home')
-  return render_template("signup.html",form=form, theme=theme)
+  return render_template("signup.html",form=form, theme=theme, hcaptcha_code=hcaptcha.get_code())
 @app.route('/signup', methods=['GET','POST'])
 @limiter.limit("35/hour")
 def signup():
@@ -234,7 +233,7 @@ def signup():
     db.session.add(u)
     db.session.commit()
     return redirect('/home')
-  return render_template("signup.html",form=form, theme=theme)
+  return render_template("signup.html",form=form, theme=theme, hcaptcha_code=hcaptcha.get_code())
 @app.route('/logout')
 def logoutuser():
   logout_user()
