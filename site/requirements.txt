@@ -6,3 +6,4 @@ Flask-WTF
 flask-bootstrap
 Flask-Limiter
 Flask-hCaptcha
+email_validator

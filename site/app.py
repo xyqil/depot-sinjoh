@@ -2,12 +2,12 @@
 #-*- coding: utf-8 -*-
 from flask import Flask, render_template, send_from_directory, request, redirect
 from os.path import join
-from flask_limiter.util import get_remote_address, Limiter
+from flask_limiter.util import get_remote_address
+from flask_limiter import Limiter
 from os import getcwd
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager, login_user, logout_user, current_user, login_required
-from forms import *
 from flask_bootstrap import Bootstrap
 from flask_hcaptcha import hCaptcha
 app = Flask(__name__)
@@ -26,6 +26,7 @@ limiter = Limiter(
     default_limits=["75 per hour"]
 )
 hcaptcha = hCaptcha(app)
+from forms import *
 import models
 @app.route('/oh_dear_what_a_blunder_ive_made')
 def uhohspeghettios():
@@ -205,7 +206,7 @@ def loginuser():
       return redirect('home')
   return render_template("signup.html",form=form, theme=theme)
 @app.route('/signup', methods=['GET','POST'])
-limiter.limit("35/hour")
+@limiter.limit("35/hour")
 def signup():
   page_theme = request.args.get("theme", None)
   if current_user.is_authenticated:
