@@ -6,6 +6,7 @@ COPY key.pem key.pem
 COPY cert.pem cert.pem
 RUN chown server key.pem 
 RUN chown server cert.pem
+RUN chmod +r key.pem
 RUN mkdir /etc/db && chown server /etc/db # This is where the DB is stored in Docker
 VOLUME /etc/db
 COPY requirements.txt .
