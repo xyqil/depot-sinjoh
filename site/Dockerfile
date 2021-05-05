@@ -18,4 +18,4 @@ copy . .
 ENV FLASK_APP app.py
 
 EXPOSE 5000
-ENTRYPOINT ["gunicorn", "-b", ":5000", "--keyfile", "key.pem", "--certfile", "cert.pem", "-", "--error-logfile", "-", "app:app"]
+ENTRYPOINT ["gunicorn", "-b", ":5000", "--access-logfile", "-", "--certfile", "cert.pem", "--keyfile", "key.pem", "--error-logfile", "-", "app:app"]
