@@ -9,10 +9,9 @@ from flask_migrate import Migrate
 from flask_login import LoginManager, login_user, logout_user, current_user, login_required
 from forms import *
 from flask_bootstrap import Bootstrap
+from flask_hcaptcha import hCaptcha
 app = Flask(__name__)
 # --CONFIG--
-app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{join(getcwd(), "app.db")}'
-debug = True
 theme = "dark"
 import config
 # --END CONFIG--
@@ -26,6 +25,7 @@ limiter = Limiter(
     key_func=get_remote_address,
     default_limits=["75 per hour"]
 )
+hcaptcha = hCaptcha(app)
 import models
 @app.route('/oh_dear_what_a_blunder_ive_made')
 def uhohspeghettios():
@@ -149,7 +149,7 @@ def bin():
       else:
         theme = page_theme
   form = TrashBinForm()
-  if form.validate_on_submit():
+  if form.validate_on_submit() and hcaptcha.verify():
     p = models.Post(body=form.line.data,author=current_user)
     db.session.add(p)
     db.session.commit()
@@ -198,7 +198,7 @@ def loginuser():
       else:
         theme = page_theme
   form = LoginForm()
-  if form.validate_on_submit():
+  if form.validate_on_submit() and hcaptcha.verify():
     user = models.User.query.filter_by(username=form.username.data).first()
     if user.check_pw_hash(form.password.data):
       login_user(user)
@@ -226,7 +226,7 @@ def signup():
       else:
         theme = page_theme
   form = SignupForm()
-  if form.validate_on_submit():
+  if form.validate_on_submit() and hcaptcha.verify():
     u = models.User(username=form.username.data)
     u.set_pw_hash(form.password.data)
     db.session.add(u)

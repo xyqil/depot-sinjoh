@@ -5,3 +5,4 @@ flask-login
 Flask-WTF
 flask-bootstrap
 Flask-Limiter
+Flask-hCaptcha
