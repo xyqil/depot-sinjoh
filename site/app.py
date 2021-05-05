@@ -197,11 +197,10 @@ def loginuser():
         theme = "dark"
       else:
         theme = page_theme
-  form = SignupForm()
+  form = LoginForm()
   if form.validate_on_submit():
     user = models.User.query.filter_by(username=form.username.data).first()
     if user.check_pw_hash(form.password.data):
-      print("omg someone logged in poggers")
       login_user(user)
       return redirect('home')
   return render_template("signup.html",form=form, theme=theme)
