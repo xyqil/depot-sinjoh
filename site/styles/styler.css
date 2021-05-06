@@ -1,21 +1,23 @@
 @font-face {
-	font-family: IndUni;
-	src: url("https://xc24.xyz/assets/fonts/IndUni-H-Regular.otf");
+	font-family: Helvetica, IndUni;
+	src: url("https://xc24.xyz/assets/fonts/Helvetica, IndUni-H-Regular.otf");
 }
 
 body {
-	font-family: IndUni;
+	font-family: Helvetica, IndUni;
 }
+
 button a {
-	font-family: IndUni;
+	font-family: Helvetica, IndUni;
 }
+
 p, h1, h2, h3, h4, h5, h6, .twitter, .clearfix{
 	padding: 1%;
-	font-family: IndUni;
+	font-family: Helvetica, IndUni;
 }
 
 .navbar-nav {
-	font-family: IndUni;
+	font-family: Helvetica, IndUni;
 }
 
 .padding {
