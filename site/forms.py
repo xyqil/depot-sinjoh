@@ -8,8 +8,8 @@ class LoginForm(FlaskForm):
     username = StringField("Username", validators=[DataRequired()])
     password = PasswordField("Password", validators=[DataRequired()])
     submit = SubmitField("Submit")
-    def validate_username(self, form):
-        if not User.query.filter_by(username=form.username.data).first():
+    def validate_username(self, field):
+        if not User.query.filter_by(username=field.data).first():
             raise ValidationError("There is no such user!")
         if not hcaptcha.verify():
             raise ValidationError("Please do the hCaptcha")
@@ -20,7 +20,7 @@ class SignupForm(FlaskForm):
     password = PasswordField("Password", validators=[DataRequired()])
     submit = SubmitField("Submit")
     def validate_username(self, form):
-        if User.query.filter_by(username=form.username.data).first():
+        if User.query.filter_by(username=field.data).first():
             raise ValidationError("A user with that name already exists")
         if not hcaptcha.verify():
             raise ValidationError("Please do the hCaptcha")
