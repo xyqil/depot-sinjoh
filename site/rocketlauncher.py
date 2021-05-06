@@ -12,7 +12,7 @@ def send_message(message):
 
 psaq = Popen(['sudo','docker','ps','-aq'], stdout = PIPE)
 psaq, _ = psaq.communicate()
-psaq = psaq.split(' ')
+psaq = str(psaq).split(' ')
 command = ['sudo', 'docker', 'stop']
 for ps in psaq:
     command.append(ps)
