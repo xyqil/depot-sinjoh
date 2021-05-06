@@ -227,7 +227,7 @@ def signup():
       else:
         theme = page_theme
   form = SignupForm()
-  if form.validate_on_submit() and hcaptcha.verify():
+  if form.validate_on_submit():
     u = models.User(username=form.username.data)
     u.set_pw_hash(form.password.data)
     db.session.add(u)
