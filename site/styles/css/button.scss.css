@@ -11076,5 +11076,9 @@ textarea.form-control-lg {
   }
 }
 /*# sourceMappingURL=bootstrap.min.css.map */
+input#submit.btn.btn-default {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
 /*# sourceMappingURL=button.scss.css.map */
