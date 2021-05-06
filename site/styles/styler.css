@@ -1,18 +1,22 @@
 @font-face {
-	font-family: WiiFont;
-	src: url('https://www.thediamondk.com/hosting/Wii.ttf');
+	font-family: IndUni;
+  src: url("https://xc24.xyz/assets/fonts/IndUni-H-Regular.otf");
 }
 body {
-	font-family: WiiFont;
+	font-family: Helvetica, IndUni;
+}
+
+button a {
+	font-family: Helvetica, IndUni;
 }
 
 p, h1, h2, h3, h4, h5, h6, .twitter, .clearfix{
 	padding: 1%;
-	font-family: WiiFont;
+	font-family: Helvetica, IndUni;
 }
 
 .navbar-nav {
-	font-family: WiiFont;
+	font-family: Helvetica, IndUni;
 }
 
 .padding {
