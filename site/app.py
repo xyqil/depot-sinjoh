@@ -28,10 +28,11 @@ limiter = Limiter(
 hcaptcha = hCaptcha(app)
 from forms import *
 import models
+
 @app.route('/oh_dear_what_a_blunder_ive_made')
 def uhohspeghettios():
   # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-  # @                CAUTION:                    @ 
+  # @                CAUTION:                    @
   # @  This page is meant for if the server is   @
   # @  well, unable to serve things, it's very   @
   # @  important that no other files are         @
@@ -40,14 +41,14 @@ def uhohspeghettios():
   # @  from loading.                             @
   # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
   # *phew* I finally got that ASCII warning sign right
-  
+
   return '''
   <!DOCTYPE html>
   <html>
   <body>
   <h1>This is the hall of broken code that you will likely never see.</h1>
   <p>This is temporary!</p>
-  <p>If you've stumbled upon this page, someone broke the server code lol</p>
+  <p>If you've stumbled upon this page, someone broke the server code lmfao</p>
   <p>Enjoy!</p>
   </body>
   </html>
@@ -55,36 +56,47 @@ def uhohspeghettios():
 @app.route('/thirdparty/spectrum/vars/dist/<css>')
 def spectrum_vars(css):
   return send_from_directory('thirdparty/spectrum/vars/dist', css)
+
 @app.route('/thirdparty/spectrum/page/dist/<css>')
 def spectrum_page(css):
   return send_from_directory('thirdparty/spectrum/page/dist', css)
+
 @app.route('/thirdparty/spectrum/typography/dist/<css>')
 def spectrum_typography(css):
   return send_from_directory('thirdparty/spectrum/typography/dist', css)
+
 @app.route('/thirdparty/spectrum/icon/dist/<css>')
 def spectrum_icon(css):
   return send_from_directory('thirdparty/spectrum/icon/dist', css)
+
 @app.route('/thirdparty/spectrum/button/dist/<css>')
 def spectrum_button(css):
   return send_from_directory('thirdparty/spectrum/button/dist', css)
+
 @app.route('/thirdparty/spectrum/actionbutton/dist/<css>')
 def spectrum_actionbutton(css):
   return send_from_directory('thirdparty/spectrum/actionbutton/dist', css)
+
 @app.route('/thirdparty/spectrum/table/dist/<css>')
 def spectrum_table(css):
   return send_from_directory('thirdparty/spectrum/table/dist', css)
+
 @app.route('/styles/css/<css>')
 def compiled_scss(css):
   return send_from_directory('styles/css', css)
+
 @app.route('/styles/<_>/<css>')
 def styles(_, css):
   return send_from_directory('styles', css)
+
 @app.route('/apis/<_>/<_2>/<css>')
 def apis(_, _2, css):
   return send_from_directory('styles', css)
+
 @app.route('/assets/images/<asset>')
 def assets(asset):
   return send_from_directory('assets/images',asset)
+
 @app.route('/')
 @app.route("/home")
 def home():
@@ -107,6 +119,7 @@ def home():
       else:
         theme = page_theme
   return render_template("index.html", theme=theme)
+
 @app.route('/services')
 def services():
   page_theme = request.args.get("theme", None)
@@ -128,6 +141,7 @@ def services():
       else:
         theme = page_theme
   return render_template("services.html", theme=theme)
+
 @app.route('/bin/post', methods=["GET","POST"])
 @login_required
 def bin():
@@ -156,6 +170,7 @@ def bin():
     db.session.commit()
     return redirect('home')
   return render_template("signup.html",form=form, theme=theme, sitekey=app.config['HCAPTCHA_SITE_KEY'])
+
 @app.route('/faq')
 def faq():
   page_theme = request.args.get("theme", None)
@@ -177,6 +192,7 @@ def faq():
       else:
         theme = page_theme
   return render_template("faq.html", theme=theme)
+
 @app.route('/login', methods=['GET','POST'])
 @limiter.limit("35/hour")
 def loginuser():
@@ -205,6 +221,7 @@ def loginuser():
       login_user(user)
       return redirect('home')
   return render_template("signup.html",form=form, theme=theme, sitekey=app.config['HCAPTCHA_SITE_KEY'])
+
 @app.route('/signup', methods=['GET','POST'])
 @limiter.limit("35/hour")
 def signup():
@@ -234,12 +251,15 @@ def signup():
     db.session.commit()
     return redirect('/home')
   return render_template("signup.html",form=form, theme=theme, sitekey=app.config['HCAPTCHA_SITE_KEY'])
+
 @app.route('/logout')
 def logoutuser():
   logout_user()
   return redirect('/home')
+
 @login.user_loader
 def load_user(id):
   return models.User.query.get(id)
+
 if __name__ == '__main__':
   app.run(debug=debug)

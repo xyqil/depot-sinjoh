@@ -1,18 +1,16 @@
-@font-face {
-	font-family: WiiFont;
-	src: url('https://www.thediamondk.com/hosting/Wii.ttf');
-}
+@import url("https://use.typekit.net/oql2jfm.css");
+
 body {
-	font-family: WiiFont;
+	font-family: liberation-sans;
 }
 
 p, h1, h2, h3, h4, h5, h6, .twitter, .clearfix{
 	padding: 1%;
-	font-family: WiiFont;
+	font-family: liberation-sans;
 }
 
 .navbar-nav {
-	font-family: WiiFont;
+	font-family: liberation-sans;
 }
 
 .padding {
