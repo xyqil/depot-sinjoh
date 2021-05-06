@@ -155,7 +155,7 @@ def bin():
     db.session.add(p)
     db.session.commit()
     return redirect('home')
-  return render_template("signup.html",form=form, theme=theme, sitekey=app.config.sitekey)
+  return render_template("signup.html",form=form, theme=theme, sitekey=app.config['HCAPTCHA_SITE_KEY'])
 @app.route('/faq')
 def faq():
   page_theme = request.args.get("theme", None)
@@ -204,7 +204,7 @@ def loginuser():
     if user.check_pw_hash(form.password.data):
       login_user(user)
       return redirect('home')
-  return render_template("signup.html",form=form, theme=theme, sitekey=app.config.sitekey)
+  return render_template("signup.html",form=form, theme=theme, sitekey=app.config['HCAPTCHA_SITE_KEY'])
 @app.route('/signup', methods=['GET','POST'])
 @limiter.limit("35/hour")
 def signup():
@@ -233,7 +233,7 @@ def signup():
     db.session.add(u)
     db.session.commit()
     return redirect('/home')
-  return render_template("signup.html",form=form, theme=theme, sitekey=app.config.sitekey)
+  return render_template("signup.html",form=form, theme=theme, sitekey=app.config['HCAPTCHA_SITE_KEY']
 @app.route('/logout')
 def logoutuser():
   logout_user()
