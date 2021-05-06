@@ -54,18 +54,18 @@ class AbstractionLayer:
   	def CheckCity(cityname):
     		reader = GrabCities()
     		for row in reader:
-      			if row."city" == cityname:
+      			if row.city == cityname:
         			return True
-      			if row."city_ascii" == cityname:
+      			elif row.city_ascii == cityname:
         			return True
 			else:
     				return False
 
 class Tables:
-	def Bellossom():
+	def __init__(): # Please don't name functions after Pokemon 6100m
 		longtable = Collections.OrderedDict()
 
 class Forecast:
-  def __init__(self, country_code, language_code, region_flag):
-    with open('forecast.bin', 'wb') as f:
-      ...
+	def __init__(self, country_code, language_code, region_flag):
+		with open('forecast.bin', 'wb') as f:
+			...
