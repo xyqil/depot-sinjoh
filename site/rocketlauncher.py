@@ -1,4 +1,4 @@
-from subprocess import Popen
+from subprocess import Popen, PIPE
 from config import DISCORD_WEBHOOK_URL, ROCKETLAUNCHER_USE_DISCORD
 from requests import post
 
@@ -10,7 +10,7 @@ def send_message(message):
         data['avatar_url'] = 'https://static.thenounproject.com/png/254007-200.png'
         requests.post(DISCORD_WEBHOOK_URL, body=data)
 
-psaq = Popen(['sudo','docker','ps','-aq'], stdout = subprocess.PIPE)
+psaq = Popen(['sudo','docker','ps','-aq'], stdout = PIPE)
 psaq, _ = psaq.communicate()
 psaq = psaq.split(' ')
 command = ['sudo', 'docker', 'stop']
