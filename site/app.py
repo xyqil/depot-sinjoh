@@ -97,6 +97,10 @@ def apis(_, _2, css):
 def assets(asset):
   return send_from_directory('assets/images',asset)
 
+@app.route('/assets/fonts/<asset>')
+def fonts(asset):
+  return send_from_directory('assets/fonts',asset)
+
 @app.route('/')
 @app.route("/home")
 def home():
