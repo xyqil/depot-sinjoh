@@ -3,7 +3,9 @@
 body {
 	font-family: liberation-sans;
 }
-
+button {
+	font-family: liberation-sans;
+}
 p, h1, h2, h3, h4, h5, h6, .twitter, .clearfix{
 	padding: 1%;
 	font-family: liberation-sans;
