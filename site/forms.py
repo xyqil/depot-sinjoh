@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import PasswordField, StringField, SubmitField, TextAreaField
-from wtforms.validators import Email
+from wtforms.validators import Email, ValidationError
 from wtforms.validators import InputRequired as DataRequired
 from models import User
 from app import hcaptcha
