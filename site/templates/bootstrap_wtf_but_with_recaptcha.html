@@ -199,7 +199,7 @@ action="" is what we want, from http://www.ietf.org/rfc/rfc2396.txt:
   >
   {{ form.hidden_tag() }}
   {{ form_errors(form, hiddens='only') }}
-  {{ hcaptcha }}
+
   {%- for field in form %}
     {% if not bootstrap_is_hidden_field(field) -%}
       {{ form_field(field,
@@ -208,6 +208,6 @@ action="" is what we want, from http://www.ietf.org/rfc/rfc2396.txt:
                     button_map=button_map) }}
     {%- endif %}
   {%- endfor %}
-
+  {{ hcaptcha_code }}
 </form>
 {%- endmacro %}
