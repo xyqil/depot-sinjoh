@@ -19,7 +19,7 @@ class SignupForm(FlaskForm):
     email = StringField("Email", validators=[DataRequired(), Email()])
     password = PasswordField("Password", validators=[DataRequired()])
     submit = SubmitField("Submit")
-    def validate_username(self, form):
+    def validate_username(self, field):
         if User.query.filter_by(username=field.data).first():
             raise ValidationError("A user with that name already exists")
         if not hcaptcha.verify():
