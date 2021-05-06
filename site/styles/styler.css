@@ -1,8 +1,7 @@
 @font-face {
 	font-family: Helvetica, IndUni;
-	src: url("https://xc24.xyz/assets/fonts/Helvetica, IndUni-H-Regular.otf");
+    	src: url("https://xc24.xyz/assets/fonts/Helvetica", "https://xc24.xyz/assets/fonts/IndUni-H-Regular");
 }
-
 body {
 	font-family: Helvetica, IndUni;
 }
