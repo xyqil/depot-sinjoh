@@ -199,7 +199,7 @@ def loginuser():
       else:
         theme = page_theme
   form = LoginForm()
-  if form.validate_on_submit() and hcaptcha.verify():
+  if form.validate_on_submit():
     user = models.User.query.filter_by(username=form.username.data).first()
     if user.check_pw_hash(form.password.data):
       login_user(user)
