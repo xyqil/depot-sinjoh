@@ -52,14 +52,14 @@ class AbstractionLayer:
   		return reader
 
   	def CheckCity(cityname):
-    	reader = GrabCities()
-    	for row in reader:
-      		if row."city" == cityname:
-        		return True
-      		if row."city_ascii" == cityname:
-        		return True
-		else:
-    			return False
+    		reader = GrabCities()
+    		for row in reader:
+      			if row."city" == cityname:
+        			return True
+      			if row."city_ascii" == cityname:
+        			return True
+			else:
+    				return False
 
 class Tables:
 	def Bellossom():
