@@ -51,16 +51,16 @@
                <div class="navbar-nav"><a class="nav-link active" href="{{ url_for("services") + "?theme=" + theme}}"><i class="fas fa-server"></i> Services</a></div>
                <div class="navbar-nav"><a class="nav-link active" href="{{ url_for("faq") + "?theme=" + theme}}"><i class="fas fa-question-circle"></i> FAQ</a></div>
                {% if theme == "dark" %}
-               <div class="navbar-nav"><a class="nav-link active spectrum-Button spectrum-Button--overBackground spectrum-Button--sizeS" style="font-weight: normal; font-family: WiiFont; padding-left: 15px; padding-right: 15px;" href="{{ request.path + "?theme=light"}}"><i class="fas fa-sun"></i> Light Mode</a></div>
+               <div class="navbar-nav"><a class="nav-link active spectrum-Button spectrum-Button--overBackground spectrum-Button--sizeS" style="font-weight: normal; padding-left: 15px; padding-right: 15px;" href="{{ request.path + "?theme=light"}}"><i class="fas fa-sun"></i> Light Mode</a></div>
                {% endif %}
                {% if theme == "light" %}
-               <div class="navbar-nav"><a class="nav-link active spectrum-Button spectrum-Button--overBackground spectrum-Button--sizeS" style="font-weight: normal; font-family: WiiFont; padding-left: 15px; padding-right: 15px;" href="{{ request.path + "?theme=dark"}}"><i class="fas fa-moon"></i> Dark Mode</a></div>
+               <div class="navbar-nav"><a class="nav-link active spectrum-Button spectrum-Button--overBackground spectrum-Button--sizeS" style="font-weight: normal; padding-left: 15px; padding-right: 15px;" href="{{ request.path + "?theme=dark"}}"><i class="fas fa-moon"></i> Dark Mode</a></div>
                {% endif %}
                {% if current_user.is_authenticated %}
-               <div class="navbar-nav" style="padding-left: 10px;"><a class="nav-link active spectrum-Button spectrum-Button--overBackground spectrum-Button--sizeS" style="font-weight: normal; font-family: WiiFont; padding-left: 30px; padding-right: 30px;" href="{{ url_for("logoutuser") }}"><i class="fas fa-door"></i> Log Out</a></div>
+               <div class="navbar-nav" style="padding-left: 10px;"><a class="nav-link active spectrum-Button spectrum-Button--overBackground spectrum-Button--sizeS" style="font-weight: normal; padding-left: 30px; padding-right: 30px;" href="{{ url_for("logoutuser") }}"><i class="fas fa-door"></i> Log Out</a></div>
                {% else %}
-               <div class="navbar-nav" style="padding-left: 10px;"><a class="nav-link active spectrum-Button spectrum-Button--overBackground spectrum-Button--sizeS" style="font-weight: normal; font-family: WiiFont; padding-left: 30px; padding-right: 30px;" href="{{ url_for("loginuser") }}">Log In</a></div>
-               <div class="navbar-nav" style="padding-left: 10px;"><a class="nav-link active spectrum-Button spectrum-Button--overBackground spectrum-Button--sizeS" style="font-weight: normal; font-family: WiiFont; padding-left: 30px; padding-right: 30px;" href="{{ url_for("signup") }}">Sign Up</a></div>
+               <div class="navbar-nav" style="padding-left: 10px;"><a class="nav-link active spectrum-Button spectrum-Button--overBackground spectrum-Button--sizeS" style="font-weight: normal; padding-left: 30px; padding-right: 30px;" href="{{ url_for("loginuser") }}">Log In</a></div>
+               <div class="navbar-nav" style="padding-left: 10px;"><a class="nav-link active spectrum-Button spectrum-Button--overBackground spectrum-Button--sizeS" style="font-weight: normal; padding-left: 30px; padding-right: 30px;" href="{{ url_for("signup") }}">Sign Up</a></div>
                {% endif %}
             </div>
          </div>
