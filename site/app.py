@@ -233,7 +233,7 @@ def signup():
     db.session.add(u)
     db.session.commit()
     return redirect('/home')
-  return render_template("signup.html",form=form, theme=theme, sitekey=app.config['HCAPTCHA_SITE_KEY']
+  return render_template("signup.html",form=form, theme=theme, sitekey=app.config['HCAPTCHA_SITE_KEY'])
 @app.route('/logout')
 def logoutuser():
   logout_user()
