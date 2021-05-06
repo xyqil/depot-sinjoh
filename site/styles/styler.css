@@ -1,18 +1,21 @@
-@import url("https://use.typekit.net/oql2jfm.css");
+@font-face {
+	font-family: IndUni;
+	src: url("../assets/fonts/IndUni-H-Regular.otf");
+}
 
 body {
-	font-family: liberation-sans;
+	font-family: IndUni;
 }
 button a {
-	font-family: liberation-sans;
+	font-family: IndUni;
 }
 p, h1, h2, h3, h4, h5, h6, .twitter, .clearfix{
 	padding: 1%;
-	font-family: liberation-sans;
+	font-family: IndUni;
 }
 
 .navbar-nav {
-	font-family: liberation-sans;
+	font-family: IndUni;
 }
 
 .padding {
