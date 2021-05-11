@@ -2,26 +2,7 @@ import config
 import zlib
 import requests
 import binascii
-import collections
 import csv
-
-
-def CalcCRC32(filename):
-    # From: https://stackoverflow.com/questions/1742866/compute-crc-of-file-in-python
-    with open(filename, "rb") as fh:
-        hash = 0
-        while True:
-            s = ZeroFillAVariable(fh.read(65536), 3)
-            if not s:
-                break
-                hash = zlib.crc32(s, hash)
-                return "%08X" % (hash & 0xFFFFFFFF)
-
-
-
-def DataDuplicator(unduplicateddata, integerdata):
-    return unduplicateddata * integerdata
-
 
 def ConvertKMHToMPH(primaryspeeddata):
     return primaryspeeddata * 0.621371
@@ -44,7 +25,6 @@ def ConvertFahrenheitToCelcius(fahrenheit):
 
 
 def ConvertTheTime(time):
-    # This function and nothing else was made by Larsenv the Seagull, modified so it isn't pure crap :troll:
     return time - 946684800 / 60
 
 
@@ -72,20 +52,21 @@ def CalculateTheFileSize(buffer):
     return int(len(buffer))
 
 
-def LongForecastTable(buffer, unkdata):
-    # Long Table Reference: https://github.com/RiiConnect24/Kaitai-Files/blob/master/Kaitais/forecast_file.ksy
-    # Short Table Reference: https://github.com/RiiConnect24/Kaitai-Files/blob/master/Kaitais/forecast_file_short.ksy
-    longtable = collections.OrderedDict()
-    longtable["version"] = GetVersionByte() # TODO: Replace Version Byte
-    # TODO: Figure out what file it's corresponding to, for both filesize and crc32, so as to speak and/or say.
-    longtable["filesize"] = CalculateTheFileSize(buffer)
-    longtable["crc32"] = CalcCRC32(buffer)
-    longtable["opening_timestamp"] = ConvertTheTime(GetCurrentTime())
-    # Unknown_1 Refrenced from https://github.com/RiiConnect24/File-Maker/blob/66d3d11e22ce3af3a6aa6a0df54b6224306e19cf/Channels/Forecast_Channel/forecast.py#L887
-    longtable["unknown_1"] = "00" + unkdata
+class LongForecastTable:
+    def __init__(self, buffer, unkdata):
+        # Long Table Reference: https://github.com/RiiConnect24/Kaitai-Files/blob/master/Kaitais/forecast_file.ksy
+        # Short Table Reference: https://github.com/RiiConnect24/Kaitai-Files/blob/master/Kaitais/forecast_file_short.ksy
+        self.longtable = {}
+        self.longtable["version"] = GetVersionByte() # TODO: Replace Version Byte
+        # TODO: Figure out what file it's corresponding to, for both filesize and crc32, so as to speak and/or say.
+        self.longtable["filesize"] = CalculateTheFileSize(buffer)
+        self.longtable["crc32"] = zlib.crc32('buffer')
+        self.longtable["opening_timestamp"] = ConvertTheTime(GetCurrentTime())
+        # Unknown_1 Refrenced from https://github.com/RiiConnect24/File-Maker/blob/66d3d11e22ce3af3a6aa6a0df54b6224306e19cf/Channels/Forecast_Channel/forecast.py#L887
+        self.longtable["unknown_1"] = "00" + unkdata
 
-    longtable["unknown_2"] = "00" + unkdata
-    longtable["padding"] = "00" + unkdata
+        self.longtable["unknown_2"] = "00" + unkdata
+        self.longtable["padding"] = "00" + unkdata
 
 
 def DataRequester(q, apikey, method):
