@@ -11,7 +11,7 @@ def CalcCRC32(filename):
     with open(filename, "rb") as fh:
         hash = 0
         while True:
-            s = fh.read(65536).zfill(3)
+            s = ZeroFillAVariable(fh.read(65536), 3)
             if not s:
                 break
                 hash = zlib.crc32(s, hash)
