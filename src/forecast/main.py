@@ -90,10 +90,10 @@ def LongForecastTable(buffer, unkdata):
     longtable["crc32"] = CalcCRC32(buffer)
     longtable["opening_timestamp"] = ConvertTheTime(GetCurrentTime())
     # Unknown_1 Refrenced from https://github.com/RiiConnect24/File-Maker/blob/66d3d11e22ce3af3a6aa6a0df54b6224306e19cf/Channels/Forecast_Channel/forecast.py#L887
-    longtable["unknown_1"] = PadAVariableWithoutZeroes(unkdata)
+    longtable["unknown_1"] = PadAVariableWithoutZeroes(unkdata, 2)
 
-    longtable["unknown_2"] = PadAVariableWithoutZeroes(unkdata)
-    longtable["padding"] = PadAVariableWithoutZeroes(unkdata)
+    longtable["unknown_2"] = PadAVariableWithoutZeroes(unkdata, 2)
+    longtable["padding"] = PadAVariableWithoutZeroes(unkdata, 2)
 
 
 def DataRequester(q, apikey, method):
