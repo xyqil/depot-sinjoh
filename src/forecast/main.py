@@ -69,16 +69,16 @@ def CalculateTheFileSize(buffer):
 def LongForecastTable(buffer):
 	# Long Table Reference: https://github.com/RiiConnect24/Kaitai-Files/blob/master/Kaitais/forecast_file.ksy
 	# Short Table Reference: https://github.com/RiiConnect24/Kaitai-Files/blob/master/Kaitais/forecast_file_short.ksy
-  longtable = collections.OrderedDict()
-  longtable['version'] = GetVersionByte()
-  longtable['filesize'] = CalculateTheFileSize(buffer) #TODO: Figure out what file it's corresponding to
-  longtable['crc32'] = CalcCRC32(buffer) #TODO: Figure out what file it's corresponding to
-  longtable['opening_timestamp'] = ConvertTheTime(GetCurrentTime())
-  # Unknown_1 Refrenced from https://github.com/RiiConnect24/File-Maker/blob/66d3d11e22ce3af3a6aa6a0df54b6224306e19cf/Channels/Forecast_Channel/forecast.py#L887
-  longtable['unknown_1'] = PadAVariableWithoutZeroes(binascii.unhexlify(ZeroFillAVariable("0", 1)))
-
-  longtable['unknown_2'] = PadAVariableWithoutZeroes(binascii.unhexlify(ZeroFillAVariable("0", 1)))
-  longtable['padding'] = PadAVariableWithoutZeroes(binascii.unhexlify(ZeroFillAVariable("0", 1)))
+  	longtable = collections.OrderedDict()
+  	longtable['version'] = GetVersionByte()
+  	longtable['filesize'] = CalculateTheFileSize(buffer) #TODO: Figure out what file it's corresponding to
+  	longtable['crc32'] = CalcCRC32(buffer) #TODO: Figure out what file it's corresponding to
+  	longtable['opening_timestamp'] = ConvertTheTime(GetCurrentTime())
+  	# Unknown_1 Refrenced from https://github.com/RiiConnect24/File-Maker/blob/66d3d11e22ce3af3a6aa6a0df54b6224306e19cf/Channels/Forecast_Channel/forecast.py#L887
+  	longtable['unknown_1'] = PadAVariableWithoutZeroes(binascii.unhexlify(ZeroFillAVariable("0", 1)))
+	
+  	longtable['unknown_2'] = PadAVariableWithoutZeroes(binascii.unhexlify(ZeroFillAVariable("0", 1)))
+  	longtable['padding'] = PadAVariableWithoutZeroes(binascii.unhexlify(ZeroFillAVariable("0", 1)))
 
 def DataRequester(q, apikey, method, additional):
   # Post code refrenced from https://www.w3schools.com/python/ref_requests_post.asp
