@@ -80,7 +80,7 @@ def CalculateTheFileSize(buffer):
     return int(len(buffer))
 
 
-def LongForecastTable(buffer):
+def LongForecastTable(buffer, unkdata):
     # Long Table Reference: https://github.com/RiiConnect24/Kaitai-Files/blob/master/Kaitais/forecast_file.ksy
     # Short Table Reference: https://github.com/RiiConnect24/Kaitai-Files/blob/master/Kaitais/forecast_file_short.ksy
     longtable = collections.OrderedDict()
@@ -90,21 +90,13 @@ def LongForecastTable(buffer):
     longtable["crc32"] = CalcCRC32(buffer)
     longtable["opening_timestamp"] = ConvertTheTime(GetCurrentTime())
     # Unknown_1 Refrenced from https://github.com/RiiConnect24/File-Maker/blob/66d3d11e22ce3af3a6aa6a0df54b6224306e19cf/Channels/Forecast_Channel/forecast.py#L887
-    longtable["unknown_1"] = PadAVariableWithoutZeroes(
-        binascii.unhexlify(ZeroFillAVariable("0", 1))
-    )
+    longtable["unknown_1"] = PadAVariableWithoutZeroes(unkdata)
 
-    longtable["unknown_2"] = PadAVariableWithoutZeroes(
-        binascii.unhexlify(ZeroFillAVariable("0", 1))
-    )
-    longtable["padding"] = PadAVariableWithoutZeroes(
-        binascii.unhexlify(ZeroFillAVariable("0", 1))
-    )
+    longtable["unknown_2"] = PadAVariableWithoutZeroes(unkdata)
+    longtable["padding"] = PadAVariableWithoutZeroes(unkdata)
 
 
-def DataRequester(q, apikey, method, additional):
+def DataRequester(q, apikey, method):
     # Post code refrenced from https://www.w3schools.com/python/ref_requests_post.asp
     # API example referenced from https://www.weatherapi.com/docs/
-    return requests.get(
-        f"http://api.weatherapi.com/v1/{method}?key={apikey}&q={q}{additional}"
-    )
+    return requests.get(f"http://api.weatherapi.com/v1/{method}?key={apikey}&q={q}")
