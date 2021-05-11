@@ -18,14 +18,6 @@ def CalcCRC32(filename):
                 return "%08X" % (hash & 0xFFFFFFFF)
 
 
-def GetVersionByte():
-    return binascii.unhexlify(ZeroFillAVariable("30", 2))
-
-
-def ZeroFillAVariable(variabledata, amount):
-    # Thanks Snoot for figuring out a better name for the function
-    return variabledata.zfill(amount)
-
 
 def DataDuplicator(unduplicateddata, integerdata):
     return unduplicateddata * integerdata
@@ -84,16 +76,16 @@ def LongForecastTable(buffer, unkdata):
     # Long Table Reference: https://github.com/RiiConnect24/Kaitai-Files/blob/master/Kaitais/forecast_file.ksy
     # Short Table Reference: https://github.com/RiiConnect24/Kaitai-Files/blob/master/Kaitais/forecast_file_short.ksy
     longtable = collections.OrderedDict()
-    longtable["version"] = GetVersionByte()
+    longtable["version"] = GetVersionByte() # TODO: Replace Version Byte
     # TODO: Figure out what file it's corresponding to, for both filesize and crc32, so as to speak and/or say.
     longtable["filesize"] = CalculateTheFileSize(buffer)
     longtable["crc32"] = CalcCRC32(buffer)
     longtable["opening_timestamp"] = ConvertTheTime(GetCurrentTime())
     # Unknown_1 Refrenced from https://github.com/RiiConnect24/File-Maker/blob/66d3d11e22ce3af3a6aa6a0df54b6224306e19cf/Channels/Forecast_Channel/forecast.py#L887
-    longtable["unknown_1"] = PadAVariableWithoutZeroes(unkdata, 2)
+    longtable["unknown_1"] = "00" + unkdata
 
-    longtable["unknown_2"] = PadAVariableWithoutZeroes(unkdata, 2)
-    longtable["padding"] = PadAVariableWithoutZeroes(unkdata, 2)
+    longtable["unknown_2"] = "00" + unkdata
+    longtable["padding"] = "00" + unkdata
 
 
 def DataRequester(q, apikey, method):
