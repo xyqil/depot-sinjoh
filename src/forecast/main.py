@@ -81,6 +81,6 @@ def LongForecastTable(buffer):
   	longtable['padding'] = PadAVariableWithoutZeroes(binascii.unhexlify(ZeroFillAVariable("0", 1)))
 
 def DataRequester(q, apikey, method, additional):
-  # Post code refrenced from https://www.w3schools.com/python/ref_requests_post.asp
+  	# Post code refrenced from https://www.w3schools.com/python/ref_requests_post.asp
 	# API example referenced from https://www.weatherapi.com/docs/
-  return requests.get(f"http://api.weatherapi.com/v1/{method}?key={apikey}&q={q}{additional}")
+  	return requests.get(f"http://api.weatherapi.com/v1/{method}?key={apikey}&q={q}{additional}")
