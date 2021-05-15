@@ -174,9 +174,33 @@ def assets(asset):
 def fonts(asset):
     return send_from_directory("assets/fonts", asset)
 
+@app.route("/<page>")
+def getpage(page):
+    page_theme = request.args.get("theme", None)
+    if current_user.is_authenticated:
+        if (
+            not current_user.theme_preferenece == page_theme
+            and page_theme != None
+            or current_user.theme_preferenece == None
+        ):
+            current_user.theme_preferenece = page_theme
+            db.session.add(current_user)
+            db.session.commit()
+        if current_user.theme_preferenece:
+            theme = current_user.theme_preferenece
+        else:
+            if not page_theme:
+                theme = "dark"
+            else:
+                theme = page_theme
+    else:
+        if not page_theme:
+            theme = "dark"
+        else:
+            theme = page_theme
+    return render_template(f"{page}.html", theme=theme)
 
 @app.route("/")
-@app.route("/home")
 def home():
     page_theme = request.args.get("theme", None)
     if current_user.is_authenticated:
@@ -201,33 +225,6 @@ def home():
         else:
             theme = page_theme
     return render_template("index.html", theme=theme)
-
-
-@app.route("/services")
-def services():
-    page_theme = request.args.get("theme", None)
-    if current_user.is_authenticated:
-        if (
-            not current_user.theme_preferenece == page_theme
-            and page_theme != None
-            or current_user.theme_preferenece == None
-        ):
-            current_user.theme_preferenece = page_theme
-            db.session.add(current_user)
-            db.session.commit()
-        if current_user.theme_preferenece:
-            theme = current_user.theme_preferenece
-        else:
-            if not page_theme:
-                theme = "dark"
-            else:
-                theme = page_theme
-    else:
-        if not page_theme:
-            theme = "dark"
-        else:
-            theme = page_theme
-    return render_template("services.html", theme=theme)
 
 
 @app.route("/bin/post", methods=["GET", "POST"])
@@ -264,34 +261,6 @@ def bin():
     return render_template(
         "signup.html", form=form, theme=theme, sitekey=app.config["HCAPTCHA_SITE_KEY"]
     )
-
-
-@app.route("/faq")
-def faq():
-    page_theme = request.args.get("theme", None)
-    if current_user.is_authenticated:
-        if (
-            not current_user.theme_preferenece == page_theme
-            and page_theme != None
-            or current_user.theme_preferenece == None
-        ):
-            current_user.theme_preferenece = page_theme
-            db.session.add(current_user)
-            db.session.commit()
-        if current_user.theme_preferenece:
-            theme = current_user.theme_preferenece
-        else:
-            if not page_theme:
-                theme = "dark"
-            else:
-                theme = page_theme
-    else:
-        if not page_theme:
-            theme = "dark"
-        else:
-            theme = page_theme
-    return render_template("faq.html", theme=theme)
-
 
 @app.route("/login", methods=["GET", "POST"])
 @limiter.limit("35/hour")
