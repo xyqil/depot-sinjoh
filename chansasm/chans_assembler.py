@@ -8,7 +8,7 @@ class Mnenonic:
         self.name = name
         self.byte = byte
 
-    def to_bytes(self, args):
+    def to_bytes(self, args=[]):
         buf = bytearray()
         buf += self.byte
         for i in args:
