@@ -1,0 +1,52 @@
+p, h1, h2, h3, h4, h5, h6{
+	padding: 1%;
+}
+
+.padding {
+	padding: 1rem 1rem;
+}
+/*box*/
+* {
+	box-sizing: border-box;
+}
+
+.box {
+	float: left;
+	width: 33.33%;
+	padding: 50px;
+}
+
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.clearfix {
+	  font-size: 50px;
+	  text-align: center;
+}
+
+div.a {
+	font-size: 15px;
+}
+
+div.b {
+	font-size: large;
+}
+
+div.c {
+	font-size: 150%;
+}
+
+div.d {
+	font-size: 88%;
+}
+
+div.e {
+	font-size: 77%;
+}
+
+div.f {
+	font-size: 66%;
+}
