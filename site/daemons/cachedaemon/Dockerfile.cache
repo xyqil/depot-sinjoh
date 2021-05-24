@@ -1,0 +1,5 @@
+FROM alpine:edge
+RUN wget https://bin.xc24.xyz/dockerize-alpine-linux-amd64-v0.6.1.tar.gz \
+ && tar -C /usr/local/bin -xzvf dockerize-alpine-linux-amd64-v0.6.1.tar.gz \
+ && rm dockerize-alpine-linux-amd64-v0.6.1.tar.gz
+RUN apk add -U --no-cache libgcc libstdc++ ca-certificates
