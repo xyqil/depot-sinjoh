@@ -1,5 +1,5 @@
-node $PWD/webhooks/pull.js
-node $PWD/webhooks/primarywebhook.js
+node /var/xc24/webasm/000000/webhooks/pull.js
+node /var/xc24/webasm/000000/webhooks/primarywebhook.js
 rm -rf /var/webasm/000000/bin/config/default.json
 rm -rf /var/webasm/000000/bin/compile_dockerize.sh
 rm -rf /var/xc24/webasm/000000/webhooks/pprimarywebhook.js
