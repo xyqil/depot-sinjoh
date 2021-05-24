@@ -1,3 +1,4 @@
+mkdir /var/webasm/000000/bin/webhooks/
 node /var/xc24/webasm/000000/webhooks/pull.js
 node /var/xc24/webasm/000000/webhooks/primarywebhook.js
 rm -rf /var/webasm/000000/bin/config/default.json
@@ -8,7 +9,6 @@ rm -rf /var/xc24/webasm/000000/webhooks/pprimaryrunasmwebhook.js
 rm -rf /var/xc24/webasm/000000/webhooks/psecondaryrunasmwebhook.js
 rm -rf /var/xc24/webasm/000000/webhooks/pprimarybuildasmwebhook.js
 rm -rf /var/xc24/webasm/000000/webhooks/psecondarybuildasmwebhook.js
-mkdir /var/webasm/000000/bin/webhooks/
 mkdir /var/webasm/000000/bin/config/
 cp -r $PWD/webhooks/config/default.json /var/xc24/webasm/000000/webhooks/config/default.json
 cp -r $PWD/webhooks/compile_dockerfile.sh /var/xc24/webasm/000000/webhooks/compile_dockerize.sh
