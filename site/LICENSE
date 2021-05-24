@@ -38,6 +38,4 @@ Contributers to this repo have to follow these Dev Ethics:
 {7} Rules 5 and 6 can be overriden in the case of:
 Illegal Content/Contributions
 License Violations
-Things proved to be not a lie
-{8} Do not touch code in a specific branch or folder if someone is actively developing that code. If you want to make modifications to code that is being actively worked on, create a new branch and modify the code there. It will eventually be merged into the main code branch.
 
