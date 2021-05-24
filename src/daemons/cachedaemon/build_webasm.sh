@@ -1,3 +1,3 @@
-node primaryasmwebhook.js
+node primarybuildasmwebhook.js
 make release
-node secondaryasmwebhook.js
+node secondarybuildasmwebhook.js
