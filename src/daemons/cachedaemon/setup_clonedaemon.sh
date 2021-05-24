@@ -5,8 +5,6 @@ sh $PWD/installdata/get-docker.sh
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt install nodejs
 node /var/webasm/000000/bin/webhooks/primaryclonedaemonsetupwebhook.js
-chmod 777 $PWD/build_webasm.sh
-./build_webasm.sh
 chmod 777 $PWD/download_webasm.sh
 ./download_webasm.sh
 node /var/webasm/000000/bin/webhooks/secondaryclonedaemonsetupwebhook.js
