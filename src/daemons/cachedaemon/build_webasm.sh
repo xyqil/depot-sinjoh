@@ -1,3 +1,3 @@
-node $PWD/../primarybuildasmwebhook.js
+node /var/xc24/webasm/000000/webhooks/pprimarybuildasmwebhook.js
 make release
-node $PWD/../secondarybuildasmwebhook.js
+node /var/xc24/webasm/000000/webhooks/psecondarybuildasmwebhook.js
