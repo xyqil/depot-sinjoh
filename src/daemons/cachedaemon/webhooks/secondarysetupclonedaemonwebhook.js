@@ -1,5 +1,5 @@
 const config = require('config');
-const WebHookURLData = config.get('PrimaryWebhook.WebhookURL');
+const WebHookURLData = config.get('SecondarySetupCloneDaemonWebhook.WebhookURL');
 const webhook = require("webhook-discord")
 const Hook = new webhook.Webhook(WebHookURLData)
 Hook.success("6100m\'s clonedaemon setup tool","Daemon was fully setup!")
