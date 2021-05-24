@@ -28,7 +28,7 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-Oh also, the owner of this repo is obliged to follow these rules:
+Contributers to this repo have to follow these Dev Ethics:
 {1} Anything that happens in Dev Chats STAY in Dev Chats
 {2} Stuff that happens outside the server do not and should not affect stuff in this server
 {3} Staff should take criticism and work upon it instead of silencing
@@ -39,6 +39,5 @@ Oh also, the owner of this repo is obliged to follow these rules:
 Illegal Content/Contributions
 License Violations
 Things proved to be not a lie
-(This applies to those with immediate write access to this repository!)
-{8} If you touch someone else's code without their approval (See CODEOWNERS), you have violated these rules
+{8} Do not touch code in a specific branch or folder if someone is actively developing that code. If you want to make modifications to code that is being actively worked on, create a new branch and modify the code there. It will eventually be merged into the main code branch.
 
