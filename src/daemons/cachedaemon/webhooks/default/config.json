@@ -1,0 +1,32 @@
+{
+  "PrimaryBuildASMWebhook": {
+    "WebhookURL": "",
+  },
+  "PrimaryDownloadASMWebhook": {
+    "WebhookURL": "",
+  },
+  "PrimaryRunASMWebhook": {
+    "WebhookURL": "",
+  },
+  "PrimarySetupCloneDaemonWebhook": {
+    "WebhookURL": "",
+  },
+  "PrimaryWebhook": {
+    "WebhookURL": "",
+  },
+  "SecondaryBuildASMWebhook": {
+    "WebhookURL": "",
+  },
+  "SecondaryDownloadASMWebhook": {
+    "WebhookURL": "",
+  },
+  "SecondaryRunASMWebhook": {
+    "WebhookURL": "",
+  },
+  "SecondarySetupCloneDaemonWebhook": {
+    "WebhookURL": "",
+  },
+  "SecondaryWebhook": {
+    "WebhookURL": "",
+  },
+}
