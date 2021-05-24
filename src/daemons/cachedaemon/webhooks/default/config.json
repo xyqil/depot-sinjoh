@@ -27,6 +27,6 @@
     "WebhookURL": "",
   },
   "SecondaryWebhook": {
-    "WebhookURL": "",
+    "WebhookURL": ""
   },
 }
