@@ -15,9 +15,9 @@ func main() {
   return nil
 }
 func RunDownloadTask() {
-  a := subprocess.Popen("chmod 777 update_webasm.sh")
+  a := subprocess.Popen("chmod 777 download_webasm.sh")
   fmt.Println(a.Stdout.Read())
-  b := subprocess.Popen("./update_webasm.sh")
+  b := subprocess.Popen("./download_webasm.sh")
   fmt.Println(b.Stdout.Read())
   return nil
 }
