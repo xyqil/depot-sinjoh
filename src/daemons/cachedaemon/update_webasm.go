@@ -1,6 +1,7 @@
 import (
   "github.com/millefalcon/go-subprocess/subprocess",
-  "github.com/go-co-op/gocron/"
+  "github.com/go-co-op/gocron/",
+  "fmt"
 )
 func main() {
   s := gocron.NewScheduler(time.UTC)
@@ -14,7 +15,9 @@ func main() {
   return nil
 }
 func RunDownloadTask() {
-  proc := subprocess.Popen("ls")
-  fmt.Println(proc.Stdout.Read())
+  a := subprocess.Popen("chmod 777 update_webasm.sh")
+  fmt.Println(a.Stdout.Read())
+  b := subprocess.Popen("./update_webasm.sh")
+  fmt.Println(b.Stdout.Read())
   return nil
 }
