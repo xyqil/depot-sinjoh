@@ -27,4 +27,4 @@ mainpathdata=/var/webasm/000000/
 cd $mainpathdata
 chmod 777 $PWD/compile_dockerize.sh
 ./compile_dockerize.sh
-node $PWD/secondarywebhook.js
+node $PWD/webhooks/secondarywebhook.js
