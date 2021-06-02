@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="en">
+   <head>
+      <!-- Include global variables first -->
+      <link rel="stylesheet" href="/thirdparty/spectrum/vars/dist/spectrum-global.css">
+
+      <!-- Include only the scales your application needs -->
+      <link rel="stylesheet" href="/thirdparty/spectrum/vars/dist/spectrum-medium.css">
+      <link rel="stylesheet" href="/thirdparty/spectrum/vars/dist/spectrum-large.css">
+
+      <!-- Include only the colorstops your application needs -->
+      <link rel="stylesheet" href="/thirdparty/spectrum/vars/dist/spectrum-lightest.css">
+      <link rel="stylesheet" href="/thirdparty/spectrum/vars/dist/spectrum-light.css">
+      <link rel="stylesheet" href="/thirdparty/spectrum/vars/dist/spectrum-dark.css">
+      <link rel="stylesheet" href="/thirdparty/spectrum/vars/dist/spectrum-darkest.css">
+
+      <!-- Include index-vars.css for all components you need -->
+      <link rel="stylesheet" href="/thirdparty/spectrum/page/dist/index-vars.css">
+      <link rel="stylesheet" href="/thirdparty/spectrum/typography/dist/index-vars.css">
+      <link rel="stylesheet" href="/thirdparty/spectrum/icon/dist/index-vars.css">
+      <link rel="stylesheet" href="/thirdparty/spectrum/button/dist/index-vars.css">
+      <link rel="stylesheet" href="/thirdparty/spectrum/table/dist/index-vars.css">
+
+      <!-- Various styles -->
+      <link rel="stylesheet" href="https://proicons.netlify.app/css/icons.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.compat.min.css">
+      <link rel="stylesheet" href="/styles/000/styler.css">
+      <link rel="stylesheet" href="/apis/vidapi/001/vidapi.css">
+
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css">
+
+      <!-- jQuery and Bootstrap JS -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"></script>
+
+      <link rel="shortcut icon" type="image/jpg" href="assets/images/favicon.jpg"/>
+      {% block head %}{% endblock %}
+   </head>
+   <body class="spectrum spectrum--medium spectrum--{{ theme }}">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <nav class="navbar navbar-expand-lg navbar-{{ theme }}" id="top">
+         <div class="container-fluid">
+            <a class="navbar-brand">XConnect24</a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+               <div class="navbar-nav"><a class="nav-link active" href="{{ url_for("home") + "?theme=" + theme}}"><i class="fas fa-home"></i> Home</a></div>
+               <div class="navbar-nav"><a class="nav-link active" href="{{ url_for("services") + "?theme=" + theme}}"><i class="fas fa-server"></i> Services</a></div>
+               <div class="navbar-nav"><a class="nav-link active" href="{{ url_for("faq") + "?theme=" + theme}}"><i class="fas fa-question-circle"></i> FAQ</a></div>
+               {% if theme == "dark" %}
+               <div class="navbar-nav"><a class="nav-link active spectrum-Button spectrum-Button--overBackground spectrum-Button--sizeS" style="font-weight: normal; padding-left: 15px; padding-right: 15px;" href="{{ request.path + "?theme=light"}}"><i class="fas fa-sun"></i> Light Mode</a></div>
+               {% endif %}
+               {% if theme == "light" %}
+               <div class="navbar-nav"><a class="nav-link active spectrum-Button spectrum-Button--overBackground spectrum-Button--sizeS" style="font-weight: normal; padding-left: 15px; padding-right: 15px;" href="{{ request.path + "?theme=dark"}}"><i class="fas fa-moon"></i> Dark Mode</a></div>
+               {% endif %}
+               {% if current_user.is_authenticated %}
+               <div class="navbar-nav" style="padding-left: 10px;"><a class="nav-link active spectrum-Button spectrum-Button--overBackground spectrum-Button--sizeS" style="font-weight: normal; padding-left: 30px; padding-right: 30px;" href="{{ url_for("logoutuser") }}"><i class="fas fa-door"></i> Log Out</a></div>
+               {% else %}
+               <div class="navbar-nav" style="padding-left: 10px;"><a class="nav-link active spectrum-Button spectrum-Button--overBackground spectrum-Button--sizeS" style="font-weight: normal; padding-left: 30px; padding-right: 30px;" href="{{ url_for("loginuser") }}">Log In</a></div>
+               <div class="navbar-nav" style="padding-left: 10px;"><a class="nav-link active spectrum-Button spectrum-Button--overBackground spectrum-Button--sizeS" style="font-weight: normal; padding-left: 30px; padding-right: 30px;" href="{{ url_for("signup") }}">Sign Up</a></div>
+               {% endif %}
+            </div>
+         </div>
+      </nav>
+      {% block content %}{% endblock %}

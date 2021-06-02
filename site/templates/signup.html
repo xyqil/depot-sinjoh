@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% import "bootstrap_wtf_but_with_recaptcha.html" as wtf %}
+{% block head %}
+    <link rel="stylesheet" href="/styles/css/button.scss.css"> 
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
+{% endblock %}
+{% block content %}
+    <div class="container-fluid padding">
+        {{ wtf.quick_form(form, sitekey) }}
+    </div>
+{% endblock %}
